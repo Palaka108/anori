@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import AnimatedSection, { fadeUp } from "../AnimatedSection";
+import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const included = [
   "Advisory guidance across all three phases",
   "CRM setup and administration",
-  "Outbound strategy and initial execution",
+  "Outbound strategy and initial execution support",
   "Weekly reporting and dashboards",
   "Market intelligence and system recommendations",
 ];
@@ -19,23 +19,23 @@ const future = [
 
 const ScopeSection = () => (
   <AnimatedSection>
-    <div className="w-full max-w-[1120px] mx-auto px-5">
-      <motion.p variants={fadeUp} className="section-label mb-4">SCOPE</motion.p>
-      <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mb-4 text-text-primary">
+    <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
+      <motion.p variants={labelSlide} className="section-label mb-4">SCOPE</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[28px] sm:text-[36px] md:text-[40px] font-bold mb-4 text-text-primary">
         Designed to Be Focused
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-lg text-text-secondary mb-12 max-w-2xl">
+      <motion.p variants={fadeUp} className="text-base sm:text-lg font-light text-text-secondary mb-12 max-w-2xl">
         We structure engagements to deliver clarity within clear boundaries. Anything listed below can be explored as a future conversation.
       </motion.p>
 
-      <div className="grid md:grid-cols-2 gap-8 mb-10">
+      <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-10">
         {/* Current Focus */}
         <motion.div variants={fadeUp} className="module-card">
-          <h3 className="text-base font-semibold mb-4 text-text-primary">Current Engagement Focus</h3>
+          <h3 className="text-[15px] font-semibold mb-4 text-text-primary">This Engagement Includes</h3>
           <ul className="space-y-3">
             {included.map((t) => (
-              <li key={t} className="flex items-start gap-2 text-sm text-text-secondary">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+              <li key={t} className="flex items-start gap-2.5 text-sm text-text-secondary">
+                <span className="mt-1.5 w-2 h-2 rounded-full bg-accent/40 shrink-0" />
                 {t}
               </li>
             ))}
@@ -44,11 +44,11 @@ const ScopeSection = () => (
 
         {/* Future */}
         <motion.div variants={fadeUp} className="module-card">
-          <h3 className="text-base font-semibold mb-4 text-text-primary">Available in Future Conversations</h3>
+          <h3 className="text-[15px] font-semibold mb-4 text-text-primary">Available in Future Conversations</h3>
           <ul className="space-y-3">
             {future.map((t) => (
-              <li key={t} className="flex items-start gap-2 text-sm text-text-secondary">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blueprint shrink-0" />
+              <li key={t} className="flex items-start gap-2.5 text-sm text-text-secondary">
+                <span className="mt-1.5 w-2 h-2 rounded-full bg-blueprint/40 shrink-0" />
                 {t}
               </li>
             ))}
@@ -64,10 +64,10 @@ const ScopeSection = () => (
         <span className="tag-accent mb-3">3-MONTH ENGAGEMENT</span>
         <h3 className="text-lg font-semibold mt-2 mb-3 text-text-primary">Automation Handover</h3>
         <p className="text-sm text-text-secondary leading-relaxed mb-3">
-          During a 3-month engagement, we build a lead processing workflow and hand it over with documentation and a usage guide at the end of the advisory period.
+          During a 3-month engagement, we build a lead processing workflow and hand it over with documentation and a usage guide at the end of the advisory period. The system becomes yours.
         </p>
         <p className="text-[13px] text-text-muted-custom">
-          The system becomes yours. Future adjustments or technical support would be a separate conversation.
+          Future adjustments or technical support would be a separate conversation.
         </p>
       </motion.div>
     </div>

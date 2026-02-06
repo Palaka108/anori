@@ -20,7 +20,7 @@ export default {
       colors: {
         border: "hsl(var(--border))",
         "border-hover": "hsl(var(--border-hover))",
-        "border-accent": "hsl(var(--border-accent))",
+        "border-accent": "hsl(var(--accent-border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",

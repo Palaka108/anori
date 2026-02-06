@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import AnimatedSection, { fadeUp } from "../AnimatedSection";
+import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const modules = [
   {
@@ -15,12 +15,12 @@ const modules = [
   {
     tag: "DISCOVERY",
     title: "ICP Hypothesis Mapping",
-    desc: "Begin documenting potential customer profiles across Building Departments, AEC, and adjacent verticals. Identify an initial 80/20 target list of highest-potential partnerships.",
+    desc: "Begin documenting potential customer profiles across Building Departments, AEC, and adjacent verticals. Identify an initial 80/20 list of highest-potential partnerships.",
   },
   {
     tag: "ENABLEMENT",
-    title: "CRM Training",
-    desc: "Deliver a foundational CRM training guide covering best practices for the primary user. Three post-setup revisions included.",
+    title: "CRM Enablement",
+    desc: "Foundational CRM training guide covering best practices for the primary user. Three post-setup revisions included.",
   },
   {
     tag: "OPTIONAL",
@@ -38,20 +38,20 @@ const reportCols = [
 
 const Month1Section = () => (
   <AnimatedSection alt>
-    <div className="w-full max-w-[1120px] mx-auto px-5">
-      <motion.p variants={fadeUp} className="section-label mb-4">PHASE 1</motion.p>
-      <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mb-4 text-text-primary">
+    <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
+      <motion.p variants={labelSlide} className="section-label mb-4">PHASE 1</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[28px] sm:text-[36px] md:text-[40px] font-bold mb-4 text-text-primary">
         Foundation & Discovery
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-lg text-text-secondary mb-12">
+      <motion.p variants={fadeUp} className="text-base sm:text-lg font-light text-text-secondary mb-12">
         Building the infrastructure and surfacing initial market signals.
       </motion.p>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-10">
         {modules.map((m) => (
           <motion.div key={m.title} variants={fadeUp} className="module-card">
-            <span className="tag-blue mb-3">{m.tag}</span>
-            <h3 className="text-base font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
+            <span className="tag-category mb-3">{m.tag}</span>
+            <h3 className="text-[17px] font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
             <p className="text-sm text-text-secondary leading-relaxed">{m.desc}</p>
           </motion.div>
         ))}
@@ -67,7 +67,7 @@ const Month1Section = () => (
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           {reportCols.map((r) => (
             <div key={r.label}>
-              <p className="font-mono text-xs uppercase tracking-wider text-text-muted-custom mb-1">{r.label}</p>
+              <p className="font-mono text-[10px] uppercase tracking-wider text-text-muted-custom mb-1">{r.label}</p>
               <p className="text-[13px] text-text-secondary">{r.desc}</p>
             </div>
           ))}
