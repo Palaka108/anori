@@ -15,7 +15,6 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -73,6 +72,10 @@ export default {
         "text-primary": "hsl(var(--text-primary))",
         "text-secondary": "hsl(var(--text-secondary))",
         "text-muted-custom": "hsl(var(--text-muted))",
+        "steel-blue": "hsl(var(--steel-blue))",
+        "soft-azure": "hsl(var(--soft-azure))",
+        "mist-blue": "hsl(var(--mist-blue))",
+        "electric-light-blue": "hsl(var(--electric-light-blue))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

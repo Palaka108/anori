@@ -21,10 +21,10 @@ const ScopeSection = () => (
   <AnimatedSection>
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
       <motion.p variants={labelSlide} className="section-label mb-4">SCOPE</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[28px] sm:text-[36px] md:text-[40px] font-bold mb-4 text-text-primary">
+      <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
         Designed to Be Focused
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-base sm:text-lg font-light text-text-secondary mb-12 max-w-2xl">
+      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12 max-w-2xl">
         We structure engagements to deliver clarity within clear boundaries. Anything listed below can be explored as a future conversation.
       </motion.p>
 
@@ -48,7 +48,7 @@ const ScopeSection = () => (
           <ul className="space-y-3">
             {future.map((t) => (
               <li key={t} className="flex items-start gap-2.5 text-sm text-text-secondary">
-                <span className="mt-1.5 w-2 h-2 rounded-full bg-blueprint/40 shrink-0" />
+                <span className="mt-1.5 w-2 h-2 rounded-full bg-soft-azure/40 shrink-0" />
                 {t}
               </li>
             ))}
