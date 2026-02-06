@@ -1,11 +1,11 @@
-const BlueprintGrid = ({ light = false }: { light?: boolean }) => (
+const BlueprintGrid = () => (
   <svg
     className="absolute inset-0 w-full h-full pointer-events-none"
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
-    style={{ opacity: light ? 0.04 : 0.06 }}
+    style={{ opacity: 0.04 }}
   >
-    <g stroke={light ? "hsl(219 22% 78%)" : "hsl(219 22% 78%)"} fill="none" strokeWidth="0.5">
+    <g stroke="hsl(219 22% 78%)" fill="none" strokeWidth="0.5">
       <rect x="20%" y="25%" width="60%" height="55%" rx="2" />
       <line x1="20%" y1="40%" x2="80%" y2="40%" />
       <line x1="20%" y1="53%" x2="80%" y2="53%" />

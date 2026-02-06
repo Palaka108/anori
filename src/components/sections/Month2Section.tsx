@@ -10,7 +10,7 @@ const modules = [
   {
     tag: "SYSTEMS",
     title: "Automation Advisory",
-    desc: "AI-assisted scan of outbound channels with efficiency analysis. Recommendations delivered with cost estimates — so investment decisions are informed, not assumed.",
+    desc: "Comprehensive scan of outbound channels with efficiency analysis. Recommendations delivered with cost estimates — so investment decisions are informed, not assumed.",
   },
   {
     tag: "VISIBILITY",

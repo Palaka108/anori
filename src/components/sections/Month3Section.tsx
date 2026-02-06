@@ -14,8 +14,8 @@ const coreModules = [
 
 const exclusiveModules = [
   {
-    title: "MEDDIC Analysis",
-    desc: "Deal-level analysis of opportunities surfaced during the engagement. A framework for how future team members could approach these conversations.",
+    title: "Custom MEDDIC-Style Analysis",
+    desc: "A custom MEDDIC-style approach adapted for pre-product partnership needs. A framework for how future team members could approach these conversations.",
   },
   {
     title: "Dashboard Alignment",

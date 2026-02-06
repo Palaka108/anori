@@ -3,29 +3,32 @@ import { Check, Star } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 import PhaseCircle from "../PhaseCircle";
 
-const monthlyItems = [
+const foundationItems = [
   "8 hours dedicated advisory engagement",
-  "Ongoing operational support",
-  "Foundation & Activation modules",
+  "CRM setup and lead organization",
+  "Follow-up architecture and calendar system",
+  "ICP hypothesis mapping",
   "Market Intelligence Report",
-  "Weekly pipeline dashboards",
-  "Monthly progress reports",
-  "Partnership analysis (standard)",
+  "Weekly dashboards",
+  "Email templates and outreach prep",
+  "CRM training guide",
 ];
 
 const packageItems = [
-  { text: "Everything in Monthly Advisory", gold: false },
-  { text: "Automation handover + documentation", gold: true },
-  { text: "MEDDIC deal analysis", gold: true },
-  { text: "Hiring readiness considerations", gold: true },
+  { text: "Everything in Foundation Engagement", gold: false },
+  { text: "Month 2 — Activation & Outbound", gold: false },
+  { text: "Month 3 — Refinement & Frameworks", gold: false },
+  { text: "Custom MEDDIC-style analysis for pre-product partnership needs", gold: true },
+  { text: "Automation recommendation analysis to scale GTM operations", gold: true },
   { text: "Full partnership scoreboard", gold: true },
-  { text: "Dashboard alignment recommendations", gold: true },
-  { text: "30/60/90 strategic framework", gold: true },
+  { text: "Dashboard alignment", gold: true },
+  { text: "Hiring readiness", gold: true },
+  { text: "30/60/90 framework", gold: true },
 ];
 
 const steps = [
   { num: "01", title: "Align on Open Questions", desc: "CRM users, existing data, start date, platform" },
-  { num: "02", title: "Choose Your Model", desc: "Monthly advisory or 3-month engagement" },
+  { num: "02", title: "Choose Your Model", desc: "Foundation engagement or 3-month commitment" },
   { num: "03", title: "Begin", desc: "Set the start date and begin Foundation & Discovery" },
 ];
 
@@ -51,33 +54,34 @@ const InvestmentSection = () => (
       </motion.p>
 
       <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-10">
-        {/* Monthly */}
+        {/* Foundation Engagement */}
         <motion.div variants={pricingCardEntry} className="module-card" style={{ boxShadow: "var(--shadow-md)" }}>
           <div className="mb-6">
             <div className="flex items-baseline gap-1">
               <span className="text-[44px] font-bold text-text-primary">$6,000</span>
-              <span className="text-base text-text-muted-custom">/month</span>
+              <span className="text-base text-text-muted-custom">/minimum</span>
             </div>
-            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mt-1">1-month minimum</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mt-1">Month 1 — 8-hour minimum to start</p>
           </div>
           <div className="h-px bg-border mb-6" />
           <ul className="space-y-3 mb-6">
-            {monthlyItems.map((item) => (
+            {foundationItems.map((item) => (
               <li key={item} className="flex items-start gap-3 text-sm text-text-secondary">
                 <Check className="w-4 h-4 mt-0.5 text-accent shrink-0" />
                 {item}
               </li>
             ))}
           </ul>
-          <p className="text-[11px] font-medium text-text-muted-custom">$300/hr if additional hours needed · Net 15</p>
+          <p className="text-[11px] font-medium text-text-muted-custom mb-1">After Month 1, engagement can continue hourly or via commitment package</p>
+          <p className="text-[11px] font-medium text-text-muted-custom">$300/hr for additional or subsequent monthly hours</p>
         </motion.div>
 
-        {/* 3-Month */}
+        {/* 3-Month Commitment */}
         <motion.div
           variants={pricingCardEntry}
           className="module-card relative"
           style={{
-            border: "1px solid hsl(var(--accent-border))",
+            border: "1px solid rgba(47,95,215,0.2)",
             background: "linear-gradient(180deg, #FFFFFF, hsl(220 33% 98%))",
             boxShadow: "var(--shadow-md)",
           }}
@@ -90,10 +94,10 @@ const InvestmentSection = () => (
           </span>
           <div className="mb-6">
             <div className="flex items-baseline gap-1">
-              <span className="text-[28px] font-semibold text-accent">Preferred Rate</span>
-              <span className="text-base text-text-muted-custom">/month</span>
+              <span className="text-[44px] font-bold text-text-primary">$15,000</span>
+              <span className="text-base text-text-muted-custom">/total</span>
             </div>
-            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mt-1">3-month commitment · discounted from $6,000/mo</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mt-1">3 months — save $3,000 vs month-to-month</p>
           </div>
           <div className="h-px bg-border mb-6" />
           <ul className="space-y-3 mb-6">
