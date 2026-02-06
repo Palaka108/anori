@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import AnimatedSection, { fadeUp } from "../AnimatedSection";
+import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const coreModules = [
   {
@@ -27,27 +27,27 @@ const exclusiveModules = [
   },
   {
     title: "Partnership Scoreboard",
-    desc: "An industry-level matrix of partnership opportunities, approach recommendations, and prioritization based on your current team and resources. Lightweight version available in month-to-month engagements.",
+    desc: "An industry-level matrix of partnership opportunities, approach recommendations, and prioritization based on your current team and resources.",
   },
 ];
 
 const Month3Section = () => (
   <AnimatedSection alt>
-    <div className="w-full max-w-[1120px] mx-auto px-5">
-      <motion.p variants={fadeUp} className="section-label mb-4">PHASE 3</motion.p>
-      <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mb-4 text-text-primary">
+    <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
+      <motion.p variants={labelSlide} className="section-label mb-4">PHASE 3</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[28px] sm:text-[36px] md:text-[40px] font-bold mb-4 text-text-primary">
         Refinement & Frameworks
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-lg text-text-secondary mb-12">
+      <motion.p variants={fadeUp} className="text-base sm:text-lg font-light text-text-secondary mb-12">
         Consolidating learnings into actionable advisory deliverables.
       </motion.p>
 
       {/* Core modules */}
-      <div className="grid sm:grid-cols-2 gap-6 mb-10">
+      <div className="grid sm:grid-cols-2 gap-4 md:gap-5 mb-10">
         {coreModules.map((m) => (
           <motion.div key={m.title} variants={fadeUp} className="module-card">
-            <span className="tag-blue mb-3">CORE</span>
-            <h3 className="text-base font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
+            <span className="tag-accent mb-3">CORE</span>
+            <h3 className="text-[17px] font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
             <p className="text-sm text-text-secondary leading-relaxed">{m.desc}</p>
           </motion.div>
         ))}
@@ -58,16 +58,16 @@ const Month3Section = () => (
         <h3 className="text-xl font-semibold text-text-primary mb-2">Extended Advisory Modules</h3>
         <div className="rounded-lg bg-gold-surface px-5 py-3">
           <p className="text-sm text-text-secondary">
-            The following modules are available exclusively in the 3-month engagement. Each is built from real engagement data collected during the advisory period.
+            Available exclusively in the 3-month engagement. Built from real engagement data collected during the advisory period.
           </p>
         </div>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 gap-6">
+      <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
         {exclusiveModules.map((m) => (
           <motion.div key={m.title} variants={fadeUp} className="module-card">
             <span className="tag-gold mb-3">3-MONTH</span>
-            <h3 className="text-base font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
+            <h3 className="text-[17px] font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
             <p className="text-sm text-text-secondary leading-relaxed">{m.desc}</p>
           </motion.div>
         ))}
