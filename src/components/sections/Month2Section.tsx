@@ -1,61 +1,56 @@
-import AnimatedSection from "../AnimatedSection";
 import { motion } from "framer-motion";
+import AnimatedSection, { fadeUp } from "../AnimatedSection";
 
-const dashboardRows = [
-  { label: "Leads moved this week", status: "TRACKING" },
-  { label: "Leads planned next week", status: "TRACKING" },
-  { label: "Active targets", status: "TRACKING" },
-  { label: "Persona analysis", status: "TRACKING" },
+const modules = [
+  {
+    tag: "EXECUTION",
+    title: "Targeted Outbound",
+    desc: "Email sequences, outbound calls, and LinkedIn engagement directed at the top accounts identified in Phase 1.",
+  },
+  {
+    tag: "SYSTEMS",
+    title: "Automation Advisory",
+    desc: "AI-assisted scan of outbound channels with efficiency analysis. Recommendations delivered with cost estimates — so investment decisions are informed, not assumed.",
+  },
+  {
+    tag: "VISIBILITY",
+    title: "Pipeline Reporting",
+    desc: "Weekly dashboard covering lead movement, active targets, upcoming priorities, and persona-level analysis within target organizations.",
+  },
+  {
+    tag: "ENABLEMENT",
+    title: "Systems Walkthrough",
+    desc: "Dedicated time to walk through recommended tools and automation approaches. Focused on clarity and readiness — not implementation of everything at once.",
+  },
 ];
 
 const Month2Section = () => (
   <AnimatedSection>
-    <div className="w-full max-w-6xl mx-auto px-6 py-20">
-      <p className="section-label mb-4">MONTH 2</p>
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-foreground">Activation & Guided Outbound</h2>
+    <div className="w-full max-w-[1120px] mx-auto px-5">
+      <motion.p variants={fadeUp} className="section-label mb-4">PHASE 2</motion.p>
+      <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mb-4 text-text-primary">
+        Activation & Guided Outbound
+      </motion.h2>
+      <motion.p variants={fadeUp} className="text-lg text-text-secondary mb-12">
+        Translating Phase 1 signals into focused outbound activity and system clarity.
+      </motion.p>
 
-      <div className="grid md:grid-cols-3 gap-6 mb-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4 }} className="card-glass p-6">
-          <h3 className="text-base font-semibold mb-4 text-foreground">Guided Outbound Execution</h3>
-          <ul className="space-y-2.5 text-sm text-text-dim">
-            {["Email generation and sequences to identified targets", "Outbound calls to top 5 target accounts (identified in Month 1)", "LinkedIn follow-ups as appropriate", "Additional outbound methods identified through AI scan", "Economy-of-scale approach via email and digital media"].map((t) => (
-              <li key={t} className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0" />{t}</li>
-            ))}
-          </ul>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.4 }} className="card-glass p-6">
-          <h3 className="text-base font-semibold mb-4 text-foreground">Systems & Automation Advisory</h3>
-          <ul className="space-y-2.5 text-sm text-text-dim">
-            {["AI automation scans for most efficient outbound methods", "Detailed cost estimates per recommended automation", "Advisory hours allocated to walk through recommended systems", "Smart recommendations paired with initial execution"].map((t) => (
-              <li key={t} className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0" />{t}</li>
-            ))}
-          </ul>
-          <p className="mt-4 text-xs italic text-text-muted-custom">
-            Not all automations are built in Month 2. This month pairs targeted recommendations with focused execution. We outline costs so you make informed investment decisions.
-          </p>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2, duration: 0.4 }} className="card-glass p-6">
-          <h3 className="text-base font-semibold mb-4 text-foreground">Weekly Pipeline Dashboard</h3>
-          <div className="space-y-2 mt-2">
-            {dashboardRows.map((r) => (
-              <div key={r.label} className="flex justify-between items-center py-2 border-b border-foreground/5 last:border-0">
-                <span className="text-sm text-text-dim">{r.label}</span>
-                <span className="tag-blue text-[9px]">{r.status}</span>
-              </div>
-            ))}
-          </div>
-          <p className="mt-4 text-xs text-text-muted-custom">Title-level persona analysis within target companies.</p>
-        </motion.div>
+      <div className="grid sm:grid-cols-2 gap-6 mb-10">
+        {modules.map((m) => (
+          <motion.div key={m.title} variants={fadeUp} className="module-card">
+            <span className="tag-blue mb-3">{m.tag}</span>
+            <h3 className="text-base font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
+            <p className="text-sm text-text-secondary leading-relaxed">{m.desc}</p>
+          </motion.div>
+        ))}
       </div>
 
-      <div className="accent-border-left card-glass-static p-6">
-        <p className="text-sm text-text-dim leading-relaxed">
-          <span className="text-accent font-semibold">Philosophy: </span>
-          We advise and execute within the scope of this engagement. Outcomes depend on market response, product readiness, and client follow-through. Month 2 adapts to what we actually learned in Month 1 — not what we assumed before starting.
-        </p>
-      </div>
+      <motion.p
+        variants={fadeUp}
+        className="text-[15px] italic text-text-muted-custom text-center max-w-[560px] mx-auto"
+      >
+        Phase 2 adapts to what we actually learned in Phase 1. Recommendations are based on real engagement data, not pre-set assumptions.
+      </motion.p>
     </div>
   </AnimatedSection>
 );

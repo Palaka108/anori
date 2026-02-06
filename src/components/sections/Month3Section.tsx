@@ -1,57 +1,74 @@
-import AnimatedSection from "../AnimatedSection";
 import { motion } from "framer-motion";
+import AnimatedSection, { fadeUp } from "../AnimatedSection";
 
-const exclusiveCards = [
-  { title: "MEDDIC Deal Analysis", items: ["MEDDIC analysis of opportunities surfaced during the engagement", "Framework for how future reps could approach the market", "Advisory document — not a guaranteed sales playbook"] },
-  { title: "Dashboard Standards", items: ["Standard vs. customized dashboard recommendations per user persona", "Reporting framework for ongoing use"] },
-  { title: "Sales Hiring Readiness", items: ["Considerations for next BD hire — what to look for, when to hire", "Comp structure observations from market research", "Readiness criteria — not a guaranteed hiring plan"] },
-  { title: "Partnership Analysis Scoreboard", items: ["Industry matrix — where initial signals suggest opportunity", "Lean team approach vs. larger investment considerations", "Full version in 3-month package; lightweight version in month-to-month"] },
+const coreModules = [
+  {
+    title: "Pipeline Refinement",
+    desc: "Ongoing pipeline hygiene, partnership strategy adjustments based on Phase 1-2 engagement data, and a progress report with forward-looking recommendations.",
+  },
+  {
+    title: "30/60/90 Advisory",
+    desc: "Strategic recommendations structured around what's working, what to adjust, and where to focus next — delivered as a clear, usable framework.",
+  },
+];
+
+const exclusiveModules = [
+  {
+    title: "MEDDIC Analysis",
+    desc: "Deal-level analysis of opportunities surfaced during the engagement. A framework for how future team members could approach these conversations.",
+  },
+  {
+    title: "Dashboard Alignment",
+    desc: "Recommendations on standard vs. customized reporting views, tailored to different user roles within your organization.",
+  },
+  {
+    title: "Hiring Readiness",
+    desc: "Considerations for your next BD hire — profile, timing, compensation benchmarks, and readiness criteria gathered from engagement observations.",
+  },
+  {
+    title: "Partnership Scoreboard",
+    desc: "An industry-level matrix of partnership opportunities, approach recommendations, and prioritization based on your current team and resources. Lightweight version available in month-to-month engagements.",
+  },
 ];
 
 const Month3Section = () => (
-  <AnimatedSection>
-    <div className="w-full max-w-6xl mx-auto px-6 py-20">
-      <p className="section-label mb-4">MONTH 3</p>
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-foreground">Refinement & Advisory Frameworks</h2>
+  <AnimatedSection alt>
+    <div className="w-full max-w-[1120px] mx-auto px-5">
+      <motion.p variants={fadeUp} className="section-label mb-4">PHASE 3</motion.p>
+      <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mb-4 text-text-primary">
+        Refinement & Frameworks
+      </motion.h2>
+      <motion.p variants={fadeUp} className="text-lg text-text-secondary mb-12">
+        Consolidating learnings into actionable advisory deliverables.
+      </motion.p>
 
-      <div className="grid md:grid-cols-2 gap-6 mb-8">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="card-glass p-6">
-          <span className="tag-blue mb-3">CORE</span>
-          <h3 className="text-base font-semibold mb-4 mt-2 text-foreground">Core Activities</h3>
-          <ul className="space-y-2.5 text-sm text-text-dim">
-            {["Pipeline hygiene and refinement", "Partnership strategy adjusted from real M1-M2 engagement data", "Strategic recommendations and noted adjustments", "Progress report with 30/60/90 recommendations"].map((t) => (
-              <li key={t} className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-accent shrink-0" />{t}</li>
-            ))}
-          </ul>
-          <p className="mt-4 text-xs italic text-text-muted-custom">If deeper analysis or expanded scope is needed, we can outline what that engagement would look like.</p>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="card-glass p-6 border-gold/20">
-          <span className="tag-gold mb-3">3-MONTH EXCLUSIVE</span>
-          <h3 className="text-base font-semibold mb-4 mt-2 text-foreground">3-Month Package Overview</h3>
-          <p className="text-sm text-text-dim leading-relaxed">
-            These advisory frameworks are only available in the 3-month package. They are built from real engagement data — not templates.
-          </p>
-        </motion.div>
+      {/* Core modules */}
+      <div className="grid sm:grid-cols-2 gap-6 mb-10">
+        {coreModules.map((m) => (
+          <motion.div key={m.title} variants={fadeUp} className="module-card">
+            <span className="tag-blue mb-3">CORE</span>
+            <h3 className="text-base font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
+            <p className="text-sm text-text-secondary leading-relaxed">{m.desc}</p>
+          </motion.div>
+        ))}
       </div>
 
+      {/* Exclusive heading */}
+      <motion.div variants={fadeUp} className="mb-6">
+        <h3 className="text-xl font-semibold text-text-primary mb-2">Extended Advisory Modules</h3>
+        <div className="rounded-lg bg-gold-surface px-5 py-3">
+          <p className="text-sm text-text-secondary">
+            The following modules are available exclusively in the 3-month engagement. Each is built from real engagement data collected during the advisory period.
+          </p>
+        </div>
+      </motion.div>
+
       <div className="grid sm:grid-cols-2 gap-6">
-        {exclusiveCards.map((c, i) => (
-          <motion.div
-            key={c.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.4 }}
-            className="card-glass p-6"
-          >
-            <span className="tag-gold mb-3">3-MONTH EXCLUSIVE</span>
-            <h3 className="text-base font-semibold mb-4 mt-2 text-foreground">{c.title}</h3>
-            <ul className="space-y-2.5 text-sm text-text-dim">
-              {c.items.map((item) => (
-                <li key={item} className="flex items-start gap-2"><span className="mt-1.5 w-1 h-1 rounded-full bg-gold shrink-0" />{item}</li>
-              ))}
-            </ul>
+        {exclusiveModules.map((m) => (
+          <motion.div key={m.title} variants={fadeUp} className="module-card">
+            <span className="tag-gold mb-3">3-MONTH</span>
+            <h3 className="text-base font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
+            <p className="text-sm text-text-secondary leading-relaxed">{m.desc}</p>
           </motion.div>
         ))}
       </div>

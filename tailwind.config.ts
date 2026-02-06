@@ -19,6 +19,8 @@ export default {
       },
       colors: {
         border: "hsl(var(--border))",
+        "border-hover": "hsl(var(--border-hover))",
+        "border-accent": "hsl(var(--border-accent))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -42,6 +44,8 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          light: "hsl(var(--accent-light))",
+          surface: "hsl(var(--accent-surface))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -53,10 +57,21 @@ export default {
         },
         blueprint: {
           DEFAULT: "hsl(var(--blueprint))",
+          light: "hsl(var(--blueprint-light))",
           dim: "hsl(var(--blueprint-dim))",
         },
-        gold: "hsl(var(--gold))",
-        "text-dim": "hsl(var(--text-dim))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          surface: "hsl(var(--gold-surface))",
+        },
+        surface: {
+          DEFAULT: "hsl(var(--surface))",
+          elevated: "hsl(var(--surface-elevated))",
+          subtle: "hsl(var(--surface-subtle))",
+          accent: "hsl(var(--surface-accent))",
+        },
+        "text-primary": "hsl(var(--text-primary))",
+        "text-secondary": "hsl(var(--text-secondary))",
         "text-muted-custom": "hsl(var(--text-muted))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

@@ -13,14 +13,14 @@ const DotNav = ({ sections, activeIndex, onDotClick }: DotNavProps) => (
         className="group flex items-center gap-3 justify-end"
         aria-label={`Go to ${label}`}
       >
-        <span className="opacity-0 group-hover:opacity-100 transition-opacity text-xs font-mono text-text-dim whitespace-nowrap">
+        <span className="opacity-0 group-hover:opacity-100 transition-opacity text-xs font-mono text-text-secondary whitespace-nowrap">
           {label}
         </span>
         <span
           className={`block rounded-full transition-all duration-300 ${
             activeIndex === i
-              ? 'w-3 h-3 bg-blueprint shadow-[0_0_8px_hsl(210_100%_56%/0.5)]'
-              : 'w-2 h-2 bg-text-muted-custom hover:bg-text-dim'
+              ? "w-3 h-3 bg-accent"
+              : "w-2 h-2 bg-text-muted-custom hover:bg-text-secondary"
           }`}
         />
       </button>
