@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
+import PhaseCircle from "../PhaseCircle";
 
 const monthlyItems = [
   "8 hours dedicated advisory engagement",
@@ -68,7 +69,7 @@ const InvestmentSection = () => (
               </li>
             ))}
           </ul>
-          <p className="text-[11px] font-medium text-text-muted-custom">$300/hr if additional hours needed • Net 15</p>
+          <p className="text-[11px] font-medium text-text-muted-custom">$300/hr if additional hours needed · Net 15</p>
         </motion.div>
 
         {/* 3-Month */}
@@ -92,7 +93,7 @@ const InvestmentSection = () => (
               <span className="text-[28px] font-semibold text-accent">Preferred Rate</span>
               <span className="text-base text-text-muted-custom">/month</span>
             </div>
-            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mt-1">3-month commitment</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mt-1">3-month commitment · discounted from $6,000/mo</p>
           </div>
           <div className="h-px bg-border mb-6" />
           <ul className="space-y-3 mb-6">
@@ -107,7 +108,7 @@ const InvestmentSection = () => (
               </li>
             ))}
           </ul>
-          <p className="text-[11px] font-medium text-text-muted-custom">$300/hr if additional hours needed • Net 15</p>
+          <p className="text-[11px] font-medium text-text-muted-custom">$300/hr if additional hours needed · Net 15</p>
         </motion.div>
       </div>
 
@@ -118,16 +119,12 @@ const InvestmentSection = () => (
         Advisory from two senior enterprise professionals with Fortune 50 experience — at a fraction of the cost of a fractional CRO or retained consulting firm.
       </motion.p>
 
+      {/* Next Steps */}
       <div className="grid sm:grid-cols-3 gap-6 md:gap-8 mb-14">
         {steps.map((s) => (
           <motion.div key={s.num} variants={fadeUp} className="text-center">
-            <div
-              className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3"
-              style={{
-                background: "linear-gradient(135deg, hsl(224 65% 51%), hsl(224 80% 67%))",
-              }}
-            >
-              <span className="text-base font-bold text-white">{s.num}</span>
+            <div className="mx-auto mb-3 w-fit">
+              <PhaseCircle num={s.num} size={48} />
             </div>
             <h4 className="text-[15px] font-semibold text-text-primary mb-1">{s.title}</h4>
             <p className="text-[13px] text-text-muted-custom">{s.desc}</p>
@@ -135,11 +132,12 @@ const InvestmentSection = () => (
         ))}
       </div>
 
+      {/* Footer */}
       <motion.div variants={fadeUp} className="text-center pt-8 border-t border-border">
         <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-text-muted-custom inline-block border border-border rounded px-4 py-1.5 mb-2">
           GOSAI
         </span>
-        <p className="text-xs text-text-muted-custom">Confidential • February 2026</p>
+        <p className="text-xs text-text-muted-custom">Confidential · February 2026</p>
       </motion.div>
     </div>
   </AnimatedSection>

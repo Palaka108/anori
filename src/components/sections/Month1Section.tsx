@@ -58,7 +58,7 @@ const Month1Section = () => (
       </div>
 
       {/* Deliverable */}
-      <motion.div variants={fadeUp} className="module-card-highlight">
+      <motion.div variants={fadeUp} className="module-card-highlight mb-8">
         <span className="tag-accent mb-3">PHASE 1 DELIVERABLE</span>
         <h3 className="text-xl font-semibold mt-2 mb-4 text-text-primary">Market Intelligence Report</h3>
         <p className="text-sm text-text-secondary leading-relaxed mb-6">
@@ -76,6 +76,14 @@ const Month1Section = () => (
           This report is yours regardless of whether the engagement continues.
         </p>
       </motion.div>
+
+      {/* Closing note */}
+      <motion.p
+        variants={fadeUp}
+        className="text-[13px] text-text-muted-custom italic text-center max-w-[560px] mx-auto"
+      >
+        We've structured this phase to be lean and focused. Anything not covered here can be scoped into future phases — reach out and we'll outline what that engagement would look like.
+      </motion.p>
     </div>
   </AnimatedSection>
 );

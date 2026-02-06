@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
-const supportItems = [
-  "Strategic Research",
-  "CRM Administration",
-  "AI-Assisted Analysis",
-  "Weekly Reporting",
-  "Dashboard Development",
-  "Pipeline Management",
+const hourItems = [
+  { title: "Strategy Sessions", desc: "Internal planning, market positioning, pipeline reviews" },
+  { title: "Outbound Execution", desc: "Customer-facing calls, emails, LinkedIn engagement" },
+  { title: "Hands-On Support", desc: "CRM setup, system walkthroughs, team enablement" },
+];
+
+const behindScenes = [
+  "Strategic planning and market research",
+  "CRM configuration and pipeline management",
+  "AI-assisted lead and market analysis",
+  "Weekly reporting and dashboard development",
+  "Email template creation and outreach prep",
+  "System recommendations and automation scoping",
 ];
 
 const RetainerSection = () => (
@@ -15,63 +21,62 @@ const RetainerSection = () => (
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
       <motion.p variants={labelSlide} className="section-label mb-4">YOUR RETAINER</motion.p>
       <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
-        What the Engagement Includes
+        More Than Hours — A Full Advisory Operation
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12">
-        Each month combines dedicated advisory hours with ongoing operational support.
+      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12 max-w-2xl leading-relaxed">
+        The retainer isn't 8 hours of labor. It's a senior advisory team running your go-to-market operation behind the scenes — with 8 hours of your direct, dedicated time each month.
       </motion.p>
 
-      <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-8">
-        {/* Left — 8 hours */}
-        <motion.div variants={fadeUp} className="module-card flex flex-col items-center text-center">
-          <div
-            className="w-24 h-24 rounded-full border-2 flex items-center justify-center mb-4"
-            style={{
-              background: "hsl(224 65% 51% / 0.06)",
-              borderColor: "hsl(224 65% 51%)",
-            }}
-          >
-            <span className="text-[44px] font-bold text-accent">8</span>
-          </div>
-          <span className="text-[15px] font-semibold text-text-primary mb-4">Dedicated Advisory Hours</span>
-          <ul className="space-y-2.5 text-sm text-text-secondary text-left">
-            {[
-              "Strategy sessions, guided outbound, or hands-on support",
-              "You set the priorities each month",
-              "Unused hours roll within the active engagement",
-            ].map((t) => (
-              <li key={t} className="flex items-start gap-2.5">
-                <span className="mt-1.5 w-2 h-2 rounded-full bg-accent/40 shrink-0" />
-                {t}
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* Right — Beyond */}
-        <motion.div variants={fadeUp} className="module-card">
-          <h3 className="text-[15px] font-semibold mb-5 text-text-primary">Beyond the 8 Hours</h3>
-          <div className="grid grid-cols-2 gap-4">
-            {supportItems.map((item) => (
-              <div key={item} className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-surface-subtle shrink-0" />
-                <span className="text-xs font-medium text-text-secondary">{item}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-
-      {/* Team bar */}
-      <motion.div variants={fadeUp} className="rounded-lg bg-surface-subtle px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-8">
-        <span className="text-[11px] font-medium uppercase tracking-wider text-text-muted-custom shrink-0">TEAM</span>
+      {/* Block 1 — The Team */}
+      <motion.div variants={fadeUp} className="module-card-highlight mb-6">
+        <span className="tag-accent mb-3">YOUR TEAM</span>
+        <h3 className="text-lg font-semibold mt-2 mb-1 text-text-primary">Two Senior Enterprise Professionals</h3>
+        <p className="text-[15px] text-text-secondary mb-4">with Fortune 50 client executive experience</p>
+        <p className="text-sm text-text-secondary leading-relaxed mb-3">
+          Your engagement is backed by two professionals who've led enterprise sales and client strategy at the Fortune 50 level. They bring the pattern recognition, frameworks, and deal instincts that come from years of high-stakes advisory work.
+        </p>
         <p className="text-sm text-text-secondary leading-relaxed">
-          Two senior enterprise sales professionals with Fortune 50 client executive experience.
+          This isn't outsourced task work — it's senior judgment applied to your specific market position, partnerships, and growth trajectory.
         </p>
       </motion.div>
 
-      <motion.p variants={fadeUp} className="text-[13px] text-text-muted-custom italic text-center max-w-2xl mx-auto">
-        Advisory capacity is structured to ensure focused, high-value engagement. We outline recommended activities each month — you adjust based on outcomes.
+      {/* Block 2 — How the 8 Hours Work */}
+      <motion.div variants={fadeUp} className="module-card mb-6">
+        <h3 className="text-lg font-semibold text-text-primary mb-1">8 Hours of Direct Engagement Each Month</h3>
+        <p className="text-sm text-text-muted-custom mb-6">You decide how they're spent.</p>
+
+        <div className="grid sm:grid-cols-3 gap-5 mb-5">
+          {hourItems.map((item) => (
+            <div key={item.title}>
+              <h4 className="text-sm font-semibold text-text-primary mb-1">{item.title}</h4>
+              <p className="text-[13px] text-text-secondary leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-[13px] text-text-muted-custom italic">
+          Unused hours roll within the active engagement period.
+        </p>
+      </motion.div>
+
+      {/* Block 3 — Behind the Scenes */}
+      <motion.div variants={fadeUp} className="module-card mb-8">
+        <h3 className="text-base font-semibold text-text-primary mb-1">Ongoing Operations — Beyond Your 8 Hours</h3>
+        <p className="text-[13px] text-text-muted-custom mb-5">This work happens continuously, not just during scheduled sessions.</p>
+
+        <div className="grid sm:grid-cols-2 gap-3">
+          {behindScenes.map((item) => (
+            <div key={item} className="flex items-start gap-2.5">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-sm bg-accent shrink-0" />
+              <span className="text-sm text-text-secondary">{item}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Closing */}
+      <motion.p variants={fadeUp} className="text-sm text-text-muted-custom italic text-center max-w-[560px] mx-auto">
+        We outline recommended activities each month based on what we're seeing in your pipeline. You adjust the plan based on outcomes and priorities.
       </motion.p>
     </div>
   </AnimatedSection>
