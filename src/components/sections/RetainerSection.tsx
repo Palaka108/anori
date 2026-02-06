@@ -19,12 +19,12 @@ const behindScenes = [
 const RetainerSection = () => (
   <AnimatedSection>
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
-      <motion.p variants={labelSlide} className="section-label mb-4">YOUR RETAINER</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-4">YOUR ADVISORY PACKAGE</motion.p>
       <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
         More Than Hours — A Full Advisory Operation
       </motion.h2>
       <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12 max-w-2xl leading-relaxed">
-        The retainer isn't 8 hours of labor. It's a senior advisory team running your go-to-market operation behind the scenes — with 8 hours of your direct, dedicated time each month.
+        This isn't a time-and-materials engagement. It's a senior advisory team running your go-to-market operation behind the scenes — with dedicated direct time each month.
       </motion.p>
 
       {/* Block 1 — The Team */}
@@ -40,10 +40,10 @@ const RetainerSection = () => (
         </p>
       </motion.div>
 
-      {/* Block 2 — How the 8 Hours Work */}
+      {/* Block 2 — How the Hours Work */}
       <motion.div variants={fadeUp} className="module-card mb-6">
-        <h3 className="text-lg font-semibold text-text-primary mb-1">8 Hours of Direct Engagement Each Month</h3>
-        <p className="text-sm text-text-muted-custom mb-6">We provide strategic recommendations — final priorities are decided with the CEO.</p>
+        <h3 className="text-lg font-semibold text-text-primary mb-1">Senior Advisory Coverage with Priority Access</h3>
+        <p className="text-sm text-text-muted-custom mb-6">We surface strategic options — decisions are made together.</p>
 
         <div className="grid sm:grid-cols-3 gap-5 mb-5">
           {hourItems.map((item) => (
@@ -55,13 +55,13 @@ const RetainerSection = () => (
         </div>
 
         <p className="text-[13px] text-text-muted-custom italic">
-          Unused hours roll within the active engagement period.
+          Advisory continuity maintained across the engagement window.
         </p>
       </motion.div>
 
       {/* Block 3 — Behind the Scenes */}
       <motion.div variants={fadeUp} className="module-card mb-8">
-        <h3 className="text-base font-semibold text-text-primary mb-1">Ongoing Operations — Beyond Your 8 Hours</h3>
+        <h3 className="text-base font-semibold text-text-primary mb-1">Ongoing Operations — Beyond Direct Advisory</h3>
         <p className="text-[13px] text-text-muted-custom mb-5">This work happens continuously, not just during scheduled sessions.</p>
 
         <div className="grid sm:grid-cols-2 gap-3">

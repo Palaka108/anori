@@ -3,33 +3,38 @@ import { Check, Star } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 import PhaseCircle from "../PhaseCircle";
 
-const foundationItems = [
-  "8 hours dedicated advisory engagement",
-  "CRM setup and lead organization",
-  "Follow-up architecture and calendar system",
-  "ICP hypothesis mapping",
-  "Market Intelligence Report",
-  "Weekly dashboards",
-  "Email templates and outreach prep",
-  "CRM training guide",
+const discoveryFeatures = [
+  "Technical & product deep dive",
+  "Partner & market reality check",
+  "GTM & CRM alignment session",
+  "Two-page Discovery Summary",
+  "Tailored Month 1 definition",
 ];
 
-const packageItems = [
-  { text: "Everything in Foundation Engagement", gold: false },
-  { text: "Month 2 — Activation & Outbound", gold: false },
-  { text: "Month 3 — Refinement & Frameworks", gold: false },
-  { text: "Custom MEDDIC-style analysis for pre-product partnership needs", gold: true },
-  { text: "Automation recommendation analysis to scale GTM operations", gold: true },
+const monthlyFeatures = [
+  "Senior advisory coverage with priority access",
+  "CRM and infrastructure decisions informed by Discovery",
+  "Outbound strategy and execution support",
+  "Market Intelligence Report",
+  "Weekly pipeline dashboards",
+  "Monthly progress reports",
+  "Partnership analysis",
+];
+
+const continuityFeatures = [
+  { text: "Everything in Monthly Advisory", gold: false },
+  { text: "Automation recommendation analysis", gold: true },
+  { text: "Custom MEDDIC-style analysis for pre-product needs", gold: true },
   { text: "Full partnership scoreboard", gold: true },
-  { text: "Dashboard alignment", gold: true },
-  { text: "Hiring readiness", gold: true },
-  { text: "30/60/90 framework", gold: true },
+  { text: "Dashboard alignment recommendations", gold: true },
+  { text: "Hiring readiness considerations", gold: true },
+  { text: "30/60/90 strategic framework", gold: true },
 ];
 
 const steps = [
-  { num: "01", title: "Align on Open Questions", desc: "CRM users, existing data, start date, platform" },
-  { num: "02", title: "Choose Your Model", desc: "Foundation engagement or 3-month commitment" },
-  { num: "03", title: "Begin", desc: "Set the start date and begin Foundation & Discovery" },
+  { num: "01", title: "Alignment Sprint", desc: "Focused discovery to understand reality before committing resources" },
+  { num: "02", title: "Monthly Advisory", desc: "Confirmed or adjusted engagement based on Discovery findings" },
+  { num: "03", title: "Continuity Decision", desc: "Multi-month options discussed with full clarity on scope" },
 ];
 
 const pricingCardEntry = {
@@ -50,33 +55,35 @@ const InvestmentSection = () => (
         Engagement Options
       </motion.h2>
       <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12">
-        Two models, same advisory team, same commitment to clarity.
+        A disciplined sequence: understand first, then act. Each step builds on confirmed reality.
       </motion.p>
 
-      <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-10">
-        {/* Foundation Engagement */}
+      {/* 3-tier pricing */}
+      <div className="grid md:grid-cols-3 gap-5 md:gap-5 mb-10">
+        {/* Discovery Sprint */}
         <motion.div variants={pricingCardEntry} className="module-card" style={{ boxShadow: "var(--shadow-md)" }}>
-          <div className="mb-6">
+          <div className="mb-5">
+            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Pre-Execution</p>
             <div className="flex items-baseline gap-1">
-              <span className="text-[44px] font-bold text-text-primary">$6,000</span>
-              <span className="text-base text-text-muted-custom">/minimum</span>
+              <span className="text-[32px] font-bold text-text-primary">$1,500</span>
+              <span className="text-sm text-text-muted-custom">– $2,000</span>
             </div>
-            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mt-1">Month 1 — 8-hour minimum to start</p>
+            <p className="text-[11px] font-medium text-text-muted-custom mt-1">Fixed fee · Credits toward Month 1</p>
           </div>
-          <div className="h-px bg-border mb-6" />
-          <ul className="space-y-3 mb-6">
-            {foundationItems.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm text-text-secondary">
-                <Check className="w-4 h-4 mt-0.5 text-accent shrink-0" />
+          <div className="h-px bg-border mb-5" />
+          <h4 className="text-sm font-semibold text-text-primary mb-3">Alignment Sprint</h4>
+          <ul className="space-y-2.5 mb-4">
+            {discoveryFeatures.map((item) => (
+              <li key={item} className="flex items-start gap-2.5 text-[13px] text-text-secondary">
+                <Check className="w-3.5 h-3.5 mt-0.5 text-accent shrink-0" />
                 {item}
               </li>
             ))}
           </ul>
-          <p className="text-[11px] font-medium text-text-muted-custom mb-1">After Month 1, engagement can continue hourly or via commitment package</p>
-          <p className="text-[11px] font-medium text-text-muted-custom">$300/hr for additional or subsequent monthly hours</p>
+          <p className="text-[11px] text-text-muted-custom">3 meetings · 2 senior advisors · deliverables retained regardless</p>
         </motion.div>
 
-        {/* 3-Month Commitment */}
+        {/* Monthly Advisory */}
         <motion.div
           variants={pricingCardEntry}
           className="module-card relative"
@@ -92,27 +99,54 @@ const InvestmentSection = () => (
           >
             RECOMMENDED
           </span>
-          <div className="mb-6">
+          <div className="mb-5">
+            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Monthly Advisory Package</p>
             <div className="flex items-baseline gap-1">
-              <span className="text-[44px] font-bold text-text-primary">$15,000</span>
-              <span className="text-base text-text-muted-custom">/total</span>
+              <span className="text-[36px] font-bold text-text-primary">$6,000</span>
+              <span className="text-sm text-text-muted-custom">/month</span>
             </div>
-            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mt-1">3 months — save $3,000 vs month-to-month</p>
+            <p className="text-[11px] font-medium text-text-muted-custom mt-1">Pre-Discovery estimate · confirmed after Alignment Sprint</p>
           </div>
-          <div className="h-px bg-border mb-6" />
-          <ul className="space-y-3 mb-6">
-            {packageItems.map((item) => (
-              <li key={item.text} className="flex items-start gap-3 text-sm text-text-secondary">
+          <div className="h-px bg-border mb-5" />
+          <ul className="space-y-2.5 mb-4">
+            {monthlyFeatures.map((item) => (
+              <li key={item} className="flex items-start gap-2.5 text-[13px] text-text-secondary">
+                <Check className="w-3.5 h-3.5 mt-0.5 text-accent shrink-0" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-[11px] text-text-muted-custom">$300/hr available for supplemental advisory hours</p>
+        </motion.div>
+
+        {/* Advisory Continuity */}
+        <motion.div
+          variants={pricingCardEntry}
+          className="module-card"
+          style={{
+            border: "1px solid rgb(212 168 67 / 0.15)",
+            boxShadow: "var(--shadow-md)",
+          }}
+        >
+          <div className="mb-5">
+            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Advisory Continuity Package</p>
+            <p className="text-[15px] font-semibold text-text-primary">Discussed After Discovery</p>
+            <p className="text-[11px] font-medium text-text-muted-custom mt-1">Reflects efficiency of continuity, not reduced value</p>
+          </div>
+          <div className="h-px bg-border mb-5" />
+          <ul className="space-y-2.5 mb-4">
+            {continuityFeatures.map((item) => (
+              <li key={item.text} className="flex items-start gap-2.5 text-[13px] text-text-secondary">
                 {item.gold ? (
-                  <Star className="w-4 h-4 mt-0.5 text-gold shrink-0" />
+                  <Star className="w-3.5 h-3.5 mt-0.5 text-gold shrink-0" />
                 ) : (
-                  <Check className="w-4 h-4 mt-0.5 text-accent shrink-0" />
+                  <Check className="w-3.5 h-3.5 mt-0.5 text-accent shrink-0" />
                 )}
                 {item.text}
               </li>
             ))}
           </ul>
-          <p className="text-[11px] font-medium text-text-muted-custom">$300/hr if additional hours needed · Net 15</p>
+          <p className="text-[11px] text-text-muted-custom">Multi-month pricing discussed when both parties have full clarity on scope</p>
         </motion.div>
       </div>
 

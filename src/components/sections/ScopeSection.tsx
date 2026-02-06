@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const included = [
-  "Advisory guidance across all three phases",
-  "CRM setup and administration",
-  "Outbound strategy and initial execution support",
+  "Advisory guidance across all engagement phases",
+  "CRM and infrastructure decisions informed by Discovery",
+  "Outbound strategy and execution support",
   "Weekly reporting and dashboards",
   "Market intelligence and system recommendations",
 ];
@@ -63,10 +63,10 @@ const ScopeSection = () => (
 
       {/* Automation Handover */}
       <motion.div variants={fadeUp} className="module-card-highlight mb-8">
-        <span className="tag-accent mb-3">3-MONTH ENGAGEMENT</span>
+        <span className="tag-accent mb-3">ADVISORY CONTINUITY PACKAGE</span>
         <h3 className="text-lg font-semibold mt-2 mb-3 text-text-primary">Automation Handover</h3>
         <p className="text-sm text-text-secondary leading-relaxed mb-3">
-          During a 3-month engagement, we build a lead processing workflow and hand it over with documentation and a usage guide at the end of the advisory period. The system becomes yours.
+          During a multi-month engagement, we build a lead processing workflow and hand it over with documentation and a usage guide at the end of the advisory period. The system becomes yours.
         </p>
         <p className="text-[13px] text-text-muted-custom">
           Future adjustments or technical support would be a separate conversation.

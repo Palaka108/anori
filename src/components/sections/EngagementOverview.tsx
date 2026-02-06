@@ -5,13 +5,13 @@ import PhaseCircle from "../PhaseCircle";
 const phases = [
   {
     num: "01",
-    title: "Foundation & Discovery",
-    desc: "Organize existing infrastructure and leads. Begin documenting market hypotheses across Building Departments, AEC, and adjacent verticals.",
+    title: "Alignment Sprint",
+    desc: "Focused discovery to understand product state, partnership dynamics, and GTM readiness before committing resources.",
   },
   {
     num: "02",
-    title: "Activation & Guided Outbound",
-    desc: "Test initial outbound approaches against prioritized accounts. Surface channel efficiency data and system recommendations.",
+    title: "Foundation & Activation",
+    desc: "Build infrastructure and begin outbound activity informed by Discovery findings — not assumptions.",
   },
   {
     num: "03",
@@ -21,7 +21,7 @@ const phases = [
 ];
 
 const principles = [
-  "Iterate fast, adjust quickly",
+  "Understand first, then act",
   "Scale once tested",
   "Flexibility by design",
   "Scope-aware",
@@ -41,7 +41,7 @@ const EngagementOverview = () => (
       {/* Purpose bar */}
       <motion.div variants={fadeUp} className="rounded-lg bg-card border border-border px-5 py-4 text-center mb-6">
         <p className="text-sm text-text-secondary leading-relaxed">
-          Structured to surface clarity before committing to execution. Each phase builds on real signals — not assumptions.
+          Structured to surface clarity before committing to execution. The engagement begins with a paid Discovery Sprint — ensuring every advisory hour is directed by reality, not assumptions.
         </p>
       </motion.div>
 
