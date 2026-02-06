@@ -24,10 +24,10 @@ const EngagementOverview = () => (
   <AnimatedSection alt>
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
       <motion.p variants={labelSlide} className="section-label mb-4">ENGAGEMENT OVERVIEW</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[28px] sm:text-[36px] md:text-[40px] font-bold mb-4 text-text-primary">
+      <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
         A Phased Advisory Approach
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-base sm:text-lg font-light text-text-secondary max-w-[600px] mb-14 leading-relaxed">
+      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary max-w-[600px] mb-14 leading-relaxed">
         Structured to surface clarity before committing to execution. Each phase builds on real signals — not assumptions.
       </motion.p>
 
@@ -41,7 +41,7 @@ const EngagementOverview = () => (
             <div className="absolute -top-7 left-1/2 -translate-x-1/2">
               <PhaseCircle num={p.num} />
             </div>
-            <h3 className="text-[17px] font-semibold text-text-primary mb-2">{p.title}</h3>
+            <h3 className="text-base font-semibold text-text-primary mb-2">{p.title}</h3>
             <p className="text-sm text-text-secondary leading-relaxed">{p.desc}</p>
           </motion.div>
         ))}

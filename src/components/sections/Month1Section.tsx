@@ -40,10 +40,10 @@ const Month1Section = () => (
   <AnimatedSection alt>
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
       <motion.p variants={labelSlide} className="section-label mb-4">PHASE 1</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[28px] sm:text-[36px] md:text-[40px] font-bold mb-4 text-text-primary">
+      <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
         Foundation & Discovery
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-base sm:text-lg font-light text-text-secondary mb-12">
+      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12">
         Building the infrastructure and surfacing initial market signals.
       </motion.p>
 
@@ -51,7 +51,7 @@ const Month1Section = () => (
         {modules.map((m) => (
           <motion.div key={m.title} variants={fadeUp} className="module-card">
             <span className="tag-category mb-3">{m.tag}</span>
-            <h3 className="text-[17px] font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
+            <h3 className="text-base font-semibold text-text-primary mt-2 mb-2">{m.title}</h3>
             <p className="text-sm text-text-secondary leading-relaxed">{m.desc}</p>
           </motion.div>
         ))}
@@ -67,7 +67,7 @@ const Month1Section = () => (
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           {reportCols.map((r) => (
             <div key={r.label}>
-              <p className="font-mono text-[10px] uppercase tracking-wider text-text-muted-custom mb-1">{r.label}</p>
+              <p className="text-[10px] font-medium uppercase tracking-wider text-accent mb-1">{r.label}</p>
               <p className="text-[13px] text-text-secondary">{r.desc}</p>
             </div>
           ))}
