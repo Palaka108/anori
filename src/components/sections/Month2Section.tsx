@@ -5,7 +5,7 @@ const modules = [
   {
     tag: "EXECUTION",
     title: "Targeted Outbound",
-    desc: "Email sequences, outbound calls, and LinkedIn engagement directed at the top accounts identified in Phase 1.",
+    desc: "Email sequences, outbound calls, and LinkedIn engagement directed at the top 5 target accounts identified in Phase 1.",
   },
   {
     tag: "SYSTEMS",
@@ -47,9 +47,9 @@ const Month2Section = () => (
 
       <motion.p
         variants={fadeUp}
-        className="text-[15px] italic text-text-muted-custom text-center max-w-[560px] mx-auto"
+        className="text-[15px] italic text-text-muted-custom text-center max-w-[620px] mx-auto"
       >
-        Phase 2 adapts to what we actually learned in Phase 1. Recommendations are based on real engagement data, not pre-set assumptions.
+        Phase 2 adapts to what we actually learned in Phase 1. Recommendations are based on real engagement data, not pre-set assumptions. Phase 2 can be engaged as a standalone month based on Phase 1 findings, or as part of a 3-month commitment.
       </motion.p>
     </div>
   </AnimatedSection>

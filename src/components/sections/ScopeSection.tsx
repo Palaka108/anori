@@ -12,6 +12,8 @@ const included = [
 const future = [
   "Advanced automation development",
   "CRM expansions and customization",
+  "Robo-dialing integration",
+  "LinkedIn outbound campaigns",
   "Text and social outreach campaigns",
   "Landing page design and development",
   "Ongoing technical support arrangements",
@@ -60,7 +62,7 @@ const ScopeSection = () => (
       </div>
 
       {/* Automation Handover */}
-      <motion.div variants={fadeUp} className="module-card-highlight">
+      <motion.div variants={fadeUp} className="module-card-highlight mb-8">
         <span className="tag-accent mb-3">3-MONTH ENGAGEMENT</span>
         <h3 className="text-lg font-semibold mt-2 mb-3 text-text-primary">Automation Handover</h3>
         <p className="text-sm text-text-secondary leading-relaxed mb-3">
@@ -70,6 +72,14 @@ const ScopeSection = () => (
           Future adjustments or technical support would be a separate conversation.
         </p>
       </motion.div>
+
+      {/* Scope closing note */}
+      <motion.p
+        variants={fadeUp}
+        className="text-[13px] text-text-muted-custom italic text-center max-w-[560px] mx-auto"
+      >
+        We've structured this engagement to be lean and focused. Items listed above can be scoped into future phases — reach out for details so we can tailor the next engagement to your needs.
+      </motion.p>
     </div>
   </AnimatedSection>
 );

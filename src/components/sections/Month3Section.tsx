@@ -56,14 +56,12 @@ const Month3Section = () => (
       {/* Exclusive heading */}
       <motion.div variants={fadeUp} className="mb-6">
         <h3 className="text-xl font-semibold text-text-primary mb-2">Extended Advisory Modules</h3>
-        <div className="rounded-lg bg-gold-surface px-5 py-3">
-          <p className="text-sm text-text-secondary">
-            Available exclusively in the 3-month engagement. Built from real engagement data.
-          </p>
-        </div>
+        <p className="text-sm text-text-secondary">
+          Available exclusively in the 3-month engagement. Built from real engagement data.
+        </p>
       </motion.div>
 
-      <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
+      <div className="grid sm:grid-cols-2 gap-4 md:gap-5 mb-10">
         {exclusiveModules.map((m) => (
           <motion.div key={m.title} variants={fadeUp} className="module-card">
             <span className="tag-gold mb-3">3-MONTH</span>
@@ -72,6 +70,14 @@ const Month3Section = () => (
           </motion.div>
         ))}
       </div>
+
+      {/* Closing note */}
+      <motion.p
+        variants={fadeUp}
+        className="text-sm text-text-muted-custom italic text-center max-w-[580px] mx-auto"
+      >
+        Iterate fast, adjust quickly, scale once tested. We deliver results based on customer interactions before expanding scope — and that's why flexibility before the technical deep dive is a feature, not a limitation.
+      </motion.p>
     </div>
   </AnimatedSection>
 );
