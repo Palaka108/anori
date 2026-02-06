@@ -5,12 +5,12 @@ const modules = [
   {
     tag: "INFRASTRUCTURE",
     title: "Lead Organization",
-    desc: "Consolidate existing leads from emails, spreadsheets, and current systems into a structured CRM. Up to 5 user seats included.",
+    desc: "Consolidate existing leads into a structured CRM — informed by Discovery findings on what exists and what's net-new. Up to 5 user seats included.",
   },
   {
     tag: "SYSTEMS",
     title: "Follow-Up Architecture",
-    desc: "Design a structured follow-up system with calendar-based assignments, team routing, and email templates for consistent outreach.",
+    desc: "Design a structured follow-up system with calendar-based assignments, team routing, and email templates — scoped to match the CRM decisions from the Alignment Sprint.",
   },
   {
     tag: "DISCOVERY",
@@ -39,12 +39,12 @@ const reportCols = [
 const Month1Section = () => (
   <AnimatedSection alt>
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
-      <motion.p variants={labelSlide} className="section-label mb-4">PHASE 1</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-4">MONTH 1</motion.p>
       <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
         Foundation & Discovery
       </motion.h2>
       <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12">
-        Building the infrastructure and surfacing initial market signals.
+        Building the infrastructure and surfacing initial market signals — informed by the Alignment Sprint.
       </motion.p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-10">
@@ -59,10 +59,10 @@ const Month1Section = () => (
 
       {/* Deliverable */}
       <motion.div variants={fadeUp} className="module-card-highlight mb-8">
-        <span className="tag-accent mb-3">PHASE 1 DELIVERABLE</span>
+        <span className="tag-accent mb-3">MONTH 1 DELIVERABLE</span>
         <h3 className="text-xl font-semibold mt-2 mb-4 text-text-primary">Market Intelligence Report</h3>
         <p className="text-sm text-text-secondary leading-relaxed mb-6">
-          A synthesis of what we've observed across your target verticals — channel efficiency findings, system recommendations for Phase 2, and cost estimates for recommended automations.
+          A synthesis of what we've observed across your target verticals — channel efficiency findings, system recommendations for Month 2, and cost estimates for recommended automations.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           {reportCols.map((r) => (
@@ -82,7 +82,7 @@ const Month1Section = () => (
         variants={fadeUp}
         className="text-[13px] text-text-muted-custom italic text-center max-w-[560px] mx-auto"
       >
-        We've structured this phase to be lean and focused. Anything not covered here can be scoped into future phases — reach out and we'll outline what that engagement would look like.
+        Month 1 activities are confirmed during the Alignment Sprint — not assumed. Anything not covered here can be scoped into future phases.
       </motion.p>
     </div>
   </AnimatedSection>

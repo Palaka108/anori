@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import DotNav from "@/components/DotNav";
 import TitleSection from "@/components/sections/TitleSection";
 import EngagementOverview from "@/components/sections/EngagementOverview";
+import DiscoverySprintSection from "@/components/sections/DiscoverySprintSection";
 import RetainerSection from "@/components/sections/RetainerSection";
 import Month1Section from "@/components/sections/Month1Section";
 import Month2Section from "@/components/sections/Month2Section";
@@ -12,10 +13,11 @@ import InvestmentSection from "@/components/sections/InvestmentSection";
 const sectionLabels = [
   "Title",
   "Overview",
-  "Retainer",
-  "Phase 1",
-  "Phase 2",
-  "Phase 3",
+  "Discovery",
+  "Advisory",
+  "Month 1",
+  "Month 2",
+  "Month 3",
   "Scope",
   "Investment",
 ];
@@ -60,12 +62,13 @@ const Index = () => {
       <DotNav sections={sectionLabels} activeIndex={activeIndex} onDotClick={scrollTo} />
       <div ref={setRef(0)}><TitleSection /></div>
       <div ref={setRef(1)}><EngagementOverview /></div>
-      <div ref={setRef(2)}><RetainerSection /></div>
-      <div ref={setRef(3)}><Month1Section /></div>
-      <div ref={setRef(4)}><Month2Section /></div>
-      <div ref={setRef(5)}><Month3Section /></div>
-      <div ref={setRef(6)}><ScopeSection /></div>
-      <div ref={setRef(7)}><InvestmentSection /></div>
+      <div ref={setRef(2)}><DiscoverySprintSection /></div>
+      <div ref={setRef(3)}><RetainerSection /></div>
+      <div ref={setRef(4)}><Month1Section /></div>
+      <div ref={setRef(5)}><Month2Section /></div>
+      <div ref={setRef(6)}><Month3Section /></div>
+      <div ref={setRef(7)}><ScopeSection /></div>
+      <div ref={setRef(8)}><InvestmentSection /></div>
     </div>
   );
 };
