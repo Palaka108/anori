@@ -30,9 +30,12 @@ const TitleSection = () => (
         Advisory Engagement Proposal
       </motion.h1>
 
-      <motion.p variants={fade} className="text-[20px] sm:text-[26px] font-medium text-accent mt-2">
-        Anori
-      </motion.p>
+      <motion.div variants={fade} className="mt-3">
+        <span className="relative inline-block text-[28px] sm:text-[36px] md:text-[42px] font-semibold text-accent">
+          Anori
+          <span className="absolute left-0 -bottom-1.5 w-full h-[3px] rounded-full bg-accent/20" />
+        </span>
+      </motion.div>
 
       <motion.div variants={fade} className="flex flex-wrap justify-center gap-2.5 mt-8">
         {["Product Discovery", "Go-to-Market Advisory", "Partnership Strategy"].map((p) => (
