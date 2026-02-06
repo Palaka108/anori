@@ -10,7 +10,7 @@ const hourItems = [
 const behindScenes = [
   "Strategic planning and market research",
   "CRM configuration and pipeline management",
-  "AI-assisted lead and market analysis",
+  "Advanced lead and market analysis",
   "Weekly reporting and dashboard development",
   "Email template creation and outreach prep",
   "System recommendations and automation scoping",
@@ -31,19 +31,19 @@ const RetainerSection = () => (
       <motion.div variants={fadeUp} className="module-card-highlight mb-6">
         <span className="tag-accent mb-3">YOUR TEAM</span>
         <h3 className="text-lg font-semibold mt-2 mb-1 text-text-primary">Two Senior Enterprise Professionals</h3>
-        <p className="text-[15px] text-text-secondary mb-4">with Fortune 50 client executive experience</p>
+        <p className="text-[15px] text-text-secondary mb-4">Specializing in Joint Development Engagements</p>
         <p className="text-sm text-text-secondary leading-relaxed mb-3">
-          Your engagement is backed by two professionals who've led enterprise sales and client strategy at the Fortune 50 level. They bring the pattern recognition, frameworks, and deal instincts that come from years of high-stakes advisory work.
+          Your engagement is led by two senior enterprise professionals. One brings extensive experience co-developing partnerships and joint development engagements with one of the world's largest defense contractors, having architected go-to-market strategies for complex enterprise deals at the Fortune 50 level.
         </p>
         <p className="text-sm text-text-secondary leading-relaxed">
-          This isn't outsourced task work — it's senior judgment applied to your specific market position, partnerships, and growth trajectory.
+          The second brings co-partnered solutions experience between Fortune 50 companies, combined with a Bachelor of Science in Architecture and LEED Certification — offering a unique blend of enterprise sales expertise and deep technical understanding of the building and architecture industry that Anori's market position demands.
         </p>
       </motion.div>
 
       {/* Block 2 — How the 8 Hours Work */}
       <motion.div variants={fadeUp} className="module-card mb-6">
         <h3 className="text-lg font-semibold text-text-primary mb-1">8 Hours of Direct Engagement Each Month</h3>
-        <p className="text-sm text-text-muted-custom mb-6">You decide how they're spent.</p>
+        <p className="text-sm text-text-muted-custom mb-6">We provide strategic recommendations — final priorities are decided with the CEO.</p>
 
         <div className="grid sm:grid-cols-3 gap-5 mb-5">
           {hourItems.map((item) => (

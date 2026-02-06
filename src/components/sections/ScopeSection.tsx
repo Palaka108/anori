@@ -15,7 +15,7 @@ const future = [
   "Robo-dialing integration",
   "LinkedIn outbound campaigns",
   "Text and social outreach campaigns",
-  "Landing page design and development",
+  "Landing pages, A/B testing, and pipeline campaign optimization",
   "Ongoing technical support arrangements",
 ];
 

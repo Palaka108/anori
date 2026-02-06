@@ -11,40 +11,33 @@ const chipFade = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
 };
 
-const focusChips = ["Product Discovery", "Go-to-Market Advisory", "Partnership Strategy"];
+const focusChips = ["Product Development", "Go-to-Market Strategy", "Partnership Activation"];
 
 const TitleSection = () => (
-  <section className="relative flex items-center justify-center overflow-hidden py-20 md:py-28 bg-steel-blue">
+  <section className="relative flex items-center justify-center overflow-hidden py-20 md:py-28 bg-surface">
     <BlueprintGrid />
 
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+      variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
       className="relative z-10 w-full max-w-3xl mx-auto px-5 text-center"
     >
-      {/* Gosai badge — credibility anchor */}
-      <motion.div variants={fade} className="mb-12">
-        <span className="text-[11px] uppercase tracking-[0.08em] text-mist-blue/70 border border-white/10 rounded px-[18px] py-1.5 inline-block font-medium select-none">
-          GOSAI · gosai.io
+      {/* Client name — top of hierarchy */}
+      <motion.div variants={fade} className="mb-6">
+        <span className="text-[22px] sm:text-[28px] md:text-[32px] font-normal text-accent">
+          Anori
         </span>
       </motion.div>
 
       {/* Main title */}
       <motion.h1
         variants={fade}
-        className="text-[24px] sm:text-[32px] md:text-[38px] font-bold leading-tight text-white mb-2"
+        className="text-[24px] sm:text-[32px] md:text-[38px] font-bold leading-tight text-text-primary mb-10"
       >
         Commercial Engagement Proposal
       </motion.h1>
-
-      {/* Client name — prominent */}
-      <motion.div variants={fade} className="mb-10">
-        <span className="relative inline-block text-[22px] sm:text-[28px] md:text-[32px] font-normal text-mist-blue">
-          Anori
-        </span>
-      </motion.div>
 
       {/* Focus chips */}
       <motion.div
@@ -55,7 +48,8 @@ const TitleSection = () => (
           <motion.span
             key={p}
             variants={chipFade}
-            className="text-[13px] font-medium text-accent-light bg-white/5 border border-white/10 rounded-full px-5 py-2 select-none"
+            className="text-[13px] font-medium text-accent bg-accent-surface border border-accent-border rounded-full px-5 py-2 select-none"
+            style={{ background: "rgba(47,95,215,0.06)", borderColor: "rgba(47,95,215,0.2)" }}
           >
             {p}
           </motion.span>
@@ -63,9 +57,16 @@ const TitleSection = () => (
       </motion.div>
 
       {/* Date */}
-      <motion.p variants={fade} className="text-xs text-mist-blue/70 tracking-wider mt-12">
+      <motion.p variants={fade} className="text-xs text-text-muted-custom tracking-wider mt-12">
         February 2026 · Confidential
       </motion.p>
+
+      {/* Gosai badge — bottom */}
+      <motion.div variants={fade} className="mt-12">
+        <span className="text-[11px] uppercase tracking-[0.08em] text-text-muted-custom border border-border rounded px-[18px] py-1.5 inline-block font-medium select-none">
+          GOSAI · gosai.io
+        </span>
+      </motion.div>
     </motion.div>
   </section>
 );
