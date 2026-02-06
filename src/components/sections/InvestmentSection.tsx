@@ -1,72 +1,80 @@
-import AnimatedSection from "../AnimatedSection";
+import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
+import AnimatedSection, { fadeUp } from "../AnimatedSection";
 
 const monthlyItems = [
   "8 hours dedicated advisory engagement",
-  "Full retainer benefits (strategy, CRM, AI, reporting)",
-  "Foundation & Activation deliverables",
-  "Market Intelligence Report (Month 1)",
-  "Weekly pipeline dashboards (Month 2+)",
-  "Lightweight partnership analysis",
+  "Ongoing operational support (CRM, reporting, research)",
+  "Foundation & Activation modules",
+  "Market Intelligence Report",
+  "Weekly pipeline dashboards",
   "Monthly progress reports",
+  "Partnership analysis (standard)",
 ];
 
 const packageItems = [
-  { text: "Everything in month-to-month", gold: false },
-  { text: "Lead gen automation handover + care guide", gold: true },
-  { text: "MEDDIC analysis + advisory playbook", gold: true },
-  { text: "Sales hiring readiness scorecard", gold: true },
-  { text: "Full partnership analysis scoreboard", gold: true },
-  { text: "Dashboard standards alignment", gold: true },
-  { text: "30/60/90 strategic recommendations", gold: true },
+  { text: "Everything in Monthly Advisory", gold: false },
+  { text: "Automation handover + documentation", gold: true },
+  { text: "MEDDIC deal analysis", gold: true },
+  { text: "Hiring readiness considerations", gold: true },
+  { text: "Full partnership scoreboard", gold: true },
+  { text: "Dashboard alignment recommendations", gold: true },
+  { text: "30/60/90 strategic framework", gold: true },
 ];
 
 const steps = [
-  { num: "01", title: "Align on Open Questions", desc: "CRM users, lead data sources, start date, platform preference" },
-  { num: "02", title: "Select Engagement Model", desc: "Month-to-month retainer or 3-month package" },
-  { num: "03", title: "Sign & Kickoff", desc: "Set the start date and begin Foundation & Discovery" },
+  { num: "01", title: "Align on Open Questions", desc: "CRM users, existing data, start date, platform" },
+  { num: "02", title: "Choose Your Model", desc: "Monthly advisory or 3-month engagement" },
+  { num: "03", title: "Begin", desc: "Set the start date and begin Foundation & Discovery" },
 ];
 
 const InvestmentSection = () => (
-  <AnimatedSection>
-    <div className="w-full max-w-6xl mx-auto px-6 py-20">
-      <p className="section-label mb-4">INVESTMENT</p>
-      <h2 className="text-3xl sm:text-4xl font-bold mb-12 text-foreground">Engagement Models</h2>
+  <AnimatedSection alt>
+    <div className="w-full max-w-[1120px] mx-auto px-5">
+      <motion.p variants={fadeUp} className="section-label mb-4">INVESTMENT</motion.p>
+      <motion.h2 variants={fadeUp} className="text-3xl sm:text-4xl font-bold mb-4 text-text-primary">
+        Engagement Options
+      </motion.h2>
+      <motion.p variants={fadeUp} className="text-lg text-text-secondary mb-12">
+        Two models, same advisory team, same commitment to clarity.
+      </motion.p>
 
-      <div className="grid md:grid-cols-2 gap-6 mb-8">
-        {/* Month-to-Month */}
-        <div className="card-glass p-8">
-          <h3 className="text-sm font-mono uppercase tracking-wider text-text-dim mb-4">Month-to-Month Retainer</h3>
-          <div className="flex items-baseline gap-1 mb-2">
-            <span className="text-5xl font-bold font-mono text-foreground">$6,000</span>
-            <span className="text-text-dim text-sm">/month</span>
+      <div className="grid md:grid-cols-2 gap-8 mb-10">
+        {/* Monthly */}
+        <motion.div variants={fadeUp} className="module-card">
+          <div className="mb-6">
+            <div className="flex items-baseline gap-1">
+              <span className="text-4xl font-bold text-text-primary">$6,000</span>
+              <span className="text-base text-text-muted-custom">/month</span>
+            </div>
+            <p className="font-mono text-[13px] text-text-muted-custom mt-1">1-month minimum</p>
           </div>
-          <p className="text-xs text-text-muted-custom mb-6">1-month minimum commitment • $300/hr overage • Net 15</p>
-          <ul className="space-y-3">
+          <div className="h-px bg-border mb-6" />
+          <ul className="space-y-3 mb-6">
             {monthlyItems.map((item) => (
-              <li key={item} className="flex items-start gap-3 text-sm text-text-dim">
+              <li key={item} className="flex items-start gap-3 text-sm text-text-secondary">
                 <Check className="w-4 h-4 mt-0.5 text-accent shrink-0" />
                 {item}
               </li>
             ))}
           </ul>
-        </div>
+          <p className="text-xs text-text-muted-custom">$300/hr if additional hours needed • Net 15</p>
+        </motion.div>
 
-        {/* 3-Month Package */}
-        <div className="card-glass p-8 relative overflow-hidden">
-          {/* Recommended ribbon */}
-          <div className="absolute top-5 -right-8 bg-accent text-background text-[10px] font-mono font-bold uppercase tracking-wider py-1 px-10 rotate-45">
-            Recommended
+        {/* 3-Month */}
+        <motion.div variants={fadeUp} className="module-card relative border-accent/20 border-2">
+          <span className="absolute top-4 right-4 tag-accent text-[10px]">RECOMMENDED</span>
+          <div className="mb-6">
+            <div className="flex items-baseline gap-1">
+              <span className="text-[28px] font-semibold text-accent">Preferred Rate</span>
+              <span className="text-base text-text-muted-custom">/month</span>
+            </div>
+            <p className="font-mono text-[13px] text-text-muted-custom mt-1">3-month commitment</p>
           </div>
-          <h3 className="text-sm font-mono uppercase tracking-wider text-text-dim mb-4">3-Month Package</h3>
-          <div className="flex items-baseline gap-1 mb-2">
-            <span className="text-5xl font-bold font-mono text-accent">Discounted</span>
-            <span className="text-text-dim text-sm">/month</span>
-          </div>
-          <p className="text-xs text-text-muted-custom mb-6">3-month commitment • $300/hr overage • Net 15</p>
-          <ul className="space-y-3">
+          <div className="h-px bg-border mb-6" />
+          <ul className="space-y-3 mb-6">
             {packageItems.map((item) => (
-              <li key={item.text} className="flex items-start gap-3 text-sm text-text-dim">
+              <li key={item.text} className="flex items-start gap-3 text-sm text-text-secondary">
                 {item.gold ? (
                   <Star className="w-4 h-4 mt-0.5 text-gold shrink-0" />
                 ) : (
@@ -76,35 +84,38 @@ const InvestmentSection = () => (
               </li>
             ))}
           </ul>
-        </div>
+          <p className="text-xs text-text-muted-custom">$300/hr if additional hours needed • Net 15</p>
+        </motion.div>
       </div>
 
-      {/* Value Context */}
-      <div className="card-glass-static p-5 flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-12">
-        <span className="tag-blue shrink-0">CONTEXT</span>
-        <p className="text-sm text-text-dim leading-relaxed">
-          Two senior enterprise sales professionals with Fortune 50 client executive experience — structured advisory at a fraction of the cost of a fractional CRO ($7,500-25,000/mo) or ex-MBB consultant ($300-500/hr).
-        </p>
-      </div>
+      {/* Context */}
+      <motion.p
+        variants={fadeUp}
+        className="text-sm text-text-secondary text-center max-w-[600px] mx-auto mb-14"
+      >
+        Advisory from two senior enterprise professionals with Fortune 50 experience — at a fraction of the cost of a fractional CRO or retained consulting firm.
+      </motion.p>
 
       {/* Next Steps */}
-      <h3 className="text-xl font-semibold mb-6 text-foreground">Next Steps</h3>
-      <div className="grid sm:grid-cols-3 gap-6 mb-12">
+      <div className="grid sm:grid-cols-3 gap-8 mb-14">
         {steps.map((s) => (
-          <div key={s.num} className="card-glass p-6 text-center">
-            <span className="text-4xl font-bold font-mono text-blueprint/30">{s.num}</span>
-            <h4 className="text-base font-semibold mt-2 mb-2 text-foreground">{s.title}</h4>
-            <p className="text-sm text-text-dim">{s.desc}</p>
-          </div>
+          <motion.div key={s.num} variants={fadeUp} className="text-center">
+            <div className="w-12 h-12 rounded-full bg-surface-subtle flex items-center justify-center mx-auto mb-3">
+              <span className="font-mono text-base text-text-secondary">{s.num}</span>
+            </div>
+            <h4 className="text-[15px] font-semibold text-text-primary mb-1">{s.title}</h4>
+            <p className="text-[13px] text-text-muted-custom">{s.desc}</p>
+          </motion.div>
         ))}
       </div>
 
       {/* Footer */}
-      <div className="text-center pt-8 border-t border-foreground/5">
-        <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-text-muted-custom">
-          GOSAI • Confidential • February 2026
+      <motion.div variants={fadeUp} className="text-center pt-8 border-t border-border">
+        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-text-muted-custom inline-block border border-border rounded-full px-4 py-1.5 mb-2">
+          GOSAI
         </span>
-      </div>
+        <p className="text-xs text-text-muted-custom">Confidential • February 2026</p>
+      </motion.div>
     </div>
   </AnimatedSection>
 );

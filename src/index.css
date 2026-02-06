@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,46 +6,60 @@
 
 @layer base {
   :root {
-    --background: 216 55% 10%;
-    --foreground: 220 40% 93%;
+    --background: 225 20% 98%;
+    --foreground: 224 30% 14%;
 
-    --card: 216 55% 14%;
-    --card-foreground: 220 40% 93%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 30% 14%;
 
-    --popover: 216 55% 14%;
-    --popover-foreground: 220 40% 93%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 30% 14%;
 
     --primary: 163 40% 31%;
-    --primary-foreground: 220 40% 93%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 216 55% 16%;
-    --secondary-foreground: 220 40% 93%;
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 224 30% 14%;
 
-    --muted: 216 30% 20%;
-    --muted-foreground: 217 18% 44%;
+    --muted: 220 16% 96%;
+    --muted-foreground: 217 14% 55%;
 
-    --accent: 163 44% 42%;
-    --accent-foreground: 220 40% 93%;
+    --accent: 163 40% 31%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 163 44% 42%;
+    --accent-surface: 160 40% 94%;
 
     --destructive: 0 62% 50%;
-    --destructive-foreground: 220 40% 93%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 100% 56% / 0.12;
-    --input: 210 100% 56% / 0.12;
-    --ring: 210 100% 56%;
+    --border: 216 20% 89%;
+    --border-hover: 216 16% 79%;
+    --border-accent: 163 40% 31% / 0.2;
+    --input: 216 20% 89%;
+    --ring: 163 40% 31%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
     /* Custom tokens */
-    --blueprint: 210 100% 56%;
-    --blueprint-dim: 210 100% 56% / 0.15;
-    --gold: 42 60% 55%;
-    --text-dim: 217 18% 62%;
-    --text-muted: 217 18% 44%;
-    --card-bg: 216 55% 14% / 0.7;
-    --card-border: 210 100% 56% / 0.12;
-    --card-hover-border: 210 100% 56% / 0.4;
-    --card-glow: 210 100% 56% / 0.15;
+    --surface: 225 20% 98%;
+    --surface-elevated: 0 0% 100%;
+    --surface-subtle: 220 20% 97%;
+    --surface-accent: 160 30% 96%;
+
+    --text-primary: 224 30% 14%;
+    --text-secondary: 218 15% 35%;
+    --text-muted: 217 14% 55%;
+
+    --blueprint: 210 40% 54%;
+    --blueprint-light: 210 50% 95%;
+    --blueprint-dim: 210 40% 54% / 0.08;
+
+    --gold: 40 55% 50%;
+    --gold-surface: 42 60% 95%;
+
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.04);
+    --shadow-md: 0 4px 12px 0 rgb(0 0 0 / 0.06);
+    --shadow-lg: 0 8px 24px 0 rgb(0 0 0 / 0.08);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -64,7 +78,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
   }
 }
@@ -74,96 +88,82 @@
     font-family: 'JetBrains Mono', monospace;
   }
 
-  .text-gradient {
-    background: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 100% 56%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .card-glass {
-    background: hsl(var(--card-bg));
-    backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--card-border));
+  /* Module Card */
+  .module-card {
+    background: hsl(var(--surface-elevated));
+    border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
-    transition: all 0.3s ease;
+    padding: 28px 24px;
+    box-shadow: var(--shadow-sm);
+    transition: all 200ms ease;
   }
 
-  .card-glass:hover {
-    border-color: hsl(var(--card-hover-border));
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px hsl(var(--card-glow));
+  .module-card:hover {
+    border-color: hsl(var(--border-hover));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
   }
 
-  .card-glass:hover::before {
-    opacity: 1;
-  }
-
-  .card-glass-static {
-    background: hsl(var(--card-bg));
-    backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--card-border));
+  /* Highlighted Module Card */
+  .module-card-highlight {
+    background: hsl(var(--surface-accent));
+    border: 1px solid hsl(var(--border-accent));
+    border-left: 3px solid hsl(var(--accent));
     border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-sm);
   }
 
+  /* Section Label */
   .section-label {
-    @apply font-mono text-xs uppercase tracking-[0.2em] flex items-center gap-3;
+    @apply font-mono text-xs uppercase tracking-[0.1em] flex items-center gap-3;
     color: hsl(var(--blueprint));
   }
 
   .section-label::before {
     content: '';
     display: block;
-    width: 24px;
+    width: 40px;
     height: 1px;
     background: hsl(var(--blueprint));
   }
 
-  .accent-border-left {
-    border-left: 3px solid hsl(var(--primary));
-    padding-left: 1.5rem;
-  }
-
+  /* Tags */
   .tag {
-    @apply font-mono text-[10px] uppercase tracking-[0.15em] px-2.5 py-1 rounded-full inline-block;
+    @apply font-mono uppercase tracking-[0.08em] px-3 py-1 rounded-full inline-block;
+    font-size: 10px;
   }
 
   .tag-blue {
     @apply tag;
     color: hsl(var(--blueprint));
-    border: 1px solid hsl(var(--blueprint-dim));
-    background: hsl(210 100% 56% / 0.08);
+    background: hsl(var(--blueprint-light));
+  }
+
+  .tag-accent {
+    @apply tag;
+    color: hsl(var(--accent));
+    background: hsl(var(--accent-surface));
   }
 
   .tag-gold {
     @apply tag;
     color: hsl(var(--gold));
-    border: 1px solid hsl(42 60% 55% / 0.3);
-    background: hsl(42 60% 55% / 0.08);
+    background: hsl(var(--gold-surface));
   }
 
-  .tag-red {
+  .tag-muted {
     @apply tag;
-    color: hsl(0 60% 60%);
-    border: 1px solid hsl(0 60% 60% / 0.3);
-    background: hsl(0 60% 60% / 0.08);
+    color: hsl(var(--text-muted));
+    background: hsl(var(--surface-subtle));
   }
 
-  .tag-green {
-    @apply tag;
-    color: hsl(var(--accent));
-    border: 1px solid hsl(var(--accent) / 0.3);
-    background: hsl(var(--accent) / 0.08);
+  /* Section alternation */
+  .section-surface {
+    background: hsl(var(--surface));
   }
 
-  .scroll-snap-container {
-    scroll-snap-type: y mandatory;
-    overflow-y: auto;
-    height: 100vh;
-  }
-
-  .scroll-snap-section {
-    scroll-snap-align: start;
-    min-height: 100vh;
+  .section-surface-alt {
+    background: hsl(var(--surface-subtle));
   }
 }
