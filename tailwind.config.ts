@@ -54,11 +54,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        blueprint: {
-          DEFAULT: "hsl(var(--blueprint))",
-          light: "hsl(var(--blueprint-light))",
-          dim: "hsl(var(--blueprint-dim))",
-        },
         gold: {
           DEFAULT: "hsl(var(--gold))",
           surface: "hsl(var(--gold-surface))",
@@ -72,10 +67,6 @@ export default {
         "text-primary": "hsl(var(--text-primary))",
         "text-secondary": "hsl(var(--text-secondary))",
         "text-muted-custom": "hsl(var(--text-muted))",
-        "steel-blue": "hsl(var(--steel-blue))",
-        "soft-azure": "hsl(var(--soft-azure))",
-        "mist-blue": "hsl(var(--mist-blue))",
-        "electric-light-blue": "hsl(var(--electric-light-blue))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

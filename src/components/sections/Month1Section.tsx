@@ -3,48 +3,51 @@ import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const modules = [
   {
-    tag: "INFRASTRUCTURE",
+    tag: "CRM",
+    title: "CRM Selection & Setup",
+    desc: "Pick the right CRM for your stage and budget. Get it configured — not over-engineered. Scope informed by the Alignment Sprint.",
+  },
+  {
+    tag: "LEADS",
     title: "Lead Organization",
-    desc: "Consolidate existing leads into a structured CRM — scope and platform informed by the Alignment Sprint. Data migration approach tailored to what actually exists.",
+    desc: "Consolidate contacts from existing sources into one structured pipeline. No ongoing data entry — just a clean starting point.",
   },
   {
     tag: "SYSTEMS",
     title: "Follow-Up Architecture",
-    desc: "Design a structured follow-up system with calendar-based assignments, team routing, and email templates — calibrated to current team capacity and lead volume.",
+    desc: "Calendar-based assignments, team routing, and email templates — calibrated to current team capacity.",
   },
   {
     tag: "DISCOVERY",
-    title: "Customer Persona ICP Mapping",
-    desc: "Document potential customer profiles across Building Departments, AEC, and adjacent verticals. Identify an initial 80/20 list of highest-potential partnerships — building on Discovery Sprint signals.",
+    title: "ICP Hypothesis Mapping",
+    desc: "Document potential customer profiles across Building Departments, AEC, and adjacent verticals. Build an initial 80/20 partner list.",
   },
   {
     tag: "ENABLEMENT",
-    title: "CRM Enablement",
-    desc: "Foundational CRM training guide covering best practices for the primary user. Three post-setup revisions included.",
-  },
-  {
-    tag: "OPTIONAL",
-    title: "Landing Page Capability",
-    desc: "Gosai-hosted landing page, independent of your existing web systems. Available if useful during this phase.",
+    title: "CRM Training",
+    desc: "Foundational training guide for the primary user. Three post-setup revisions included.",
   },
 ];
 
 const reportCols = [
   { label: "Market Signals", desc: "What we're observing across verticals" },
   { label: "Channel Analysis", desc: "Outbound channel efficiency findings" },
-  { label: "System Recommendations", desc: "Suggested tools and approaches for Phase 2" },
+  { label: "System Recommendations", desc: "Suggested tools for Month 2" },
   { label: "Cost Estimates", desc: "Build-out pricing for recommended automations" },
 ];
 
 const Month1Section = () => (
-  <AnimatedSection alt>
+  <AnimatedSection>
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
-      <motion.p variants={labelSlide} className="section-label mb-4">MONTH 1</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-4">STEP 2</motion.p>
       <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
-        Foundation
+        Month 1 — Foundation
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12">
-        Building the infrastructure and surfacing initial market signals — informed by Discovery findings.
+      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-4 max-w-xl leading-relaxed">
+        Build a simple, working CRM foundation. Organize leads. Create a follow-up rhythm.
+      </motion.p>
+      <motion.p variants={fadeUp} className="text-sm text-text-muted-custom mb-12 max-w-xl">
+        Everything here is informed by what we learned in the Alignment Sprint — not predetermined.
       </motion.p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-10">
@@ -62,12 +65,12 @@ const Month1Section = () => (
         <span className="tag-accent mb-3">MONTH 1 DELIVERABLE</span>
         <h3 className="text-xl font-semibold mt-2 mb-4 text-text-primary">Market Intelligence Report</h3>
         <p className="text-sm text-text-secondary leading-relaxed mb-6">
-          A synthesis of what we've observed across your target verticals — channel efficiency findings, system recommendations for Month 2, and cost estimates for recommended automations.
+          A synthesis of what we've observed — channel efficiency, system recommendations, and automation cost estimates.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           {reportCols.map((r) => (
             <div key={r.label}>
-              <p className="text-[10px] font-medium uppercase tracking-wider text-accent mb-1">{r.label}</p>
+              <p className="text-[10px] font-semibold uppercase tracking-wider text-accent mb-1">{r.label}</p>
               <p className="text-[13px] text-text-secondary">{r.desc}</p>
             </div>
           ))}
@@ -77,13 +80,14 @@ const Month1Section = () => (
         </p>
       </motion.div>
 
-      {/* Closing note */}
-      <motion.p
-        variants={fadeUp}
-        className="text-[13px] text-text-muted-custom italic text-center max-w-[560px] mx-auto"
-      >
-        Phase 1 activities are informed by the Alignment Sprint — not predetermined. Anything not covered here can be scoped into future phases.
-      </motion.p>
+      <motion.div variants={fadeUp} className="module-card max-w-2xl mx-auto">
+        <h4 className="text-sm font-semibold text-text-primary mb-2">Boundaries:</h4>
+        <ul className="space-y-1.5">
+          <li className="text-[13px] text-text-secondary">• No ongoing data entry — we set it up, you maintain it</li>
+          <li className="text-[13px] text-text-secondary">• No major CRM re-builds after setup is complete</li>
+          <li className="text-[13px] text-text-secondary">• Three post-setup revisions included in training</li>
+        </ul>
+      </motion.div>
     </div>
   </AnimatedSection>
 );
