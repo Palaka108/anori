@@ -14,9 +14,9 @@ const staggerContainer = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.7,
       ease: [0.25, 0.46, 0.45, 0.94] as const,
-      staggerChildren: 0.08,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -28,8 +28,10 @@ const AnimatedSection = ({ children, className = "", id, alt = false }: Animated
     whileInView="visible"
     viewport={{ once: true, amount: 0.12 }}
     variants={staggerContainer}
-    className={`relative ${alt ? "section-surface-alt" : "section-surface"} py-16 md:py-[100px] ${className}`}
+    className={`relative ${alt ? "section-surface-alt" : "section-surface"} py-16 md:py-[100px] bg-grid-pattern ${className}`}
   >
+    {/* Subtle top edge glow line */}
+    <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent/10 to-transparent" />
     {children}
   </motion.section>
 );
@@ -40,18 +42,18 @@ export const fadeUp = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.6,
       ease: [0.25, 0.46, 0.45, 0.94] as const,
     },
   },
 };
 
 export const labelSlide = {
-  hidden: { opacity: 0, x: -12 },
+  hidden: { opacity: 0, x: -16 },
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
   },
 };
 

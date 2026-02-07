@@ -65,7 +65,7 @@ const InvestmentSection = () => (
       {/* 3-tier pricing */}
       <div className="grid md:grid-cols-3 gap-5 md:gap-5 mb-10">
         {/* Discovery Sprint */}
-        <motion.div variants={pricingCardEntry} className="module-card" style={{ boxShadow: "var(--shadow-sm)" }}>
+        <motion.div variants={pricingCardEntry} className="module-card">
           <div className="mb-4">
             <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Pre-Execution</p>
             <div className="flex items-baseline gap-1">
@@ -91,17 +91,12 @@ const InvestmentSection = () => (
           variants={pricingCardEntry}
           className="module-card relative"
           style={{
-            border: "1px solid rgba(47,95,215,0.2)",
-            background: "linear-gradient(180deg, #FFFFFF, hsl(220 33% 98%))",
-            boxShadow: "var(--shadow-md)",
+            border: "1px solid hsl(200 90% 50% / 0.2)",
+            background: "linear-gradient(180deg, hsl(220 18% 14% / 0.8), hsl(220 18% 10% / 0.8))",
+            backdropFilter: "blur(16px)",
+            boxShadow: "var(--shadow-md), 0 0 30px rgba(0, 180, 255, 0.06)",
           }}
         >
-          <span
-            className="absolute top-4 right-4 text-[10px] font-medium uppercase tracking-[0.06em] text-white px-3 py-1 rounded-full"
-            style={{ background: "linear-gradient(90deg, hsl(224 65% 51%), hsl(224 80% 67%))" }}
-          >
-            RECOMMENDED
-          </span>
           <div className="mb-5">
             <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Monthly Advisory Package</p>
             <div className="flex items-baseline gap-1">
@@ -128,9 +123,8 @@ const InvestmentSection = () => (
           variants={pricingCardEntry}
           className="module-card"
           style={{
-            border: "1px solid rgb(212 168 67 / 0.2)",
-            borderTop: "3px solid hsl(40, 62%, 52%)",
-            boxShadow: "var(--shadow-sm)",
+            border: "1px solid hsl(40 62% 52% / 0.2)",
+            borderTop: "3px solid hsl(40 62% 52%)",
           }}
         >
           <div className="mb-4">

@@ -37,8 +37,16 @@ const EngagementOverview = () => (
         A phased advisory engagement beginning with a focused alignment sprint — ensuring every hour invested is directed by reality, not assumptions.
       </motion.p>
 
-      {/* Purpose bar */}
-      <motion.div variants={fadeUp} className="rounded-lg bg-card border border-border px-5 py-4 text-center mb-6">
+      {/* Purpose bar — glass panel */}
+      <motion.div
+        variants={fadeUp}
+        className="rounded-lg px-5 py-4 text-center mb-6 border"
+        style={{
+          background: "hsl(220 18% 12% / 0.6)",
+          backdropFilter: "blur(12px)",
+          borderColor: "hsl(200 90% 50% / 0.12)",
+        }}
+      >
         <p className="text-sm text-text-secondary leading-relaxed">
           We conduct a paid Discovery Sprint before full engagement begins. This ensures Month 1 is tailored to where Anori is today — not where we assume you are.
         </p>
@@ -49,14 +57,15 @@ const EngagementOverview = () => (
         {principles.map((p) => (
           <span
             key={p}
-            className="text-[11px] font-medium text-text-muted-custom bg-surface border border-border rounded-full px-4 py-1.5 select-none"
+            className="text-[11px] font-medium text-text-muted-custom border border-border rounded-full px-4 py-1.5 select-none"
+            style={{ background: "hsl(220 18% 12% / 0.5)" }}
           >
             {p}
           </span>
         ))}
       </motion.div>
 
-      {/* Phase cards — small 32px circles */}
+      {/* Phase cards */}
       <div className="grid md:grid-cols-3 gap-5 md:gap-6 mb-14">
         {phases.map((p) => (
           <motion.div
@@ -66,10 +75,11 @@ const EngagementOverview = () => (
           >
             <div className="absolute -top-4 left-1/2 -translate-x-1/2">
               <div
-                className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold"
                 style={{
-                  background: "linear-gradient(135deg, hsl(224 65% 51%), hsl(224 80% 67%))",
-                  boxShadow: "var(--shadow-sm)",
+                  background: "linear-gradient(135deg, hsl(200 90% 50%), hsl(200 100% 65%))",
+                  boxShadow: "var(--shadow-sm), 0 0 12px rgba(0, 180, 255, 0.2)",
+                  color: "hsl(220 20% 8%)",
                 }}
               >
                 {p.num}

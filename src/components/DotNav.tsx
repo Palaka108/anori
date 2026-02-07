@@ -19,7 +19,7 @@ const DotNav = ({ sections, activeIndex, onDotClick }: DotNavProps) => (
         <span
           className={`block rounded-full transition-all duration-300 ${
             activeIndex === i
-              ? "w-2.5 h-2.5 bg-accent"
+              ? "w-2.5 h-2.5 bg-accent shadow-[0_0_8px_rgba(0,180,255,0.4)]"
               : "w-2 h-2 bg-mist-blue hover:bg-soft-azure"
           }`}
         />

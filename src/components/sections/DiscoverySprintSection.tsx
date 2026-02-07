@@ -69,10 +69,11 @@ const DiscoverySprintSection = () => (
           <motion.div key={card.num} variants={fadeUp} className="module-card relative pt-5">
             <div className="flex items-start gap-3 mb-3">
               <div
-                className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0"
                 style={{
-                  background: "linear-gradient(135deg, hsl(224 65% 51%), hsl(224 80% 67%))",
-                  boxShadow: "var(--shadow-sm)",
+                  background: "linear-gradient(135deg, hsl(200 90% 50%), hsl(200 100% 65%))",
+                  boxShadow: "var(--shadow-sm), 0 0 12px rgba(0, 180, 255, 0.15)",
+                  color: "hsl(220 20% 8%)",
                 }}
               >
                 {card.num}
@@ -94,8 +95,16 @@ const DiscoverySprintSection = () => (
         ))}
       </div>
 
-      {/* Info bar */}
-      <motion.div variants={fadeUp} className="rounded-lg bg-card border border-border px-5 py-4 mb-8">
+      {/* Info bar — glass */}
+      <motion.div
+        variants={fadeUp}
+        className="rounded-lg px-5 py-4 mb-8 border"
+        style={{
+          background: "hsl(220 18% 12% / 0.6)",
+          backdropFilter: "blur(12px)",
+          borderColor: "hsl(200 90% 50% / 0.1)",
+        }}
+      >
         <div className="grid sm:grid-cols-3 gap-4 sm:gap-0 sm:divide-x sm:divide-border text-center">
           {infoItems.map((item) => (
             <div key={item.title} className="px-4">
