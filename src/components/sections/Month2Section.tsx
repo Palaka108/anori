@@ -3,36 +3,39 @@ import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const modules = [
   {
-    tag: "EXECUTION",
+    tag: "OUTBOUND",
     title: "Targeted Outbound",
-    desc: "Email sequences, outbound calls, and LinkedIn engagement directed at the top 5 target accounts identified in Month 1.",
+    desc: "Up to 5 target accounts identified in Month 1. Email sequences, calls, and LinkedIn engagement — focused testing, not scale.",
   },
   {
     tag: "SYSTEMS",
     title: "Automation Advisory",
-    desc: "Comprehensive scan of outbound channels with efficiency analysis. Recommendations delivered with cost estimates — so investment decisions are informed, not assumed.",
+    desc: "Efficiency analysis of outbound channels. Recommendations delivered with cost estimates — so decisions are informed.",
   },
   {
-    tag: "VISIBILITY",
+    tag: "REPORTING",
     title: "Pipeline Reporting",
-    desc: "Weekly dashboard covering lead movement, active targets, upcoming priorities, and persona-level analysis within target organizations.",
+    desc: "Weekly dashboard: lead movement, active targets, upcoming priorities, and persona-level analysis.",
   },
   {
     tag: "ENABLEMENT",
     title: "Systems Walkthrough",
-    desc: "Dedicated time to walk through recommended tools and automation approaches. Focused on clarity and readiness — not implementation of everything at once.",
+    desc: "Dedicated time to walk through recommended tools and automation approaches. Clarity first, implementation after.",
   },
 ];
 
 const Month2Section = () => (
-  <AnimatedSection>
+  <AnimatedSection alt>
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
-      <motion.p variants={labelSlide} className="section-label mb-4">MONTH 2</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-4">STEP 3</motion.p>
       <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
-        Activation & Guided Outbound
+        Month 2 — Activation & Guided Outbound
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12">
-        Translating Month 1 signals into focused outbound activity and system clarity.
+      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-4 max-w-xl leading-relaxed">
+        The goal is learning, not scale. We test outbound approaches and capture what actually works.
+      </motion.p>
+      <motion.p variants={fadeUp} className="text-sm text-text-muted-custom mb-12 max-w-xl">
+        This is explicitly not a full SDR program. It's focused testing to inform your first real sales hire.
       </motion.p>
 
       <div className="grid sm:grid-cols-2 gap-4 md:gap-5 mb-10">
@@ -47,9 +50,9 @@ const Month2Section = () => (
 
       <motion.p
         variants={fadeUp}
-        className="text-[15px] italic text-text-muted-custom text-center max-w-[620px] mx-auto"
+        className="text-[13px] italic text-text-muted-custom text-center max-w-lg mx-auto"
       >
-        Phase 2 adapts to what we actually learned in Phase 1. Recommendations are based on real engagement data, not pre-set assumptions. Phase 2 scope is refined during the engagement — not locked in advance.
+        Month 2 adapts to what we actually learned in Month 1. Scope is refined during the engagement — not locked in advance.
       </motion.p>
     </div>
   </AnimatedSection>
