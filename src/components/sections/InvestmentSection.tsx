@@ -97,15 +97,6 @@ const InvestmentSection = () => (
             boxShadow: "var(--shadow-md), 0 0 30px rgba(0, 180, 255, 0.06)",
           }}
         >
-          <span
-            className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider px-3 py-1 rounded-full select-none"
-            style={{
-              background: "linear-gradient(135deg, hsl(200 90% 50%), hsl(200 100% 65%))",
-              color: "hsl(220 20% 8%)",
-            }}
-          >
-            Recommended
-          </span>
           <div className="mb-5">
             <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Monthly Advisory Package</p>
             <div className="flex items-baseline gap-1">
