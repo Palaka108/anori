@@ -49,7 +49,7 @@ const Month2Section = () => (
         variants={fadeUp}
         className="text-[15px] italic text-text-muted-custom text-center max-w-[620px] mx-auto"
       >
-        Month 2 adapts to what we actually learned in Month 1. Recommendations are based on real engagement data, not pre-set assumptions. Month 2 can be engaged standalone or as part of an Advisory Continuity Package.
+        Phase 2 adapts to what we actually learned in Phase 1. Recommendations are based on real engagement data, not pre-set assumptions. Phase 2 scope is refined during the engagement — not locked in advance.
       </motion.p>
     </div>
   </AnimatedSection>

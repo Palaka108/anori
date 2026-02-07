@@ -7,8 +7,8 @@ const sprintCards = [
     title: "Technical & Product Deep Dive",
     items: [
       "Roadmap history and forward roadmap review",
-      "POC review and feedback pattern synthesis",
-      "Use case identification and low-hanging fruit assessment",
+      "POC feedback synthesis and pattern identification",
+      "Use case mapping and low-hanging fruit assessment",
     ],
   },
   {
@@ -24,50 +24,52 @@ const sprintCards = [
     num: "3",
     title: "GTM & CRM Alignment Session",
     items: [
-      "Lead reality assessment — what exists, what doesn't",
+      "Lead reality assessment — what exists and what doesn't",
       "CRM strategy: warehouse existing data vs. activate immediately",
-      "Data flow design: lead capture → calendar → follow-up",
-      "BDR readiness considerations",
+      "Data flow design and BDR readiness considerations",
     ],
   },
 ];
 
+const infoItems = [
+  { title: "3 Meetings Minimum", sub: "Technical, partner, and alignment sessions", accent: false },
+  { title: "2 Senior Advisors", sub: "Present at a minimum of two sessions", accent: false },
+  { title: "$1,500", sub: "Full credit toward Month 1 if engagement proceeds", accent: true },
+];
+
 const deliverables = [
   {
-    title: "Two-Page Discovery Summary",
-    desc: "Current state assessment, gaps, risks, opportunities, and recommended next actions.",
+    title: "Discovery Summary",
+    desc: "Two-page assessment of what exists today, what doesn't, immediate risks, and recommended next actions.",
   },
   {
     title: "Tailored Month 1 Definition",
-    desc: "What should happen in Month 1, what should wait, and what should not be done yet.",
+    desc: "What should happen in Month 1, what should wait, and what should not be done yet — based on reality, not assumptions.",
   },
   {
-    title: "Preliminary 3-Month Trajectory",
-    desc: "Directional advisory roadmap — serves as a conversation starter for multi-month commitment.",
+    title: "3-Month Trajectory",
+    desc: "A high-level directional plan for the advisory engagement — preliminary and non-contractual until the client proceeds.",
   },
 ];
 
 const DiscoverySprintSection = () => (
-  <AnimatedSection>
+  <AnimatedSection alt>
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
-      <motion.p variants={labelSlide} className="section-label mb-4">PRE-EXECUTION</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-4">ALIGNMENT</motion.p>
       <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
-        Alignment Sprint
+        Pre-Execution Alignment Sprint
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-4 max-w-[620px] leading-relaxed">
-        Before committing advisory resources to execution, we conduct a focused alignment sprint to ensure every hour invested is directed by reality — not assumptions.
-      </motion.p>
-      <motion.p variants={fadeUp} className="text-sm text-text-muted-custom mb-12 max-w-[620px]">
-        This is standard practice for senior advisory engagements. It protects both parties and ensures the monthly engagement is tailored precisely to where Anori is today.
+      <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12 max-w-[620px] leading-relaxed">
+        Before committing advisory resources, we conduct a focused sprint to ensure the engagement is tailored precisely to where Anori is today.
       </motion.p>
 
       {/* Sprint cards */}
-      <div className="grid sm:grid-cols-3 gap-4 md:gap-5 mb-10">
+      <div className="grid sm:grid-cols-3 gap-4 md:gap-5 mb-8">
         {sprintCards.map((card) => (
-          <motion.div key={card.num} variants={fadeUp} className="module-card relative pt-12">
-            <div className="absolute -top-4 left-5">
+          <motion.div key={card.num} variants={fadeUp} className="module-card relative pt-5">
+            <div className="flex items-start gap-3 mb-3">
               <div
-                className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
                 style={{
                   background: "linear-gradient(135deg, hsl(224 65% 51%), hsl(224 80% 67%))",
                   boxShadow: "var(--shadow-sm)",
@@ -75,10 +77,12 @@ const DiscoverySprintSection = () => (
               >
                 {card.num}
               </div>
+              <div>
+                <span className="tag-accent mb-2">ALIGNMENT</span>
+                <h3 className="text-[15px] font-semibold text-text-primary mt-1">{card.title}</h3>
+              </div>
             </div>
-            <span className="tag-accent mb-3">ALIGNMENT</span>
-            <h3 className="text-[15px] font-semibold text-text-primary mt-2 mb-3">{card.title}</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 ml-11">
               {card.items.map((item) => (
                 <li key={item} className="flex items-start gap-2.5 text-[13px] text-text-secondary leading-relaxed">
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-sm bg-accent shrink-0" />
@@ -90,35 +94,29 @@ const DiscoverySprintSection = () => (
         ))}
       </div>
 
-      {/* Meeting cadence */}
-      <motion.div variants={fadeUp} className="rounded-lg bg-card border border-border px-5 py-4 text-center mb-6">
-        <p className="text-sm text-text-secondary leading-relaxed">
-          <span className="font-semibold text-text-primary">Minimum three meetings</span> across the sprint — technical team session, partner or customer-facing conversation, and recap alignment session. Two senior advisors attend at least two of the three sessions.
-        </p>
-      </motion.div>
-
-      {/* Pricing bar */}
-      <motion.div
-        variants={fadeUp}
-        className="rounded-lg px-5 py-4 text-center mb-10"
-        style={{
-          background: "hsl(224 65% 51% / 0.04)",
-          border: "1px solid hsl(224 65% 51% / 0.2)",
-        }}
-      >
-        <p className="text-[15px] font-semibold text-text-primary">
-          $1,500 – $2,000 fixed fee
-          <span className="text-sm font-normal text-text-secondary ml-2">· Full credit applied toward Month 1</span>
-        </p>
+      {/* Info bar */}
+      <motion.div variants={fadeUp} className="rounded-lg bg-card border border-border px-5 py-4 mb-8">
+        <div className="grid sm:grid-cols-3 gap-4 sm:gap-0 sm:divide-x sm:divide-border text-center">
+          {infoItems.map((item) => (
+            <div key={item.title} className="px-4">
+              <p className={`text-sm font-semibold mb-0.5 ${item.accent ? "text-accent" : "text-text-primary"}`}>
+                {item.title}
+              </p>
+              <p className="text-xs text-text-muted-custom">{item.sub}</p>
+            </div>
+          ))}
+        </div>
       </motion.div>
 
       {/* Deliverables */}
-      <motion.div variants={fadeUp} className="mb-8">
-        <h3 className="text-lg font-semibold text-text-primary mb-1">Discovery Deliverables</h3>
-        <p className="text-[13px] text-text-muted-custom mb-5">These deliverables are yours regardless of whether the engagement continues.</p>
-        <div className="grid sm:grid-cols-3 gap-4">
+      <motion.div variants={fadeUp} className="module-card-highlight mb-8">
+        <span className="tag-accent mb-3">DISCOVERY DELIVERABLES</span>
+        <h3 className="text-lg font-semibold mt-2 mb-5 text-text-primary">
+          What You Receive — Regardless of Whether the Engagement Continues
+        </h3>
+        <div className="grid sm:grid-cols-3 gap-5">
           {deliverables.map((d) => (
-            <div key={d.title} className="module-card">
+            <div key={d.title}>
               <h4 className="text-sm font-semibold text-text-primary mb-1">{d.title}</h4>
               <p className="text-[13px] text-text-secondary leading-relaxed">{d.desc}</p>
             </div>
@@ -128,9 +126,9 @@ const DiscoverySprintSection = () => (
 
       <motion.p
         variants={fadeUp}
-        className="text-[13px] text-text-muted-custom italic text-center max-w-[560px] mx-auto"
+        className="text-[13px] text-text-muted-custom italic text-center max-w-[580px] mx-auto"
       >
-        If the engagement proceeds, the Discovery fee credits toward Month 1 — making it a no-cost step for the client. If it does not, the client retains all deliverables outright.
+        If the engagement does not proceed, these deliverables are yours to keep. If it does, the Discovery fee credits toward Month 1 and the summary deepens into an execution plan.
       </motion.p>
     </div>
   </AnimatedSection>

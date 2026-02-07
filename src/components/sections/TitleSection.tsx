@@ -11,7 +11,7 @@ const chipFade = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } },
 };
 
-const focusChips = ["Product Development", "Go-to-Market Strategy", "Partnership Activation"];
+const focusChips = ["Strategic Advisory", "Go-to-Market Partnership", "Partnership Activation"];
 
 const TitleSection = () => (
   <section className="relative flex items-center justify-center overflow-hidden py-20 md:py-28 bg-surface">
