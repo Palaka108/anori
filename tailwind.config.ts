@@ -58,6 +58,10 @@ export default {
           DEFAULT: "hsl(var(--gold))",
           surface: "hsl(var(--gold-surface))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          surface: "hsl(var(--success-surface))",
+        },
         surface: {
           DEFAULT: "hsl(var(--surface))",
           elevated: "hsl(var(--surface-elevated))",
