@@ -56,8 +56,16 @@ const RetainerSection = () => (
         We surface options and recommendations. Final priorities are decided with the CEO.
       </motion.p>
 
-      {/* Block 3 — Selective Senior Coverage */}
-      <motion.div variants={fadeUp} className="rounded-lg bg-card border border-border px-5 py-5 mb-6">
+      {/* Block 3 — Selective Senior Coverage — glass panel */}
+      <motion.div
+        variants={fadeUp}
+        className="rounded-lg px-5 py-5 mb-6 border"
+        style={{
+          background: "hsl(220 18% 12% / 0.6)",
+          backdropFilter: "blur(12px)",
+          borderColor: "hsl(200 90% 50% / 0.1)",
+        }}
+      >
         <h3 className="text-[15px] font-semibold text-text-primary mb-2">Selective Senior Coverage</h3>
         <p className="text-[13px] text-text-secondary leading-relaxed">
           Two senior advisors with joint development and Fortune 50 partnership experience. Both attend key sessions — not every session. Coverage is intentional, not performative. Architecture and enterprise expertise applied where they move the needle.

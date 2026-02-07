@@ -58,7 +58,7 @@ const Index = () => {
   };
 
   return (
-    <div className="bg-surface min-h-screen">
+    <div className="bg-background min-h-screen">
       <DotNav sections={sectionLabels} activeIndex={activeIndex} onDotClick={scrollTo} />
       <div ref={setRef(0)}><TitleSection /></div>
       <div ref={setRef(1)}><EngagementOverview /></div>

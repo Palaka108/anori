@@ -13,11 +13,11 @@ const PhaseCircle = ({ num, size = 56 }: { num: string; size?: number }) => (
     style={{
       width: size,
       height: size,
-      background: "linear-gradient(135deg, hsl(224 65% 51%), hsl(224 80% 67%))",
-      boxShadow: "var(--shadow-md)",
+      background: "linear-gradient(135deg, hsl(200 90% 50%), hsl(200 100% 65%))",
+      boxShadow: "var(--shadow-md), 0 0 20px rgba(0, 180, 255, 0.15)",
     }}
   >
-    <span className="text-[22px] font-bold text-white">{num}</span>
+    <span className="text-[22px] font-bold" style={{ color: "hsl(220 20% 8%)" }}>{num}</span>
   </motion.div>
 );
 

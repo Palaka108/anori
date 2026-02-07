@@ -3,7 +3,7 @@ import BlueprintGrid from "../BlueprintGrid";
 
 const fade = {
   hidden: { opacity: 0, y: 16 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] as const } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const } },
 };
 
 const chipFade = {
@@ -14,8 +14,15 @@ const chipFade = {
 const focusChips = ["Strategic Advisory", "Go-to-Market Partnership", "Partnership Activation"];
 
 const TitleSection = () => (
-  <section className="relative flex items-center justify-center overflow-hidden py-20 md:py-28 bg-surface">
+  <section className="relative flex items-center justify-center overflow-hidden py-20 md:py-28 section-surface">
     <BlueprintGrid />
+    {/* Radial glow behind title */}
+    <div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] pointer-events-none"
+      style={{
+        background: "radial-gradient(ellipse, hsl(200 90% 50% / 0.08), transparent 70%)",
+      }}
+    />
 
     <motion.div
       initial="hidden"
@@ -24,7 +31,7 @@ const TitleSection = () => (
       variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
       className="relative z-10 w-full max-w-3xl mx-auto px-5 text-center"
     >
-      {/* Client name — top of hierarchy */}
+      {/* Client name */}
       <motion.div variants={fade} className="mb-6">
         <span className="text-[22px] sm:text-[28px] md:text-[32px] font-normal text-accent">
           Anori
@@ -48,8 +55,11 @@ const TitleSection = () => (
           <motion.span
             key={p}
             variants={chipFade}
-            className="text-[13px] font-medium text-accent bg-accent-surface border border-accent-border rounded-full px-5 py-2 select-none"
-            style={{ background: "rgba(47,95,215,0.06)", borderColor: "rgba(47,95,215,0.2)" }}
+            className="text-[13px] font-medium text-accent rounded-full px-5 py-2 select-none border"
+            style={{
+              background: "hsl(200 90% 50% / 0.06)",
+              borderColor: "hsl(200 90% 50% / 0.2)",
+            }}
           >
             {p}
           </motion.span>
@@ -61,7 +71,7 @@ const TitleSection = () => (
         February 2026 · Confidential
       </motion.p>
 
-      {/* Gosai badge — bottom */}
+      {/* Gosai badge */}
       <motion.div variants={fade} className="mt-12">
         <span className="text-[11px] uppercase tracking-[0.08em] text-text-muted-custom border border-border rounded px-[18px] py-1.5 inline-block font-medium select-none">
           GOSAI · gosai.io
