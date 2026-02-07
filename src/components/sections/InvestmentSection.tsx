@@ -6,7 +6,7 @@ import PhaseCircle from "../PhaseCircle";
 const discoveryFeatures = [
   "3 focused alignment meetings",
   "Two senior advisors present",
-  "2-page Discovery Summary",
+  "Current Stage Assessment document",
   "Tailored Month 1 definition",
   "Preliminary 3-month trajectory",
   "Deliverables retained regardless",
@@ -16,9 +16,9 @@ const monthlyFeatures = [
   "Senior advisory coverage with priority access",
   "CRM and infrastructure setup (scope informed by Discovery)",
   "Follow-up architecture and calendar system",
-  "ICP hypothesis mapping across verticals",
+  "Customer Persona ICP mapping across verticals",
   "Market Intelligence Report",
-  "Weekly pipeline dashboards",
+  "Weekly reports and pipeline dashboards",
   "Email templates and outreach prep",
   "CRM training guide for primary user",
 ];
@@ -27,9 +27,9 @@ const continuityFeatures = [
   { text: "Everything in Monthly Advisory Package", gold: false },
   { text: "Month 2: Activation & Guided Outbound", gold: false },
   { text: "Month 3: Refinement & Frameworks", gold: false },
-  { text: "Custom MEDDIC-style analysis", gold: true },
+  { text: "Custom pre-product partnership framework integrated in CRM", gold: true },
   { text: "Automation recommendation analysis", gold: true },
-  { text: "Full partnership scoreboard", gold: true },
+  { text: "Partnership analysis", gold: true },
   { text: "Dashboard alignment", gold: true },
   { text: "Hiring readiness considerations", gold: true },
   { text: "30/60/90 strategic framework", gold: true },
@@ -69,7 +69,7 @@ const InvestmentSection = () => (
           <div className="mb-4">
             <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Pre-Execution</p>
             <div className="flex items-baseline gap-1">
-              <span className="text-[32px] font-bold text-text-primary">$1,500</span>
+              <span className="text-[32px] font-bold text-text-primary">$1,800</span>
               <span className="text-sm text-text-muted-custom">/fixed</span>
             </div>
             <p className="text-xs font-medium uppercase tracking-wider text-accent mt-1">Credits toward Month 1</p>
