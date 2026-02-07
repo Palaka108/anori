@@ -6,67 +6,57 @@ const fade = {
 };
 
 const HeroSection = () => (
-  <section className="relative flex items-center justify-center py-24 md:py-36 section-surface overflow-hidden">
-    {/* Subtle radial glow */}
-    <div
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] pointer-events-none"
-      style={{ background: "radial-gradient(ellipse, hsl(215 70% 50% / 0.04), transparent 70%)" }}
-    />
-
+  <section className="relative flex items-center justify-center py-28 md:py-40 overflow-hidden"
+    style={{ background: "linear-gradient(180deg, hsl(224 65% 52% / 0.03) 0%, hsl(220 14% 97%) 100%)" }}
+  >
     <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
       variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-      className="relative z-10 w-full max-w-3xl mx-auto px-5 text-center"
+      className="relative z-10 w-full max-w-[720px] mx-auto px-5 text-center"
     >
-      {/* Eyebrow */}
-      <motion.p variants={fade} className="text-sm font-medium text-accent tracking-wide mb-4">
-        Revenue Systems Advisory for Early-Stage Founders
-      </motion.p>
-
-      {/* Main headline */}
+      {/* Title */}
       <motion.h1
         variants={fade}
-        className="text-[28px] sm:text-[36px] md:text-[44px] font-bold leading-tight text-text-primary mb-6"
+        className="text-[32px] sm:text-[40px] md:text-[48px] font-bold leading-[1.15] text-text-primary mb-5 tracking-tight"
       >
-        Your product is strong.
-        <br />
-        <span className="text-accent">Your revenue system isn't built yet.</span>
+        ANORI
       </motion.h1>
 
-      {/* Subtitle */}
+      {/* Proposal subtitle */}
       <motion.p
         variants={fade}
-        className="text-base sm:text-lg text-text-secondary max-w-xl mx-auto mb-8 leading-relaxed"
+        className="text-lg sm:text-xl md:text-[22px] font-medium text-text-secondary mb-6 leading-snug"
       >
-        We help early-stage founders in AEC and building-tech go from scattered leads and fuzzy GTM to a working CRM, clear pipeline, and a 90-day plan that earns investor confidence.
+        Commercial Advisory Engagement Proposal
       </motion.p>
 
-      {/* Pain points */}
-      <motion.div variants={fade} className="flex flex-col sm:flex-row justify-center gap-3 mb-10">
-        {["Leads buried in spreadsheets", "No repeatable follow-up", "Can't tell a traction story"].map((p) => (
-          <span
-            key={p}
-            className="text-[13px] text-text-secondary bg-surface-subtle border border-border rounded-full px-4 py-2"
-          >
-            {p}
-          </span>
-        ))}
-      </motion.div>
+      {/* Divider */}
+      <motion.div variants={fade} className="section-divider max-w-[200px] mx-auto mb-8" />
 
-      {/* Engagement flow */}
-      <motion.p variants={fade} className="text-sm text-text-muted-custom mb-10">
-        Alignment Sprint → CRM + Lead Foundation → Guided Outbound → Frameworks You Keep
+      {/* Subtext */}
+      <motion.p
+        variants={fade}
+        className="text-[15px] text-text-muted-custom max-w-lg mx-auto mb-10 leading-relaxed"
+      >
+        Structured advisory support for early-stage building-tech initiatives — designed to earn clarity before scale.
       </motion.p>
 
-      {/* Footer badges */}
-      <motion.div variants={fade} className="flex flex-col items-center gap-4">
-        <span className="text-[11px] uppercase tracking-[0.08em] text-text-muted-custom border border-border rounded px-4 py-1.5 inline-block font-medium">
-          GOSAI · gosai.io
-        </span>
-        <p className="text-xs text-text-muted-custom">Confidential · February 2026</p>
+      {/* CTAs */}
+      <motion.div variants={fade} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
+        <a href="#engagement-overview" className="px-6 py-3 rounded-lg bg-accent text-accent-foreground text-sm font-semibold transition-all hover:opacity-90">
+          View Engagement Structure
+        </a>
+        <a href="#alignment-phase" className="px-6 py-3 rounded-lg border border-border text-text-secondary text-sm font-medium transition-all hover:border-accent hover:text-accent">
+          Proceed with Alignment Phase
+        </a>
       </motion.div>
+
+      {/* Meta */}
+      <motion.p variants={fade} className="text-xs text-text-muted-custom tracking-wide">
+        February 2026 · Confidential
+      </motion.p>
     </motion.div>
   </section>
 );

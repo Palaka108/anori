@@ -1,31 +1,23 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import DotNav from "@/components/DotNav";
 import HeroSection from "@/components/sections/HeroSection";
-import FounderRealitySection from "@/components/sections/FounderRealitySection";
-import HowAnoriHelpsSection from "@/components/sections/HowAnoriHelpsSection";
+import EngagementOverviewSection from "@/components/sections/EngagementOverviewSection";
 import AlignmentSprintSection from "@/components/sections/AlignmentSprintSection";
 import Month1Section from "@/components/sections/Month1Section";
-import Month2Section from "@/components/sections/Month2Section";
-import Month3Section from "@/components/sections/Month3Section";
+import ThreeMonthSection from "@/components/sections/ThreeMonthSection";
 import ScopeClaritySection from "@/components/sections/ScopeClaritySection";
-import InvestmentSection from "@/components/sections/InvestmentSection";
-import AboutSection from "@/components/sections/AboutSection";
-import CTASection from "@/components/sections/CTASection";
-import FAQSection from "@/components/sections/FAQSection";
+import EngagementFlowSection from "@/components/sections/EngagementFlowSection";
+import FooterSection from "@/components/sections/FooterSection";
 
 const sectionLabels = [
-  "Home",
-  "Reality",
-  "How It Works",
-  "Alignment Sprint",
-  "Month 1",
-  "Month 2",
-  "Month 3",
+  "Proposal",
+  "Overview",
+  "Phase 1",
+  "Phase 2",
+  "Phase 3",
   "Scope",
-  "Investment",
-  "About",
-  "Next Step",
-  "FAQ",
+  "Process",
+  "Footer",
 ];
 
 const Index = () => {
@@ -67,17 +59,13 @@ const Index = () => {
     <div className="bg-background min-h-screen">
       <DotNav sections={sectionLabels} activeIndex={activeIndex} onDotClick={scrollTo} />
       <div ref={setRef(0)}><HeroSection /></div>
-      <div ref={setRef(1)}><FounderRealitySection /></div>
-      <div ref={setRef(2)}><HowAnoriHelpsSection /></div>
-      <div ref={setRef(3)}><AlignmentSprintSection /></div>
-      <div ref={setRef(4)}><Month1Section /></div>
-      <div ref={setRef(5)}><Month2Section /></div>
-      <div ref={setRef(6)}><Month3Section /></div>
-      <div ref={setRef(7)}><ScopeClaritySection /></div>
-      <div ref={setRef(8)}><InvestmentSection /></div>
-      <div ref={setRef(9)}><AboutSection /></div>
-      <div ref={setRef(10)}><CTASection /></div>
-      <div ref={setRef(11)}><FAQSection /></div>
+      <div ref={setRef(1)}><EngagementOverviewSection /></div>
+      <div ref={setRef(2)}><AlignmentSprintSection /></div>
+      <div ref={setRef(3)}><Month1Section /></div>
+      <div ref={setRef(4)}><ThreeMonthSection /></div>
+      <div ref={setRef(5)}><ScopeClaritySection /></div>
+      <div ref={setRef(6)}><EngagementFlowSection /></div>
+      <div ref={setRef(7)}><FooterSection /></div>
     </div>
   );
 };
