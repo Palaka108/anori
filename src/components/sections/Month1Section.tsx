@@ -14,7 +14,7 @@ const modules = [
   },
   {
     tag: "DISCOVERY",
-    title: "ICP Hypothesis Mapping",
+    title: "Customer Persona ICP Mapping",
     desc: "Document potential customer profiles across Building Departments, AEC, and adjacent verticals. Identify an initial 80/20 list of highest-potential partnerships — building on Discovery Sprint signals.",
   },
   {

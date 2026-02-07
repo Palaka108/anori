@@ -14,8 +14,8 @@ const coreModules = [
 
 const exclusiveModules = [
   {
-    title: "Custom MEDDIC-Style Analysis",
-    desc: "A custom MEDDIC-style approach adapted for pre-product partnership needs. A framework for how future team members could approach these conversations.",
+    title: "Custom Pre-Product Partnership Framework",
+    desc: "A custom partnership framework integrated in CRM, adapted for pre-product partnership needs. A framework for how future team members could approach these conversations.",
   },
   {
     title: "Dashboard Alignment",
@@ -26,7 +26,7 @@ const exclusiveModules = [
     desc: "Considerations for your next BD hire — profile, timing, compensation benchmarks, and readiness criteria.",
   },
   {
-    title: "Partnership Scoreboard",
+    title: "Partnership Analysis",
     desc: "An industry-level matrix of partnership opportunities, approach recommendations, and prioritization based on current team and resources.",
   },
 ];

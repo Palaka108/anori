@@ -34,13 +34,13 @@ const sprintCards = [
 const infoItems = [
   { title: "3 Meetings Minimum", sub: "Technical, partner, and alignment sessions", accent: false },
   { title: "2 Senior Advisors", sub: "Present at a minimum of two sessions", accent: false },
-  { title: "$1,500", sub: "Full credit toward Month 1 if engagement proceeds", accent: true },
+  { title: "$1,800", sub: "Full credit toward Month 1 if engagement proceeds", accent: true },
 ];
 
 const deliverables = [
   {
-    title: "Discovery Summary",
-    desc: "Two-page assessment of what exists today, what doesn't, immediate risks, and recommended next actions.",
+    title: "Current Stage Assessment",
+    desc: "A comprehensive document used to tailor Month 1 and beyond — including potential automations to be built.",
   },
   {
     title: "Tailored Month 1 Definition",
