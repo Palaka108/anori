@@ -1,83 +1,82 @@
 import { motion } from "framer-motion";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
-const hourItems = [
-  { title: "Strategy Sessions", desc: "Internal planning, market positioning, pipeline reviews" },
-  { title: "Outbound Execution", desc: "Customer-facing calls, emails, LinkedIn engagement" },
-  { title: "Hands-On Support", desc: "CRM setup, system walkthroughs, team enablement" },
+const monthlyCards = [
+  { title: "Strategy & Planning", desc: "Market positioning, pipeline reviews, and advisory sessions — tailored to Discovery findings." },
+  { title: "Outbound Execution", desc: "Customer-facing calls, emails, LinkedIn engagement — targeting accounts surfaced in the Alignment Sprint." },
+  { title: "Hands-On Support", desc: "CRM decisions, system walkthroughs, team enablement — scoped to what actually needs to happen." },
 ];
 
-const behindScenes = [
-  "Strategic planning and market research",
-  "CRM configuration and pipeline management",
+const opsLeft = [
+  "Strategic planning and research",
+  "CRM configuration and pipeline ops",
   "Advanced lead and market analysis",
-  "Weekly reporting and dashboard development",
-  "Email template creation and outreach prep",
-  "System recommendations and automation scoping",
+];
+
+const opsRight = [
+  "Weekly reporting and dashboards",
+  "Email templates and outreach prep",
+  "System and automation scoping",
 ];
 
 const RetainerSection = () => (
   <AnimatedSection>
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
-      <motion.p variants={labelSlide} className="section-label mb-4">YOUR ADVISORY PACKAGE</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-4">ADVISORY MODEL</motion.p>
       <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
-        More Than Hours — A Full Advisory Operation
+        How the Advisory Operates
       </motion.h2>
       <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12 max-w-2xl leading-relaxed">
-        This isn't a time-and-materials engagement. It's a senior advisory team running your go-to-market operation behind the scenes — with dedicated direct time each month.
+        Clear ownership. Selective senior coverage. Outcome-driven execution.
       </motion.p>
 
-      {/* Block 1 — The Team */}
-      <motion.div variants={fadeUp} className="module-card-highlight mb-6">
-        <span className="tag-accent mb-3">YOUR TEAM</span>
-        <h3 className="text-lg font-semibold mt-2 mb-1 text-text-primary">Two Senior Enterprise Professionals</h3>
-        <p className="text-[15px] text-text-secondary mb-4">Specializing in Joint Development Engagements</p>
-        <p className="text-sm text-text-secondary leading-relaxed mb-3">
-          Your engagement is led by two senior enterprise professionals. One brings extensive experience co-developing partnerships and joint development engagements with one of the world's largest defense contractors, having architected go-to-market strategies for complex enterprise deals at the Fortune 50 level.
-        </p>
-        <p className="text-sm text-text-secondary leading-relaxed">
-          The second brings co-partnered solutions experience between Fortune 50 companies, combined with a Bachelor of Science in Architecture and LEED Certification — offering a unique blend of enterprise sales expertise and deep technical understanding of the building and architecture industry that Anori's market position demands.
-        </p>
-      </motion.div>
-
-      {/* Block 2 — How the Hours Work */}
+      {/* Block 1 — Single Point of Ownership */}
       <motion.div variants={fadeUp} className="module-card mb-6">
-        <h3 className="text-lg font-semibold text-text-primary mb-1">Senior Advisory Coverage with Priority Access</h3>
-        <p className="text-sm text-text-muted-custom mb-6">We surface strategic options — decisions are made together.</p>
-
-        <div className="grid sm:grid-cols-3 gap-5 mb-5">
-          {hourItems.map((item) => (
-            <div key={item.title}>
-              <h4 className="text-sm font-semibold text-text-primary mb-1">{item.title}</h4>
-              <p className="text-[13px] text-text-secondary leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className="text-[13px] text-text-muted-custom italic">
-          Advisory continuity maintained across the engagement window.
+        <span className="tag-accent mb-3">CORE</span>
+        <h3 className="text-base font-semibold text-text-primary mt-2 mb-2">Single Point of Ownership</h3>
+        <p className="text-sm text-text-secondary leading-relaxed">
+          One accountable advisor manages your engagement end-to-end. Decisions surface to the CEO — never buried in committee.
         </p>
       </motion.div>
 
-      {/* Block 3 — Behind the Scenes */}
-      <motion.div variants={fadeUp} className="module-card mb-8">
-        <h3 className="text-base font-semibold text-text-primary mb-1">Ongoing Operations — Beyond Direct Advisory</h3>
-        <p className="text-[13px] text-text-muted-custom mb-5">This work happens continuously, not just during scheduled sessions.</p>
+      {/* Block 2 — What You Get Each Month */}
+      <div className="grid sm:grid-cols-3 gap-4 md:gap-5 mb-4">
+        {monthlyCards.map((item) => (
+          <motion.div key={item.title} variants={fadeUp} className="module-card">
+            <div className="flex items-start gap-2.5 mb-2">
+              <span className="mt-1 w-2.5 h-2.5 rounded-sm bg-accent shrink-0" />
+              <h4 className="text-sm font-semibold text-text-primary">{item.title}</h4>
+            </div>
+            <p className="text-[13px] text-text-secondary leading-relaxed ml-5">{item.desc}</p>
+          </motion.div>
+        ))}
+      </div>
 
-        <div className="grid sm:grid-cols-2 gap-3">
-          {behindScenes.map((item) => (
-            <div key={item} className="flex items-start gap-2.5">
+      <motion.p variants={fadeUp} className="text-[13px] text-text-muted-custom italic text-center mb-8">
+        We surface options and recommendations. Final priorities are decided with the CEO.
+      </motion.p>
+
+      {/* Block 3 — Selective Senior Coverage */}
+      <motion.div variants={fadeUp} className="rounded-lg bg-card border border-border px-5 py-5 mb-6">
+        <h3 className="text-[15px] font-semibold text-text-primary mb-2">Selective Senior Coverage</h3>
+        <p className="text-[13px] text-text-secondary leading-relaxed">
+          Two senior advisors with joint development and Fortune 50 partnership experience. Both attend key sessions — not every session. Coverage is intentional, not performative. Architecture and enterprise expertise applied where they move the needle.
+        </p>
+      </motion.div>
+
+      {/* Block 4 — Ongoing Operations */}
+      <motion.div variants={fadeUp} className="mb-0">
+        <h3 className="text-[15px] font-semibold text-text-primary mb-1">Beyond Direct Engagement</h3>
+        <p className="text-xs text-text-muted-custom mb-4">Continuous work that happens outside scheduled sessions.</p>
+        <div className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
+          {[...opsLeft, ...opsRight].map((item, i) => (
+            <div key={item} className={`flex items-start gap-2.5 ${i < 3 ? "sm:col-start-1" : "sm:col-start-2"}`}>
               <span className="mt-1.5 w-1.5 h-1.5 rounded-sm bg-accent shrink-0" />
               <span className="text-sm text-text-secondary">{item}</span>
             </div>
           ))}
         </div>
       </motion.div>
-
-      {/* Closing */}
-      <motion.p variants={fadeUp} className="text-sm text-text-muted-custom italic text-center max-w-[560px] mx-auto">
-        We outline recommended activities each month based on what we're seeing in your pipeline. You adjust the plan based on outcomes and priorities.
-      </motion.p>
     </div>
   </AnimatedSection>
 );

@@ -5,17 +5,17 @@ const modules = [
   {
     tag: "INFRASTRUCTURE",
     title: "Lead Organization",
-    desc: "Consolidate existing leads into a structured CRM — informed by Discovery findings on what exists and what's net-new. Up to 5 user seats included.",
+    desc: "Consolidate existing leads into a structured CRM — scope and platform informed by the Alignment Sprint. Data migration approach tailored to what actually exists.",
   },
   {
     tag: "SYSTEMS",
     title: "Follow-Up Architecture",
-    desc: "Design a structured follow-up system with calendar-based assignments, team routing, and email templates — scoped to match the CRM decisions from the Alignment Sprint.",
+    desc: "Design a structured follow-up system with calendar-based assignments, team routing, and email templates — calibrated to current team capacity and lead volume.",
   },
   {
     tag: "DISCOVERY",
     title: "ICP Hypothesis Mapping",
-    desc: "Begin documenting potential customer profiles across Building Departments, AEC, and adjacent verticals. Identify an initial 80/20 list of highest-potential partnerships.",
+    desc: "Document potential customer profiles across Building Departments, AEC, and adjacent verticals. Identify an initial 80/20 list of highest-potential partnerships — building on Discovery Sprint signals.",
   },
   {
     tag: "ENABLEMENT",
@@ -41,10 +41,10 @@ const Month1Section = () => (
     <div className="w-full max-w-[1080px] mx-auto px-5 md:px-10">
       <motion.p variants={labelSlide} className="section-label mb-4">MONTH 1</motion.p>
       <motion.h2 variants={fadeUp} className="text-[26px] sm:text-[32px] md:text-[36px] font-bold mb-4 text-text-primary">
-        Foundation & Discovery
+        Foundation
       </motion.h2>
       <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12">
-        Building the infrastructure and surfacing initial market signals — informed by the Alignment Sprint.
+        Building the infrastructure and surfacing initial market signals — informed by Discovery findings.
       </motion.p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 mb-10">
@@ -82,7 +82,7 @@ const Month1Section = () => (
         variants={fadeUp}
         className="text-[13px] text-text-muted-custom italic text-center max-w-[560px] mx-auto"
       >
-        Month 1 activities are confirmed during the Alignment Sprint — not assumed. Anything not covered here can be scoped into future phases.
+        Phase 1 activities are informed by the Alignment Sprint — not predetermined. Anything not covered here can be scoped into future phases.
       </motion.p>
     </div>
   </AnimatedSection>

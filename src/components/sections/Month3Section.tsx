@@ -57,7 +57,7 @@ const Month3Section = () => (
       <motion.div variants={fadeUp} className="mb-6">
         <h3 className="text-xl font-semibold text-text-primary mb-2">Extended Advisory Modules</h3>
         <p className="text-sm text-text-secondary">
-          Available exclusively in the Advisory Continuity Package. Built from real engagement data.
+          Available in multi-month engagements. Built from real engagement data.
         </p>
       </motion.div>
 

@@ -4,37 +4,41 @@ import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 import PhaseCircle from "../PhaseCircle";
 
 const discoveryFeatures = [
-  "Technical & product deep dive",
-  "Partner & market reality check",
-  "GTM & CRM alignment session",
-  "Two-page Discovery Summary",
+  "3 focused alignment meetings",
+  "Two senior advisors present",
+  "2-page Discovery Summary",
   "Tailored Month 1 definition",
+  "Preliminary 3-month trajectory",
+  "Deliverables retained regardless",
 ];
 
 const monthlyFeatures = [
   "Senior advisory coverage with priority access",
-  "CRM and infrastructure decisions informed by Discovery",
-  "Outbound strategy and execution support",
+  "CRM and infrastructure setup (scope informed by Discovery)",
+  "Follow-up architecture and calendar system",
+  "ICP hypothesis mapping across verticals",
   "Market Intelligence Report",
   "Weekly pipeline dashboards",
-  "Monthly progress reports",
-  "Partnership analysis",
+  "Email templates and outreach prep",
+  "CRM training guide for primary user",
 ];
 
 const continuityFeatures = [
-  { text: "Everything in Monthly Advisory", gold: false },
+  { text: "Everything in Monthly Advisory Package", gold: false },
+  { text: "Month 2: Activation & Guided Outbound", gold: false },
+  { text: "Month 3: Refinement & Frameworks", gold: false },
+  { text: "Custom MEDDIC-style analysis", gold: true },
   { text: "Automation recommendation analysis", gold: true },
-  { text: "Custom MEDDIC-style analysis for pre-product needs", gold: true },
   { text: "Full partnership scoreboard", gold: true },
-  { text: "Dashboard alignment recommendations", gold: true },
+  { text: "Dashboard alignment", gold: true },
   { text: "Hiring readiness considerations", gold: true },
   { text: "30/60/90 strategic framework", gold: true },
 ];
 
 const steps = [
-  { num: "01", title: "Alignment Sprint", desc: "Focused discovery to understand reality before committing resources" },
-  { num: "02", title: "Monthly Advisory", desc: "Confirmed or adjusted engagement based on Discovery findings" },
-  { num: "03", title: "Continuity Decision", desc: "Multi-month options discussed with full clarity on scope" },
+  { num: "01", title: "Alignment Sprint", desc: "Schedule the Discovery Sprint to establish baseline clarity" },
+  { num: "02", title: "Review Findings", desc: "Review Discovery deliverables and confirm engagement scope" },
+  { num: "03", title: "Begin Month 1", desc: "Launch the tailored advisory engagement" },
 ];
 
 const pricingCardEntry = {
@@ -55,23 +59,22 @@ const InvestmentSection = () => (
         Engagement Options
       </motion.h2>
       <motion.p variants={fadeUp} className="text-base sm:text-[17px] text-text-secondary mb-12">
-        A disciplined sequence: understand first, then act. Each step builds on confirmed reality.
+        A disciplined path from alignment to advisory — designed to reduce risk for both parties.
       </motion.p>
 
       {/* 3-tier pricing */}
       <div className="grid md:grid-cols-3 gap-5 md:gap-5 mb-10">
         {/* Discovery Sprint */}
-        <motion.div variants={pricingCardEntry} className="module-card" style={{ boxShadow: "var(--shadow-md)" }}>
-          <div className="mb-5">
+        <motion.div variants={pricingCardEntry} className="module-card" style={{ boxShadow: "var(--shadow-sm)" }}>
+          <div className="mb-4">
             <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Pre-Execution</p>
             <div className="flex items-baseline gap-1">
               <span className="text-[32px] font-bold text-text-primary">$1,500</span>
-              <span className="text-sm text-text-muted-custom">– $2,000</span>
+              <span className="text-sm text-text-muted-custom">/fixed</span>
             </div>
-            <p className="text-[11px] font-medium text-text-muted-custom mt-1">Fixed fee · Credits toward Month 1</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-accent mt-1">Credits toward Month 1</p>
           </div>
-          <div className="h-px bg-border mb-5" />
-          <h4 className="text-sm font-semibold text-text-primary mb-3">Alignment Sprint</h4>
+          <div className="h-px bg-border mb-4" />
           <ul className="space-y-2.5 mb-4">
             {discoveryFeatures.map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-[13px] text-text-secondary">
@@ -80,7 +83,7 @@ const InvestmentSection = () => (
               </li>
             ))}
           </ul>
-          <p className="text-[11px] text-text-muted-custom">3 meetings · 2 senior advisors · deliverables retained regardless</p>
+          <p className="text-xs text-text-muted-custom italic">Standard practice for senior advisory engagements.</p>
         </motion.div>
 
         {/* Monthly Advisory */}
@@ -102,10 +105,10 @@ const InvestmentSection = () => (
           <div className="mb-5">
             <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Monthly Advisory Package</p>
             <div className="flex items-baseline gap-1">
-              <span className="text-[36px] font-bold text-text-primary">$6,000</span>
-              <span className="text-sm text-text-muted-custom">/month</span>
+              <span className="text-[44px] font-bold text-accent">$6,000</span>
+              <span className="text-base text-text-muted-custom">/month</span>
             </div>
-            <p className="text-[11px] font-medium text-text-muted-custom mt-1">Pre-Discovery estimate · confirmed after Alignment Sprint</p>
+            <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted-custom mt-1">Initial estimate — confirmed or adjusted after Discovery</p>
           </div>
           <div className="h-px bg-border mb-5" />
           <ul className="space-y-2.5 mb-4">
@@ -116,24 +119,29 @@ const InvestmentSection = () => (
               </li>
             ))}
           </ul>
-          <p className="text-[11px] text-text-muted-custom">$300/hr available for supplemental advisory hours</p>
+          <p className="text-xs text-text-muted-custom italic mb-1">Monthly scope tailored by Discovery Sprint findings</p>
+          <p className="text-[11px] text-text-muted-custom">$300/hr available for supplemental advisory hours · Net 15</p>
         </motion.div>
 
-        {/* Advisory Continuity */}
+        {/* 3-Month Advisory */}
         <motion.div
           variants={pricingCardEntry}
           className="module-card"
           style={{
-            border: "1px solid rgb(212 168 67 / 0.15)",
-            boxShadow: "var(--shadow-md)",
+            border: "1px solid rgb(212 168 67 / 0.2)",
+            borderTop: "3px solid hsl(40, 62%, 52%)",
+            boxShadow: "var(--shadow-sm)",
           }}
         >
-          <div className="mb-5">
-            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">Advisory Continuity Package</p>
-            <p className="text-[15px] font-semibold text-text-primary">Discussed After Discovery</p>
-            <p className="text-[11px] font-medium text-text-muted-custom mt-1">Reflects efficiency of continuity, not reduced value</p>
+          <div className="mb-4">
+            <p className="text-xs font-medium uppercase tracking-wider text-text-muted-custom mb-2">3-Month Advisory Package</p>
+            <div className="flex items-baseline gap-1">
+              <span className="text-[32px] font-bold text-text-primary">$15,000</span>
+              <span className="text-sm text-text-muted-custom">/3 months</span>
+            </div>
+            <p className="text-[11px] font-medium uppercase tracking-wider text-text-muted-custom mt-1">Initial estimate — confirmed or adjusted after Discovery</p>
           </div>
-          <div className="h-px bg-border mb-5" />
+          <div className="h-px bg-border mb-4" />
           <ul className="space-y-2.5 mb-4">
             {continuityFeatures.map((item) => (
               <li key={item.text} className="flex items-start gap-2.5 text-[13px] text-text-secondary">
@@ -146,15 +154,15 @@ const InvestmentSection = () => (
               </li>
             ))}
           </ul>
-          <p className="text-[11px] text-text-muted-custom">Multi-month pricing discussed when both parties have full clarity on scope</p>
+          <p className="text-xs text-text-muted-custom italic">Reflects efficiency and continuity — not reduced value.</p>
         </motion.div>
       </div>
 
       <motion.p
         variants={fadeUp}
-        className="text-sm text-text-secondary text-center max-w-[580px] mx-auto mb-14"
+        className="text-[13px] text-text-muted-custom italic text-center max-w-[480px] mx-auto mb-14"
       >
-        Advisory from two senior enterprise professionals with Fortune 50 experience — at a fraction of the cost of a fractional CRO or retained consulting firm.
+        All pricing reflects initial estimates. Final scope and pricing are confirmed after the Alignment Sprint.
       </motion.p>
 
       {/* Next Steps */}
