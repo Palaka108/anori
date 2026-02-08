@@ -6,8 +6,8 @@ const fade = {
 };
 
 const FooterSection = () => {
-  const scrollToInitial = () => {
-    document.getElementById("initial-phase")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const scrollToDesign = () => {
+    document.getElementById("design-phase")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -22,11 +22,8 @@ const FooterSection = () => {
         <motion.div variants={fade} className="section-divider max-w-[80px] mx-auto mb-6" />
 
         <motion.div variants={fade} className="mb-6">
-          <button
-            onClick={scrollToInitial}
-            className="w-full sm:w-auto px-6 py-3.5 rounded-lg text-[14px] font-semibold bg-accent text-accent-foreground transition-all hover:opacity-90 active:scale-[0.97] min-h-[48px]"
-          >
-            Proceed with Initial Phase
+          <button onClick={scrollToDesign} className="btn-primary">
+            Proceed with Design Phase
           </button>
         </motion.div>
 

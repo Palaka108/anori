@@ -5,7 +5,6 @@ import Month1Section from "@/components/sections/Month1Section";
 import ThreeMonthSection from "@/components/sections/ThreeMonthSection";
 import ScopeBoundariesSection from "@/components/sections/ScopeBoundariesSection";
 import EngagementFlowSection from "@/components/sections/EngagementFlowSection";
-import PricingSection from "@/components/sections/PricingSection";
 import FooterSection from "@/components/sections/FooterSection";
 
 const Index = () => (
@@ -17,7 +16,6 @@ const Index = () => (
     <ThreeMonthSection />
     <ScopeBoundariesSection />
     <EngagementFlowSection />
-    <PricingSection />
     <FooterSection />
   </div>
 );

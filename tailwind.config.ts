@@ -46,6 +46,10 @@ export default {
           light: "hsl(var(--accent-light))",
           surface: "hsl(var(--accent-surface))",
         },
+        violet: {
+          DEFAULT: "hsl(var(--violet))",
+          surface: "hsl(var(--violet-surface))",
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
@@ -53,10 +57,6 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        gold: {
-          DEFAULT: "hsl(var(--gold))",
-          surface: "hsl(var(--gold-surface))",
         },
         success: {
           DEFAULT: "hsl(var(--success))",
