@@ -3,60 +3,64 @@ import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const month2 = [
   "Guided outbound execution",
-  "1–2 sequences across up to 5 target accounts",
-  "Limited number of touches appropriate for this stage",
+  "1–2 sequences",
+  "Up to 5 target accounts",
+  "Limited, stage-appropriate touches",
   "Weekly pipeline visibility",
-  "Automation and tooling recommendations",
+  "Tooling & automation recommendations",
 ];
 
 const month3 = [
-  "Pipeline refinement and hygiene",
+  "Pipeline refinement & hygiene",
   "30 / 60 / 90 advisory framework",
-  "Pre-product partnership framework (CRM-integrated)",
+  "CRM-integrated partnership framework",
   "Dashboard alignment guidance",
   "Hiring readiness considerations",
 ];
 
 const ThreeMonthSection = () => (
   <AnimatedSection id="three-month">
-    <div className="w-full max-w-[620px] mx-auto px-4 sm:px-5">
-      <motion.p variants={labelSlide} className="section-label mb-3 sm:mb-4">3-MONTH PACKAGE</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-2.5 sm:mb-3 text-text-primary">
+    <div className="content-container">
+      <motion.p variants={labelSlide} className="section-label mb-3">3-MONTH PACKAGE</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
         3-Month Advisory Package
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-[14px] text-text-secondary mb-6 sm:mb-8 leading-relaxed">
-        From execution to reusable frameworks.
-      </motion.p>
-
-      {/* Month 2 */}
-      <motion.div variants={fadeUp} className="tap-card mb-3">
-        <span className="tag-accent mb-2.5 sm:mb-3">MONTH 2 — ACTIVATION</span>
-        <ul className="space-y-2 mt-2">
-          {month2.map((item) => (
-            <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
-          ))}
-        </ul>
-      </motion.div>
-
-      {/* Month 2 Time Box */}
-      <motion.div variants={fadeUp} className="time-box mb-4 sm:mb-5">
-        <p className="text-[13px] text-text-primary leading-relaxed">
-          Month 2 includes <span className="font-semibold">up to 8 hours</span> of structured meetings and working sessions.
+      <motion.div variants={fadeUp} className="module-card mb-6">
+        <p className="text-[14px] text-text-secondary leading-relaxed">
+          From execution to reusable frameworks.
         </p>
       </motion.div>
 
-      {/* Month 3 */}
-      <motion.div variants={fadeUp} className="tap-card mb-4 sm:mb-5">
-        <span className="tag-accent mb-2.5 sm:mb-3">MONTH 3 — REFINEMENT</span>
-        <ul className="space-y-2 mt-2">
-          {month3.map((item) => (
-            <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
-          ))}
-        </ul>
-      </motion.div>
+      {/* Two-column on sm+ */}
+      <div className="space-y-5 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
+        {/* Month 2 */}
+        <motion.div variants={fadeUp}>
+          <span className="tag-accent mb-3">MONTH 2 — ACTIVATION</span>
+          <div className="space-y-2 mt-3">
+            {month2.map((item) => (
+              <div key={item} className="scope-box">{item}</div>
+            ))}
+          </div>
+          <div className="time-box mt-3">
+            <p className="text-[13px] text-text-primary leading-relaxed">
+              Up to <span className="font-semibold">8 hours</span> of structured meetings and working sessions.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Month 3 */}
+        <motion.div variants={fadeUp}>
+          <span className="tag-accent mb-3">MONTH 3 — REFINEMENT</span>
+          <div className="space-y-2 mt-3">
+            {month3.map((item) => (
+              <div key={item} className="scope-box">{item}</div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
 
       {/* Investment */}
-      <motion.div variants={fadeUp} className="investment-card border-l-[3px] border-l-accent">
+      <motion.div variants={fadeUp} className="investment-card border-l-[3px] border-l-accent mt-5">
         <div className="flex items-center justify-between gap-3 mb-3">
           <div>
             <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">3-Month Package</p>

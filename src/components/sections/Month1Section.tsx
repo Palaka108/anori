@@ -2,24 +2,24 @@ import { motion } from "framer-motion";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const infrastructure = [
-  "CRM platform selection and configuration",
-  "Intake of an initial set of existing leads (volume and sources defined during Initial Phase)",
-  "Pipeline structure aligned to current stage",
+  "CRM platform selection & configuration",
+  "Intake of initial existing leads (volume defined during Initial Phase)",
+  "Stage-appropriate pipeline structure",
 ];
 
 const systems = [
-  "Follow-up architecture (calendar-based + templates)",
-  "ICP and persona mapping across target verticals",
+  "Follow-up architecture (calendar + templates)",
+  "ICP & persona mapping across target verticals",
   "CRM enablement guide (up to three revisions)",
 ];
 
 const advisory = [
-  "Strategic planning and prioritization",
-  "CRM configuration and pipeline operations",
-  "Lead and market analysis",
-  "Weekly dashboards and reporting",
-  "Outreach preparation and sequencing",
-  "System and automation scoping (recommendations only)",
+  "Strategic planning & prioritization",
+  "CRM and pipeline operations",
+  "Lead & market analysis",
+  "Weekly dashboards & reporting",
+  "Outreach preparation & sequencing",
+  "Automation scoping (recommendations only)",
 ];
 
 const reportItems = [
@@ -31,61 +31,63 @@ const reportItems = [
 
 const Month1Section = () => (
   <AnimatedSection id="month-1" alt>
-    <div className="w-full max-w-[620px] mx-auto px-4 sm:px-5">
-      <motion.p variants={labelSlide} className="section-label mb-3 sm:mb-4">MONTH 1</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-2.5 sm:mb-3 text-text-primary">
+    <div className="content-container">
+      <motion.p variants={labelSlide} className="section-label mb-3">MONTH 1</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
         Foundation
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-[14px] text-text-secondary mb-6 sm:mb-8 leading-relaxed">
-        Establishing core infrastructure and surfacing initial market signals.
-      </motion.p>
+      <motion.div variants={fadeUp} className="module-card mb-5">
+        <p className="text-[14px] text-text-secondary leading-relaxed">
+          Establishing core infrastructure and surfacing initial market signals.
+        </p>
+      </motion.div>
 
-      {/* Infrastructure */}
-      <motion.div variants={fadeUp} className="tap-card mb-3">
-        <span className="tag-accent mb-2.5 sm:mb-3">INFRASTRUCTURE</span>
-        <ul className="space-y-2 mt-2">
+      {/* Infrastructure card group */}
+      <motion.div variants={fadeUp} className="mb-4">
+        <span className="tag-accent mb-3">INFRASTRUCTURE</span>
+        <div className="space-y-2 mt-3">
           {infrastructure.map((item) => (
-            <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
+            <div key={item} className="scope-box">{item}</div>
           ))}
-        </ul>
+        </div>
       </motion.div>
 
-      {/* Systems */}
-      <motion.div variants={fadeUp} className="tap-card mb-3">
-        <span className="tag-accent mb-2.5 sm:mb-3">SYSTEMS</span>
-        <ul className="space-y-2 mt-2">
+      {/* Systems card group */}
+      <motion.div variants={fadeUp} className="mb-4">
+        <span className="tag-accent mb-3">SYSTEMS</span>
+        <div className="space-y-2 mt-3">
           {systems.map((item) => (
-            <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
+            <div key={item} className="scope-box">{item}</div>
           ))}
-        </ul>
+        </div>
       </motion.div>
 
-      {/* Advisory */}
-      <motion.div variants={fadeUp} className="tap-card mb-4 sm:mb-5">
-        <span className="tag-accent mb-2.5 sm:mb-3">ADVISORY WORK</span>
-        <ul className="space-y-2 mt-2">
+      {/* Advisory card group */}
+      <motion.div variants={fadeUp} className="mb-5">
+        <span className="tag-accent mb-3">ADVISORY WORK</span>
+        <div className="card-grid-2 mt-3">
           {advisory.map((item) => (
-            <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
+            <div key={item} className="scope-box">{item}</div>
           ))}
-        </ul>
+        </div>
       </motion.div>
 
       {/* Time Box */}
-      <motion.div variants={fadeUp} className="time-box mb-4 sm:mb-5">
+      <motion.div variants={fadeUp} className="time-box mb-5">
         <p className="text-[13px] text-text-primary leading-relaxed">
-          Month 1 includes <span className="font-semibold">up to 8 hours</span> of customer-, partner-, and Anori-facing meetings.
+          Up to <span className="font-semibold">8 hours</span> of customer-, partner-, and Anori-facing meetings.
         </p>
       </motion.div>
 
       {/* Deliverable */}
-      <motion.div variants={fadeUp} className="module-card-highlight mb-4 sm:mb-5">
+      <motion.div variants={fadeUp} className="module-card-highlight mb-5">
         <p className="text-[11px] font-semibold uppercase tracking-wider text-accent mb-2">Month 1 Deliverable</p>
-        <p className="text-[14px] font-semibold text-text-primary mb-2">Market Intelligence Report</p>
-        <ul className="space-y-1">
+        <p className="text-[14px] font-semibold text-text-primary mb-3">Market Intelligence Report</p>
+        <div className="card-grid-2">
           {reportItems.map((item) => (
-            <li key={item} className="text-[13px] text-text-secondary">— {item}</li>
+            <div key={item} className="scope-box text-[12px] text-center">{item}</div>
           ))}
-        </ul>
+        </div>
       </motion.div>
 
       {/* Investment */}
@@ -101,7 +103,7 @@ const Month1Section = () => (
           </div>
         </div>
         <p className="text-[12px] text-text-muted-custom leading-relaxed">
-          Final scope and monthly investment are confirmed after the Initial Phase, once product reality, lead volume and quality, and execution needs are clear. No ongoing advisory work begins until the refined scope and fee are mutually agreed.
+          Final scope and monthly investment confirmed after the Initial Phase.
         </p>
       </motion.div>
     </div>

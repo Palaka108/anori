@@ -1,57 +1,66 @@
 import { motion } from "framer-motion";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
-const scope = [
-  "Product and roadmap alignment review",
-  "Synthesis of POC and early feedback patterns",
-  "Partner or customer-facing conversation (if available)",
-  "Lead and CRM reality assessment",
+const scopeItems = [
+  "Product & roadmap alignment",
+  "POC and feedback synthesis",
+  "Partner / customer conversation (if available)",
+  "Lead & CRM reality assessment",
   "GTM signal validation",
-  "Definition of execution-ready priorities",
+  "Execution priority definition",
 ];
 
 const deliverables = [
   "Current Stage Assessment",
-  "Month 1 execution definition",
-  "Preliminary 3-month advisory trajectory",
+  "Month 1 Execution Definition",
+  "Preliminary 3-Month Trajectory",
 ];
 
 const AlignmentSprintSection = () => (
   <AnimatedSection id="initial-phase">
-    <div className="w-full max-w-[620px] mx-auto px-4 sm:px-5">
-      <motion.p variants={labelSlide} className="section-label mb-3 sm:mb-4">INITIAL PHASE</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-2.5 sm:mb-3 text-text-primary">
+    <div className="content-container">
+      <motion.p variants={labelSlide} className="section-label mb-3">INITIAL PHASE</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
         Alignment & Scoping
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-[14px] text-text-secondary mb-5 sm:mb-6 leading-relaxed">
-        Execution-focused advisory work to establish a defensible baseline. This phase formalizes understanding of product state, partnership dynamics, and GTM readiness.
-      </motion.p>
 
-      {/* Scope */}
-      <motion.div variants={fadeUp} className="mb-4 sm:mb-5">
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-text-muted-custom mb-2.5 sm:mb-3">Scope</p>
-        <div className="space-y-2">
-          {scope.map((item) => (
-            <div key={item} className="scope-pill">{item}</div>
+      {/* Description box */}
+      <motion.div variants={fadeUp} className="module-card mb-5">
+        <p className="text-[14px] text-text-secondary leading-relaxed mb-2">
+          Execution-focused advisory work to establish a defensible baseline.
+        </p>
+        <p className="text-[14px] text-text-secondary leading-relaxed">
+          Defines what should be executed now, what should wait, and what should not proceed.
+        </p>
+      </motion.div>
+
+      {/* Scope boxes grid */}
+      <motion.div variants={fadeUp} className="mb-5">
+        <p className="text-[11px] font-semibold uppercase tracking-wider text-text-muted-custom mb-3">Scope</p>
+        <div className="card-grid-2">
+          {scopeItems.map((item) => (
+            <div key={item} className="scope-box">{item}</div>
           ))}
         </div>
       </motion.div>
 
       {/* Time Box */}
-      <motion.div variants={fadeUp} className="time-box mb-4 sm:mb-5">
+      <motion.div variants={fadeUp} className="time-box mb-5">
         <p className="text-[13px] text-text-primary leading-relaxed">
-          The Initial Phase includes <span className="font-semibold">up to 6 hours</span> of working sessions and associated analysis and documentation.
+          Up to <span className="font-semibold">6 hours</span> of working sessions, analysis, and documentation.
         </p>
       </motion.div>
 
       {/* Deliverables */}
-      <motion.div variants={fadeUp} className="module-card-highlight mb-4 sm:mb-5">
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-accent mb-2">Deliverables</p>
-        <ul className="space-y-1.5">
+      <motion.div variants={fadeUp} className="mb-5">
+        <p className="text-[11px] font-semibold uppercase tracking-wider text-accent mb-3">Deliverables</p>
+        <div className="card-grid-3">
           {deliverables.map((d) => (
-            <li key={d} className="text-[13px] text-text-primary">— {d}</li>
+            <div key={d} className="deliverable-tile">
+              <p>{d}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       </motion.div>
 
       {/* Investment */}
