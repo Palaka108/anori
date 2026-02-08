@@ -42,7 +42,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[85vh] md:min-h-[70vh] overflow-hidden px-5 py-20">
+    <section className="relative flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[80vh] md:min-h-[70vh] overflow-hidden px-4 sm:px-5 py-16 sm:py-20">
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -58,51 +58,51 @@ const HeroSection = () => {
       >
         <motion.h1
           variants={fade}
-          className="text-[28px] sm:text-[36px] md:text-[44px] font-bold leading-[1.1] text-text-primary mb-4 tracking-tight"
+          className="text-[32px] sm:text-[36px] md:text-[44px] font-bold leading-[1.1] text-text-primary mb-3 sm:mb-4 tracking-tight"
         >
           ANORI
         </motion.h1>
 
         <motion.p
           variants={fade}
-          className="text-[16px] sm:text-lg font-medium text-text-secondary mb-4 leading-snug"
+          className="text-[15px] sm:text-[16px] md:text-lg font-medium text-text-secondary mb-3 sm:mb-4 leading-snug"
         >
           Commercial Advisory Engagement Proposal
         </motion.p>
 
-        <motion.div variants={fade} className="section-divider max-w-[160px] mx-auto mb-6" />
+        <motion.div variants={fade} className="section-divider max-w-[120px] sm:max-w-[160px] mx-auto mb-5 sm:mb-6" />
 
         <motion.p
           variants={fade}
-          className="text-[14px] text-text-muted-custom max-w-md mx-auto mb-8 leading-relaxed"
+          className="text-[13px] sm:text-[14px] text-text-muted-custom max-w-sm sm:max-w-md mx-auto mb-6 sm:mb-8 leading-relaxed px-2"
         >
           Structured advisory support for early-stage building-tech initiatives — designed to earn clarity before scale.
         </motion.p>
 
-        <motion.p variants={fade} className="text-[11px] text-text-muted-custom tracking-widest uppercase mb-8">
+        <motion.p variants={fade} className="text-[10px] sm:text-[11px] text-text-muted-custom tracking-widest uppercase mb-6 sm:mb-8">
           February 2026 · Confidential
         </motion.p>
 
-        {/* CTAs */}
-        <motion.div variants={fade} className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
+        {/* CTAs — stacked on mobile */}
+        <motion.div variants={fade} className="flex flex-col gap-3 sm:flex-row sm:gap-3 justify-center mb-8 sm:mb-10 px-2 sm:px-0">
           <button
             onClick={scrollToOverview}
-            className="px-6 py-3 rounded-lg text-[14px] font-semibold bg-accent text-accent-foreground transition-all hover:opacity-90 active:scale-[0.97]"
+            className="w-full sm:w-auto px-6 py-3.5 sm:py-3 rounded-lg text-[14px] font-semibold bg-accent text-accent-foreground transition-all hover:opacity-90 active:scale-[0.97] min-h-[48px]"
           >
             View Engagement Structure
           </button>
           <button
             onClick={scrollToInitial}
-            className="px-6 py-3 rounded-lg text-[14px] font-semibold border border-accent text-accent transition-all hover:bg-accent-surface active:scale-[0.97]"
+            className="w-full sm:w-auto px-6 py-3.5 sm:py-3 rounded-lg text-[14px] font-semibold border border-accent text-accent transition-all hover:bg-accent-surface active:scale-[0.97] min-h-[48px]"
           >
             Proceed with Initial Phase
           </button>
         </motion.div>
 
-        {/* Nav pills */}
+        {/* Nav pills — horizontal scroll on mobile */}
         <motion.div
           variants={fade}
-          className="flex gap-2 overflow-x-auto pb-2 -mx-5 px-5 scrollbar-hide sm:flex-wrap sm:justify-center sm:overflow-visible sm:mx-0 sm:px-0"
+          className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide sm:flex-wrap sm:justify-center sm:overflow-visible sm:mx-0 sm:px-0"
           style={{ WebkitOverflowScrolling: "touch" }}
         >
           {navItems.map((item) => (

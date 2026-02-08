@@ -31,18 +31,18 @@ const reportItems = [
 
 const Month1Section = () => (
   <AnimatedSection id="month-1" alt>
-    <div className="w-full max-w-[620px] mx-auto px-5">
-      <motion.p variants={labelSlide} className="section-label mb-4">MONTH 1</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
+    <div className="w-full max-w-[620px] mx-auto px-4 sm:px-5">
+      <motion.p variants={labelSlide} className="section-label mb-3 sm:mb-4">MONTH 1</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-2.5 sm:mb-3 text-text-primary">
         Foundation
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-[14px] text-text-secondary mb-8 leading-relaxed">
+      <motion.p variants={fadeUp} className="text-[14px] text-text-secondary mb-6 sm:mb-8 leading-relaxed">
         Establishing core infrastructure and surfacing initial market signals.
       </motion.p>
 
       {/* Infrastructure */}
       <motion.div variants={fadeUp} className="tap-card mb-3">
-        <span className="tag-accent mb-3">INFRASTRUCTURE</span>
+        <span className="tag-accent mb-2.5 sm:mb-3">INFRASTRUCTURE</span>
         <ul className="space-y-2 mt-2">
           {infrastructure.map((item) => (
             <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
@@ -52,7 +52,7 @@ const Month1Section = () => (
 
       {/* Systems */}
       <motion.div variants={fadeUp} className="tap-card mb-3">
-        <span className="tag-accent mb-3">SYSTEMS</span>
+        <span className="tag-accent mb-2.5 sm:mb-3">SYSTEMS</span>
         <ul className="space-y-2 mt-2">
           {systems.map((item) => (
             <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
@@ -61,8 +61,8 @@ const Month1Section = () => (
       </motion.div>
 
       {/* Advisory */}
-      <motion.div variants={fadeUp} className="tap-card mb-5">
-        <span className="tag-accent mb-3">ADVISORY WORK</span>
+      <motion.div variants={fadeUp} className="tap-card mb-4 sm:mb-5">
+        <span className="tag-accent mb-2.5 sm:mb-3">ADVISORY WORK</span>
         <ul className="space-y-2 mt-2">
           {advisory.map((item) => (
             <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
@@ -71,14 +71,14 @@ const Month1Section = () => (
       </motion.div>
 
       {/* Time Box */}
-      <motion.div variants={fadeUp} className="time-box mb-5">
+      <motion.div variants={fadeUp} className="time-box mb-4 sm:mb-5">
         <p className="text-[13px] text-text-primary leading-relaxed">
           Month 1 includes <span className="font-semibold">up to 8 hours</span> of customer-, partner-, and Anori-facing meetings.
         </p>
       </motion.div>
 
       {/* Deliverable */}
-      <motion.div variants={fadeUp} className="module-card-highlight mb-5">
+      <motion.div variants={fadeUp} className="module-card-highlight mb-4 sm:mb-5">
         <p className="text-[11px] font-semibold uppercase tracking-wider text-accent mb-2">Month 1 Deliverable</p>
         <p className="text-[14px] font-semibold text-text-primary mb-2">Market Intelligence Report</p>
         <ul className="space-y-1">
@@ -95,9 +95,9 @@ const Month1Section = () => (
             <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Month 1 Advisory</p>
             <p className="text-[11px] text-text-muted-custom">Initial Estimate</p>
           </div>
-          <div className="text-right">
-            <span className="text-[24px] sm:text-[28px] font-bold text-text-primary">$6,000</span>
-            <span className="text-[12px] text-text-muted-custom ml-1">/ month</span>
+          <div className="text-right shrink-0">
+            <span className="text-[22px] sm:text-[28px] font-bold text-text-primary">$6,000</span>
+            <span className="text-[11px] sm:text-[12px] text-text-muted-custom ml-1">/ month</span>
           </div>
         </div>
         <p className="text-[12px] text-text-muted-custom leading-relaxed">

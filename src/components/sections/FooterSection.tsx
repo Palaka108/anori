@@ -16,24 +16,24 @@ const FooterSection = () => {
       whileInView="visible"
       viewport={{ once: true }}
       variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
-      className="section-surface py-16 md:py-20"
+      className="section-surface py-12 sm:py-16 md:py-20"
     >
-      <div className="w-full max-w-[620px] mx-auto px-5 text-center">
-        <motion.div variants={fade} className="section-divider max-w-[100px] mx-auto mb-8" />
+      <div className="w-full max-w-[620px] mx-auto px-4 sm:px-5 text-center">
+        <motion.div variants={fade} className="section-divider max-w-[80px] sm:max-w-[100px] mx-auto mb-6 sm:mb-8" />
 
-        <motion.div variants={fade} className="mb-8">
+        <motion.div variants={fade} className="mb-6 sm:mb-8">
           <button
             onClick={scrollToInitial}
-            className="px-6 py-3 rounded-lg text-[14px] font-semibold bg-accent text-accent-foreground transition-all hover:opacity-90 active:scale-[0.97]"
+            className="w-full sm:w-auto px-6 py-3.5 sm:py-3 rounded-lg text-[14px] font-semibold bg-accent text-accent-foreground transition-all hover:opacity-90 active:scale-[0.97] min-h-[48px]"
           >
             Proceed with Initial Phase
           </button>
         </motion.div>
 
-        <motion.p variants={fade} className="text-[12px] text-text-muted-custom mb-1 tracking-wide">
+        <motion.p variants={fade} className="text-[11px] sm:text-[12px] text-text-muted-custom mb-1 tracking-wide">
           Confidential · February 2026
         </motion.p>
-        <motion.p variants={fade} className="text-[12px] text-text-muted-custom">
+        <motion.p variants={fade} className="text-[11px] sm:text-[12px] text-text-muted-custom">
           Anori / Gosai
         </motion.p>
       </div>

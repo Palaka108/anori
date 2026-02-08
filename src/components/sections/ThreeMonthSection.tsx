@@ -19,18 +19,18 @@ const month3 = [
 
 const ThreeMonthSection = () => (
   <AnimatedSection id="three-month">
-    <div className="w-full max-w-[620px] mx-auto px-5">
-      <motion.p variants={labelSlide} className="section-label mb-4">3-MONTH PACKAGE</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
+    <div className="w-full max-w-[620px] mx-auto px-4 sm:px-5">
+      <motion.p variants={labelSlide} className="section-label mb-3 sm:mb-4">3-MONTH PACKAGE</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-2.5 sm:mb-3 text-text-primary">
         3-Month Advisory Package
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-[14px] text-text-secondary mb-8 leading-relaxed">
+      <motion.p variants={fadeUp} className="text-[14px] text-text-secondary mb-6 sm:mb-8 leading-relaxed">
         From execution to reusable frameworks.
       </motion.p>
 
       {/* Month 2 */}
       <motion.div variants={fadeUp} className="tap-card mb-3">
-        <span className="tag-accent mb-3">MONTH 2 — ACTIVATION</span>
+        <span className="tag-accent mb-2.5 sm:mb-3">MONTH 2 — ACTIVATION</span>
         <ul className="space-y-2 mt-2">
           {month2.map((item) => (
             <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
@@ -39,15 +39,15 @@ const ThreeMonthSection = () => (
       </motion.div>
 
       {/* Month 2 Time Box */}
-      <motion.div variants={fadeUp} className="time-box mb-5">
+      <motion.div variants={fadeUp} className="time-box mb-4 sm:mb-5">
         <p className="text-[13px] text-text-primary leading-relaxed">
           Month 2 includes <span className="font-semibold">up to 8 hours</span> of structured meetings and working sessions.
         </p>
       </motion.div>
 
       {/* Month 3 */}
-      <motion.div variants={fadeUp} className="tap-card mb-5">
-        <span className="tag-accent mb-3">MONTH 3 — REFINEMENT</span>
+      <motion.div variants={fadeUp} className="tap-card mb-4 sm:mb-5">
+        <span className="tag-accent mb-2.5 sm:mb-3">MONTH 3 — REFINEMENT</span>
         <ul className="space-y-2 mt-2">
           {month3.map((item) => (
             <li key={item} className="text-[13px] text-text-secondary leading-relaxed">• {item}</li>
@@ -62,9 +62,9 @@ const ThreeMonthSection = () => (
             <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">3-Month Package</p>
             <p className="text-[11px] text-text-muted-custom">Initial Estimate</p>
           </div>
-          <div className="text-right">
-            <span className="text-[24px] sm:text-[28px] font-bold text-text-primary">$15,000</span>
-            <span className="text-[12px] text-text-muted-custom ml-1">total</span>
+          <div className="text-right shrink-0">
+            <span className="text-[22px] sm:text-[28px] font-bold text-text-primary">$15,000</span>
+            <span className="text-[11px] sm:text-[12px] text-text-muted-custom ml-1">total</span>
           </div>
         </div>
         <p className="text-[12px] text-text-muted-custom leading-relaxed">

@@ -24,13 +24,13 @@ const tiers = [
 
 const PricingSection = () => (
   <AnimatedSection id="pricing" alt>
-    <div className="w-full max-w-[620px] mx-auto px-5">
-      <motion.p variants={labelSlide} className="section-label mb-4">INVESTMENT</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-8 text-text-primary">
+    <div className="w-full max-w-[620px] mx-auto px-4 sm:px-5">
+      <motion.p variants={labelSlide} className="section-label mb-3 sm:mb-4">INVESTMENT</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-6 sm:mb-8 text-text-primary">
         Pricing Summary
       </motion.h2>
 
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {tiers.map((tier) => (
           <motion.div
             key={tier.label}
@@ -38,22 +38,22 @@ const PricingSection = () => (
             className="investment-card border-l-[3px] border-l-accent"
           >
             <div className="flex items-center justify-between gap-3">
-              <div>
+              <div className="min-w-0">
                 <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">
                   {tier.label}
                 </p>
                 <p className="text-[11px] text-text-muted-custom">{tier.note}</p>
               </div>
               <div className="text-right shrink-0">
-                <span className="text-[24px] sm:text-[28px] font-bold text-text-primary">{tier.price}</span>
-                <span className="text-[12px] text-text-muted-custom ml-1">{tier.unit}</span>
+                <span className="text-[22px] sm:text-[28px] font-bold text-text-primary">{tier.price}</span>
+                <span className="text-[11px] sm:text-[12px] text-text-muted-custom ml-1">{tier.unit}</span>
               </div>
             </div>
           </motion.div>
         ))}
       </div>
 
-      <motion.p variants={fadeUp} className="text-[12px] text-text-muted-custom mt-6 leading-relaxed text-center">
+      <motion.p variants={fadeUp} className="text-[12px] text-text-muted-custom mt-5 sm:mt-6 leading-relaxed text-center">
         All pricing represents initial estimates. Final scope and investment confirmed after the Initial Phase.
       </motion.p>
     </div>
