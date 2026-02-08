@@ -7,30 +7,27 @@ const tiers = [
     price: "$1,800",
     unit: "fixed",
     note: "Credited toward Month 1 if engagement proceeds",
-    accent: true,
   },
   {
     label: "Month 1 Advisory",
     price: "$6,000",
     unit: "/ month",
-    note: "Final scope confirmed after Initial Phase",
-    accent: true,
+    note: "Initial estimate — confirmed after Initial Phase",
   },
   {
     label: "3-Month Package",
     price: "$15,000",
     unit: "total",
-    note: "Months 1–3 bundled — confirmed after Initial Phase",
-    accent: false,
+    note: "Initial estimate — confirmed after Initial Phase",
   },
 ];
 
 const PricingSection = () => (
   <AnimatedSection id="pricing" alt>
-    <div className="w-full max-w-[600px] mx-auto px-5">
+    <div className="w-full max-w-[620px] mx-auto px-5">
       <motion.p variants={labelSlide} className="section-label mb-4">INVESTMENT</motion.p>
       <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-8 text-text-primary">
-        Pricing
+        Pricing Summary
       </motion.h2>
 
       <div className="space-y-4">
@@ -38,11 +35,11 @@ const PricingSection = () => (
           <motion.div
             key={tier.label}
             variants={fadeUp}
-            className={`investment-card border-l-[3px] ${tier.accent ? "border-l-accent" : "border-l-gold"}`}
+            className="investment-card border-l-[3px] border-l-accent"
           >
             <div className="flex items-center justify-between gap-3">
               <div>
-                <p className={`text-[12px] font-semibold uppercase tracking-wider mb-0.5 ${tier.accent ? "text-accent" : "text-gold"}`}>
+                <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">
                   {tier.label}
                 </p>
                 <p className="text-[11px] text-text-muted-custom">{tier.note}</p>
