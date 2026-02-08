@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Zap, Send, Building, Phone, Eye, Wrench, Filter, Calendar, Link, Layout, Briefcase, Clock } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
+import ExpandableCard from "../ExpandableCard";
 
 const month2 = [
   { Icon: Zap, text: "Guided outbound execution" },
@@ -32,37 +33,39 @@ const ThreeMonthSection = () => (
         </p>
       </motion.div>
 
-      <div className="space-y-5 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
-        {/* Month 2 */}
+      <div className="space-y-4">
+        {/* Month 2 — expandable */}
         <motion.div variants={fadeUp}>
-          <span className="tag-accent mb-3">MONTH 2 — ACTIVATION</span>
-          <div className="space-y-2 mt-3">
-            {month2.map((item) => (
-              <div key={item.text} className="scope-box">
-                <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
-                <span>{item.text}</span>
-              </div>
-            ))}
-          </div>
-          <div className="time-box mt-3">
-            <Clock className="time-icon w-[18px] h-[18px]" strokeWidth={1.5} />
-            <p className="text-[13px] text-text-primary leading-relaxed">
-              Up to <span className="font-semibold">8 hours</span> of structured meetings and working sessions.
-            </p>
-          </div>
+          <ExpandableCard title="Month 2 — Activation" subtitle="Outbound execution, pipeline, tooling">
+            <div className="space-y-2 mb-4">
+              {month2.map((item) => (
+                <div key={item.text} className="scope-box">
+                  <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+                  <span>{item.text}</span>
+                </div>
+              ))}
+            </div>
+            <div className="time-box">
+              <Clock className="time-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+              <p className="text-[13px] text-text-primary leading-relaxed">
+                Up to <span className="font-semibold">8 hours</span> of structured meetings and working sessions.
+              </p>
+            </div>
+          </ExpandableCard>
         </motion.div>
 
-        {/* Month 3 */}
+        {/* Month 3 — expandable */}
         <motion.div variants={fadeUp}>
-          <span className="tag-violet mb-3">MONTH 3 — REFINEMENT</span>
-          <div className="space-y-2 mt-3">
-            {month3.map((item) => (
-              <div key={item.text} className="scope-box">
-                <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
-                <span>{item.text}</span>
-              </div>
-            ))}
-          </div>
+          <ExpandableCard title="Month 3 — Refinement" subtitle="Pipeline hygiene, frameworks, hiring readiness">
+            <div className="space-y-2">
+              {month3.map((item) => (
+                <div key={item.text} className="scope-box">
+                  <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+                  <span>{item.text}</span>
+                </div>
+              ))}
+            </div>
+          </ExpandableCard>
         </motion.div>
       </div>
 
