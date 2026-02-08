@@ -1,40 +1,35 @@
 import { motion } from "framer-motion";
+import { Box, Download, GitBranch, Users, Calendar, Target, BookOpen, Compass, Settings, PieChart, Activity, Mail, Cpu, Clock, BarChart2 } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const infrastructure = [
-  "CRM platform selection & configuration",
-  "Intake of initial existing leads (volume defined during Initial Phase)",
-  "Stage-appropriate pipeline structure",
+  { Icon: Box, text: "CRM platform finalization & full team setup" },
+  { Icon: Download, text: "Intake of initial lead set (volume/sources defined in Design Phase)" },
+  { Icon: GitBranch, text: "Stage-appropriate pipeline structure" },
+  { Icon: Users, text: "CRM access for all 5 team members" },
 ];
 
 const systems = [
-  "Follow-up architecture (calendar + templates)",
-  "ICP & persona mapping across target verticals",
-  "CRM enablement guide (up to three revisions)",
+  { Icon: Calendar, text: "Follow-up architecture (calendar + templates)" },
+  { Icon: Target, text: "ICP & persona mapping across target verticals" },
+  { Icon: BookOpen, text: "CRM enablement guide (up to three revisions)" },
 ];
 
 const advisory = [
-  "Strategic planning & prioritization",
-  "CRM and pipeline operations",
-  "Lead & market analysis",
-  "Weekly dashboards & reporting",
-  "Outreach preparation & sequencing",
-  "Automation scoping (recommendations only)",
-];
-
-const reportItems = [
-  "Market signals",
-  "Channel efficiency insights",
-  "System recommendations",
-  "Cost estimates for next phase",
+  { Icon: Compass, text: "Strategic planning & prioritization" },
+  { Icon: Settings, text: "CRM and pipeline operations" },
+  { Icon: PieChart, text: "Lead & market analysis" },
+  { Icon: Activity, text: "Weekly dashboards & reporting" },
+  { Icon: Mail, text: "Outreach preparation" },
+  { Icon: Cpu, text: "Automation scoping (recommendations only)" },
 ];
 
 const Month1Section = () => (
-  <AnimatedSection id="month-1" alt>
+  <AnimatedSection id="month-1">
     <div className="content-container">
       <motion.p variants={labelSlide} className="section-label mb-3">MONTH 1</motion.p>
       <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
-        Foundation
+        Full Foundation Build
       </motion.h2>
       <motion.div variants={fadeUp} className="module-card mb-5">
         <p className="text-[14px] text-text-secondary leading-relaxed">
@@ -42,38 +37,48 @@ const Month1Section = () => (
         </p>
       </motion.div>
 
-      {/* Infrastructure card group */}
+      {/* Infrastructure */}
       <motion.div variants={fadeUp} className="mb-4">
         <span className="tag-accent mb-3">INFRASTRUCTURE</span>
         <div className="space-y-2 mt-3">
           {infrastructure.map((item) => (
-            <div key={item} className="scope-box">{item}</div>
+            <div key={item.text} className="scope-box">
+              <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+              <span>{item.text}</span>
+            </div>
           ))}
         </div>
       </motion.div>
 
-      {/* Systems card group */}
+      {/* Systems */}
       <motion.div variants={fadeUp} className="mb-4">
         <span className="tag-accent mb-3">SYSTEMS</span>
         <div className="space-y-2 mt-3">
           {systems.map((item) => (
-            <div key={item} className="scope-box">{item}</div>
+            <div key={item.text} className="scope-box">
+              <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+              <span>{item.text}</span>
+            </div>
           ))}
         </div>
       </motion.div>
 
-      {/* Advisory card group */}
+      {/* Advisory */}
       <motion.div variants={fadeUp} className="mb-5">
         <span className="tag-accent mb-3">ADVISORY WORK</span>
         <div className="card-grid-2 mt-3">
           {advisory.map((item) => (
-            <div key={item} className="scope-box">{item}</div>
+            <div key={item.text} className="scope-box">
+              <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+              <span>{item.text}</span>
+            </div>
           ))}
         </div>
       </motion.div>
 
       {/* Time Box */}
       <motion.div variants={fadeUp} className="time-box mb-5">
+        <Clock className="time-icon w-[18px] h-[18px]" strokeWidth={1.5} />
         <p className="text-[13px] text-text-primary leading-relaxed">
           Up to <span className="font-semibold">8 hours</span> of customer-, partner-, and Anori-facing meetings.
         </p>
@@ -81,17 +86,18 @@ const Month1Section = () => (
 
       {/* Deliverable */}
       <motion.div variants={fadeUp} className="module-card-highlight mb-5">
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-accent mb-2">Month 1 Deliverable</p>
-        <p className="text-[14px] font-semibold text-text-primary mb-3">Market Intelligence Report</p>
-        <div className="card-grid-2">
-          {reportItems.map((item) => (
-            <div key={item} className="scope-box text-[12px] text-center">{item}</div>
-          ))}
+        <div className="flex items-center gap-2 mb-2">
+          <BarChart2 className="w-[18px] h-[18px] text-accent" strokeWidth={1.5} />
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">Month 1 Deliverable</p>
         </div>
+        <p className="text-[14px] font-semibold text-text-primary mb-2">Market Intelligence Report</p>
+        <p className="text-[13px] text-text-secondary leading-relaxed">
+          Market signals · Channel insights · System recommendations · Cost estimates
+        </p>
       </motion.div>
 
       {/* Investment */}
-      <motion.div variants={fadeUp} className="investment-card border-l-[3px] border-l-accent">
+      <motion.div variants={fadeUp} className="investment-card">
         <div className="flex items-center justify-between gap-3 mb-3">
           <div>
             <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Month 1 Advisory</p>
@@ -103,7 +109,7 @@ const Month1Section = () => (
           </div>
         </div>
         <p className="text-[12px] text-text-muted-custom leading-relaxed">
-          Final scope and monthly investment confirmed after the Initial Phase.
+          Final scope and fee confirmed after Design Phase.
         </p>
       </motion.div>
     </div>

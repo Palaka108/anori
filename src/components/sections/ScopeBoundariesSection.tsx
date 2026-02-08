@@ -21,7 +21,7 @@ const notIncluded = [
 ];
 
 const ScopeBoundariesSection = () => (
-  <AnimatedSection id="scope" alt>
+  <AnimatedSection id="scope">
     <div className="content-container">
       <motion.p variants={labelSlide} className="section-label mb-3">SCOPE</motion.p>
       <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-6 text-text-primary">
@@ -31,12 +31,12 @@ const ScopeBoundariesSection = () => (
       <div className="space-y-6 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-5">
         {/* Included */}
         <motion.div variants={fadeUp}>
-          <p className="text-[12px] font-semibold uppercase tracking-wider text-success mb-3">What's Included</p>
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-success mb-3">Included</p>
           <div className="space-y-2">
             {included.map((item) => (
               <div key={item} className="boundary-tile">
                 <div className="w-6 h-6 rounded-md bg-success-surface flex items-center justify-center shrink-0">
-                  <Check className="w-3.5 h-3.5 text-success" />
+                  <Check className="w-3.5 h-3.5 text-success" strokeWidth={2} />
                 </div>
                 <span className="text-text-primary font-medium">{item}</span>
               </div>
@@ -49,9 +49,9 @@ const ScopeBoundariesSection = () => (
           <p className="text-[12px] font-semibold uppercase tracking-wider text-text-muted-custom mb-3">Not Included</p>
           <div className="space-y-2">
             {notIncluded.map((item) => (
-              <div key={item} className="boundary-tile">
+              <div key={item} className="boundary-tile opacity-60">
                 <div className="w-6 h-6 rounded-md bg-muted flex items-center justify-center shrink-0">
-                  <X className="w-3.5 h-3.5 text-text-muted-custom" />
+                  <X className="w-3.5 h-3.5 text-text-muted-custom" strokeWidth={2} />
                 </div>
                 <span className="text-text-secondary">{item}</span>
               </div>

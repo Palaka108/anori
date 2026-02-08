@@ -1,51 +1,66 @@
 import { motion } from "framer-motion";
+import { Search, MessageCircle, Users, BarChart, TrendingUp, CheckCircle, Database, Clock, FileText, ClipboardList, Map } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const scopeItems = [
-  "Product & roadmap alignment",
-  "POC and feedback synthesis",
-  "Partner / customer conversation (if available)",
-  "Lead & CRM reality assessment",
-  "GTM signal validation",
-  "Execution priority definition",
+  { Icon: Search, text: "Product & roadmap alignment" },
+  { Icon: MessageCircle, text: "POC and feedback synthesis" },
+  { Icon: Users, text: "Partner / customer conversation (if available)" },
+  { Icon: BarChart, text: "Lead & CRM reality assessment" },
+  { Icon: TrendingUp, text: "GTM signal validation" },
+  { Icon: CheckCircle, text: "Execution priority definition" },
 ];
 
 const deliverables = [
-  "Current Stage Assessment",
-  "Month 1 Execution Definition",
-  "Preliminary 3-Month Trajectory",
+  { Icon: FileText, text: "Current Stage Assessment" },
+  { Icon: ClipboardList, text: "Month 1 Execution Definition" },
+  { Icon: Map, text: "Preliminary 3-Month Trajectory" },
 ];
 
 const AlignmentSprintSection = () => (
-  <AnimatedSection id="initial-phase">
+  <AnimatedSection id="design-phase" alt>
     <div className="content-container">
-      <motion.p variants={labelSlide} className="section-label mb-3">INITIAL PHASE</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-3">DESIGN PHASE</motion.p>
       <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
-        Alignment & Scoping
+        Alignment & Foundation Setup
       </motion.h2>
 
-      {/* Description box */}
       <motion.div variants={fadeUp} className="module-card mb-5">
         <p className="text-[14px] text-text-secondary leading-relaxed mb-2">
-          Execution-focused advisory work to establish a defensible baseline.
+          Execution-focused advisory work to establish a defensible baseline and begin CRM implementation.
         </p>
         <p className="text-[14px] text-text-secondary leading-relaxed">
           Defines what should be executed now, what should wait, and what should not proceed.
         </p>
       </motion.div>
 
-      {/* Scope boxes grid */}
+      {/* Scope boxes */}
       <motion.div variants={fadeUp} className="mb-5">
         <p className="text-[11px] font-semibold uppercase tracking-wider text-text-muted-custom mb-3">Scope</p>
         <div className="card-grid-2">
           {scopeItems.map((item) => (
-            <div key={item} className="scope-box">{item}</div>
+            <div key={item.text} className="scope-box">
+              <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+              <span>{item.text}</span>
+            </div>
           ))}
         </div>
       </motion.div>
 
+      {/* CRM Setup */}
+      <motion.div variants={fadeUp} className="module-card-highlight mb-5">
+        <div className="flex items-center gap-2 mb-2">
+          <Database className="w-[18px] h-[18px] text-accent" strokeWidth={1.5} />
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-accent">CRM Setup Included</p>
+        </div>
+        <p className="text-[13px] text-text-secondary leading-relaxed">
+          HubSpot configuration for 1 primary user (Adrian). Additional team members (4) added in Month 1.
+        </p>
+      </motion.div>
+
       {/* Time Box */}
       <motion.div variants={fadeUp} className="time-box mb-5">
+        <Clock className="time-icon w-[18px] h-[18px]" strokeWidth={1.5} />
         <p className="text-[13px] text-text-primary leading-relaxed">
           Up to <span className="font-semibold">6 hours</span> of working sessions, analysis, and documentation.
         </p>
@@ -56,18 +71,19 @@ const AlignmentSprintSection = () => (
         <p className="text-[11px] font-semibold uppercase tracking-wider text-accent mb-3">Deliverables</p>
         <div className="card-grid-3">
           {deliverables.map((d) => (
-            <div key={d} className="deliverable-tile">
-              <p>{d}</p>
+            <div key={d.text} className="deliverable-tile">
+              <d.Icon className="tile-icon w-5 h-5" strokeWidth={1.5} />
+              <p>{d.text}</p>
             </div>
           ))}
         </div>
       </motion.div>
 
       {/* Investment */}
-      <motion.div variants={fadeUp} className="investment-card border-l-[3px] border-l-accent">
+      <motion.div variants={fadeUp} className="investment-card">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Initial Phase</p>
+            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Design Phase</p>
             <p className="text-[11px] text-text-muted-custom">Credited toward Month 1 if engagement proceeds</p>
           </div>
           <div className="text-right shrink-0">

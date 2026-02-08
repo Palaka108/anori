@@ -8,33 +8,32 @@ const fade = {
 
 const navItems = [
   { label: "Overview", anchor: "overview" },
-  { label: "Initial Phase", anchor: "initial-phase" },
+  { label: "Design Phase", anchor: "design-phase" },
   { label: "Month 1", anchor: "month-1" },
-  { label: "3-Month", anchor: "three-month" },
+  { label: "Future Months", anchor: "future-months" },
   { label: "Scope", anchor: "scope" },
-  { label: "Pricing", anchor: "pricing" },
+  { label: "Flow", anchor: "flow" },
 ];
 
 const HeroSection = () => {
   const handleNavClick = useCallback((anchor: string) => {
-    const el = document.getElementById(anchor);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
-
-  const scrollToOverview = useCallback(() => {
-    document.getElementById("overview")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, []);
-
-  const scrollToInitial = useCallback(() => {
-    document.getElementById("initial-phase")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document.getElementById(anchor)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[75vh] overflow-hidden px-4 sm:px-6 py-16 sm:py-20">
+    <section
+      className="relative flex flex-col items-center justify-center min-h-[90vh] sm:min-h-[75vh] overflow-hidden px-4 sm:px-6 py-16 sm:py-20"
+      style={{
+        background: "radial-gradient(ellipse at 50% 20%, hsl(240 40% 18%) 0%, hsl(220 20% 7%) 70%)",
+      }}
+    >
+      {/* Subtle grid overlay */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
-          background: "radial-gradient(ellipse at 50% 30%, hsl(225 70% 48% / 0.04) 0%, transparent 70%)",
+          backgroundImage:
+            "linear-gradient(hsl(0 0% 100% / 0.1) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100% / 0.1) 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
         }}
       />
 
@@ -67,23 +66,19 @@ const HeroSection = () => {
           Structured advisory support for early-stage building-tech initiatives — designed to earn clarity before scale.
         </motion.p>
 
-        <motion.p variants={fade} className="text-[10px] sm:text-[11px] text-text-muted-custom tracking-widest uppercase mb-8">
-          February 2026 · Confidential
-        </motion.p>
+        <motion.div variants={fade} className="inline-block mb-8">
+          <span className="text-[10px] sm:text-[11px] text-accent tracking-widest uppercase px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5">
+            February 2026 · Confidential
+          </span>
+        </motion.div>
 
         {/* CTAs */}
         <motion.div variants={fade} className="flex flex-col gap-3 sm:flex-row sm:gap-3 justify-center mb-10 px-2 sm:px-0">
-          <button
-            onClick={scrollToOverview}
-            className="w-full sm:w-auto px-6 py-3.5 rounded-lg text-[14px] font-semibold bg-accent text-accent-foreground transition-all hover:opacity-90 active:scale-[0.97] min-h-[48px]"
-          >
+          <button onClick={() => handleNavClick("overview")} className="btn-primary">
             View Engagement Structure
           </button>
-          <button
-            onClick={scrollToInitial}
-            className="w-full sm:w-auto px-6 py-3.5 rounded-lg text-[14px] font-semibold border border-accent text-accent transition-all hover:bg-accent-surface active:scale-[0.97] min-h-[48px]"
-          >
-            Proceed with Initial Phase
+          <button onClick={() => handleNavClick("design-phase")} className="btn-secondary">
+            Proceed with Design Phase
           </button>
         </motion.div>
 
@@ -94,11 +89,7 @@ const HeroSection = () => {
           style={{ WebkitOverflowScrolling: "touch" }}
         >
           {navItems.map((item) => (
-            <button
-              key={item.anchor}
-              onClick={() => handleNavClick(item.anchor)}
-              className="nav-pill shrink-0"
-            >
+            <button key={item.anchor} onClick={() => handleNavClick(item.anchor)} className="nav-pill shrink-0">
               {item.label}
             </button>
           ))}

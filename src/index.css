@@ -6,72 +6,73 @@
 
 @layer base {
   :root {
-    /* LIGHT ENTERPRISE PROPOSAL PALETTE */
-    --background: 220 20% 98%;
-    --foreground: 0 0% 12%;
-    --surface: 220 20% 98%;
-    --surface-elevated: 0 0% 100%;
-    --surface-subtle: 220 14% 96%;
-    --surface-accent: 215 70% 50% / 0.05;
+    /* DARK PREMIUM PROPOSAL PALETTE */
+    --background: 220 20% 7%;
+    --foreground: 0 0% 96%;
+    --surface: 220 16% 10%;
+    --surface-elevated: 215 14% 13%;
+    --surface-subtle: 215 12% 15%;
+    --surface-accent: 187 100% 50% / 0.06;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
+    --card: 215 14% 13%;
+    --card-foreground: 0 0% 96%;
+    --popover: 215 14% 13%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 225 70% 48%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 14% 94%;
-    --secondary-foreground: 0 0% 20%;
+    --primary: 187 100% 50%;
+    --primary-foreground: 220 20% 7%;
+    --secondary: 215 12% 18%;
+    --secondary-foreground: 0 0% 90%;
 
-    --muted: 220 12% 93%;
-    --muted-foreground: 220 8% 46%;
+    --muted: 215 10% 20%;
+    --muted-foreground: 220 10% 55%;
 
-    --accent: 225 70% 48%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 225 55% 58%;
-    --accent-surface: 225 70% 48% / 0.06;
-    --accent-border: 225 70% 48% / 0.18;
+    --accent: 187 100% 50%;
+    --accent-foreground: 220 20% 7%;
+    --accent-light: 187 80% 60%;
+    --accent-surface: 187 100% 50% / 0.08;
+    --accent-border: 187 100% 50% / 0.20;
+
+    --violet: 263 70% 58%;
+    --violet-surface: 263 70% 58% / 0.10;
+    --violet-border: 263 70% 58% / 0.25;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
     /* TEXT */
-    --text-primary: 0 0% 12%;
-    --text-secondary: 220 5% 40%;
-    --text-muted: 220 6% 58%;
+    --text-primary: 0 0% 96%;
+    --text-secondary: 220 20% 72%;
+    --text-muted: 220 10% 50%;
 
     /* BORDERS */
-    --border: 220 14% 90%;
-    --border-hover: 220 10% 80%;
-    --input: 220 14% 90%;
-    --ring: 225 70% 48%;
+    --border: 0 0% 100% / 0.10;
+    --border-hover: 0 0% 100% / 0.20;
+    --input: 0 0% 100% / 0.10;
+    --ring: 187 100% 50%;
 
-    --radius: 0.75rem;
-
-    /* GOLD */
-    --gold: 38 65% 48%;
-    --gold-surface: 38 65% 48% / 0.08;
+    --radius: 0.875rem;
 
     /* GREEN */
-    --success: 152 56% 42%;
-    --success-surface: 152 56% 42% / 0.08;
+    --success: 160 60% 50%;
+    --success-surface: 160 60% 50% / 0.10;
 
     /* SHADOWS */
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
-    --shadow-hover: 0 6px 20px rgba(47, 95, 215, 0.08);
-    --shadow-glow: 0 0 16px rgba(47, 95, 215, 0.1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 8px 24px rgba(0, 212, 255, 0.08);
+    --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.12);
+    --shadow-glow-violet: 0 0 20px rgba(139, 92, 246, 0.12);
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 12%;
-    --sidebar-primary: 225 70% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 0 0% 12%;
-    --sidebar-border: 220 14% 90%;
-    --sidebar-ring: 225 70% 48%;
+    --sidebar-background: 220 20% 7%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 215 12% 15%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 100% / 0.10;
+    --sidebar-ring: 187 100% 50%;
 
     /* Safe areas for notched devices */
     --safe-top: env(safe-area-inset-top, 0px);
@@ -115,7 +116,53 @@
 }
 
 @layer utilities {
-  /* ========== CORE CARD SYSTEM ========== */
+  /* ========== CORE CARD SYSTEM — DARK PREMIUM ========== */
+
+  .glow-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 16px 14px;
+    box-shadow: var(--shadow-sm);
+    transition: all 280ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (min-width: 640px) {
+    .glow-card { padding: 24px 22px; }
+  }
+  @media (hover: hover) {
+    .glow-card:hover {
+      border-color: hsl(var(--accent-border));
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+  }
+
+  /* Scope Box — tile for individual items */
+  .scope-box {
+    background: hsl(var(--surface-subtle));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: hsl(var(--text-primary));
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 200ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .scope-box .scope-icon {
+    color: hsl(var(--accent));
+    flex-shrink: 0;
+  }
+  @media (hover: hover) {
+    .scope-box:hover {
+      border-color: hsl(var(--accent-border));
+      background: hsl(var(--accent-surface));
+    }
+  }
 
   /* Module Card — primary content card */
   .module-card {
@@ -129,34 +176,8 @@
   @media (min-width: 640px) {
     .module-card { padding: 24px 22px; }
   }
-  @media (hover: hover) {
-    .module-card:hover {
-      border-color: hsl(var(--accent-border));
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
-  }
 
-  /* Scope Box — small tile for individual scope items */
-  .scope-box {
-    background: hsl(var(--surface-subtle));
-    border: 1px solid hsl(var(--border));
-    border-radius: var(--radius);
-    padding: 12px 14px;
-    font-size: 13px;
-    font-weight: 500;
-    color: hsl(var(--text-primary));
-    transition: all 200ms ease;
-    -webkit-tap-highlight-color: transparent;
-  }
-  @media (hover: hover) {
-    .scope-box:hover {
-      border-color: hsl(var(--accent-border));
-      background: hsl(var(--accent-surface));
-    }
-  }
-
-  /* Highlighted Module Card */
+  /* Module Card Highlight */
   .module-card-highlight {
     background: hsl(var(--accent-surface));
     border: 1px solid hsl(var(--accent-border));
@@ -169,13 +190,24 @@
     .module-card-highlight { padding: 22px 20px; }
   }
 
-  /* Investment Card */
+  /* Investment Card — gradient border */
   .investment-card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
     padding: 20px 16px;
     box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+  }
+  .investment-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, hsl(187 100% 50%), hsl(263 70% 58%));
   }
   @media (min-width: 640px) {
     .investment-card { padding: 24px 20px; }
@@ -189,11 +221,18 @@
     padding: 14px;
     text-align: center;
     box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
   }
   .deliverable-tile p {
     font-size: 13px;
     font-weight: 600;
     color: hsl(var(--text-primary));
+  }
+  .deliverable-tile .tile-icon {
+    color: hsl(var(--accent));
   }
 
   /* Scope Boundary Tile — included/excluded items */
@@ -230,7 +269,7 @@
   @media (hover: hover) {
     .step-card:hover {
       border-color: hsl(var(--accent-border));
-      box-shadow: var(--shadow-hover);
+      box-shadow: var(--shadow-glow);
     }
   }
 
@@ -309,11 +348,11 @@
     border: 1px solid hsl(var(--accent-border));
   }
 
-  .tag-gold {
+  .tag-violet {
     @apply tag;
-    color: hsl(var(--gold));
-    background: hsl(var(--gold-surface));
-    border: 1px solid hsl(38 65% 48% / 0.18);
+    color: hsl(var(--violet));
+    background: hsl(var(--violet-surface));
+    border: 1px solid hsl(var(--violet-border));
   }
 
   /* Section surfaces */
@@ -324,17 +363,17 @@
     background: hsl(var(--surface-elevated));
   }
 
-  /* Divider */
+  /* Gradient divider */
   .section-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--accent) / 0.4), hsl(var(--violet) / 0.3), transparent);
   }
 
-  /* Nav pill — 44px min touch target */
+  /* Nav pill */
   .nav-pill {
     @apply text-[13px] font-medium px-4 py-2.5 rounded-full whitespace-nowrap;
     color: hsl(var(--text-secondary));
-    background: hsl(var(--card));
+    background: hsl(var(--surface-subtle));
     border: 1px solid hsl(var(--border));
     transition: all 200ms ease;
     -webkit-tap-highlight-color: transparent;
@@ -351,6 +390,7 @@
     .nav-pill:hover {
       border-color: hsl(var(--accent-border));
       color: hsl(var(--accent));
+      box-shadow: var(--shadow-glow);
     }
   }
 
@@ -360,8 +400,54 @@
     border: 1px solid hsl(var(--accent-border));
     border-radius: var(--radius);
     padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .time-box .time-icon {
+    color: hsl(var(--accent));
+    flex-shrink: 0;
   }
   @media (min-width: 640px) {
     .time-box { padding: 14px 16px; }
+  }
+
+  /* CTA Buttons */
+  .btn-primary {
+    @apply w-full sm:w-auto px-6 py-3.5 rounded-lg text-[14px] font-semibold transition-all active:scale-[0.97];
+    background: linear-gradient(135deg, hsl(187 100% 50%), hsl(263 70% 58%));
+    color: white;
+    min-height: 48px;
+  }
+  @media (hover: hover) {
+    .btn-primary:hover { opacity: 0.9; box-shadow: var(--shadow-glow); }
+  }
+
+  .btn-secondary {
+    @apply w-full sm:w-auto px-6 py-3.5 rounded-lg text-[14px] font-semibold transition-all active:scale-[0.97];
+    border: 1px solid hsl(var(--accent-border));
+    color: hsl(var(--accent));
+    background: transparent;
+    min-height: 48px;
+  }
+  @media (hover: hover) {
+    .btn-secondary:hover {
+      background: hsl(var(--accent-surface));
+      box-shadow: var(--shadow-glow);
+    }
+  }
+
+  /* Step connector line */
+  .step-connector {
+    width: 2px;
+    height: 20px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, hsl(var(--accent) / 0.4), hsl(var(--violet) / 0.3));
+  }
+  @media (min-width: 640px) {
+    .step-connector {
+      width: 40px;
+      height: 2px;
+    }
   }
 }
