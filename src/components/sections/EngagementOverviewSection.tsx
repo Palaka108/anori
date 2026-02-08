@@ -1,25 +1,50 @@
 import { motion } from "framer-motion";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
+const cards = [
+  {
+    label: "INITIAL PHASE",
+    title: "Alignment & Scoping",
+    desc: "Establish a factual baseline and define execution priorities.",
+  },
+  {
+    label: "MONTH 1",
+    title: "Foundation",
+    desc: "Build core systems and surface early market signals.",
+  },
+  {
+    label: "3-MONTH PACKAGE",
+    title: "Advisory Package",
+    desc: "Activate, refine, and convert learning into durable frameworks.",
+  },
+];
+
 const EngagementOverviewSection = () => (
   <AnimatedSection id="overview" alt>
-    <div className="w-full max-w-[600px] mx-auto px-5">
+    <div className="w-full max-w-[620px] mx-auto px-5">
       <motion.p variants={labelSlide} className="section-label mb-4">OVERVIEW</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-6 text-text-primary">
+      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-4 text-text-primary">
         Engagement Overview
       </motion.h2>
 
-      <motion.div variants={fadeUp} className="space-y-4 text-[14px] sm:text-[15px] text-text-secondary leading-relaxed">
+      <motion.div variants={fadeUp} className="space-y-3 text-[14px] text-text-secondary leading-relaxed mb-8">
         <p>
-          This is a structured, execution-aware advisory engagement — designed to ground reality, surface signal, and guide clear next steps.
+          This engagement is structured to ensure advisory effort is guided by reality — not assumptions.
         </p>
         <p>
-          Advisory effort is guided by what's real — not assumptions. Execution options unlock only after initial alignment establishes a factual baseline.
-        </p>
-        <p className="text-text-muted-custom text-[13px]">
-          This is not a generic consulting engagement.
+          Execution phases are defined only after an initial alignment and scoping phase.
         </p>
       </motion.div>
+
+      <div className="space-y-3">
+        {cards.map((card) => (
+          <motion.div key={card.title} variants={fadeUp} className="module-card">
+            <span className="tag-accent mb-3">{card.label}</span>
+            <h3 className="text-[15px] font-semibold text-text-primary mb-1.5">{card.title}</h3>
+            <p className="text-[13px] text-text-secondary leading-relaxed">{card.desc}</p>
+          </motion.div>
+        ))}
+      </div>
     </div>
   </AnimatedSection>
 );

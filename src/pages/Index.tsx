@@ -2,9 +2,9 @@ import HeroSection from "@/components/sections/HeroSection";
 import EngagementOverviewSection from "@/components/sections/EngagementOverviewSection";
 import AlignmentSprintSection from "@/components/sections/AlignmentSprintSection";
 import Month1Section from "@/components/sections/Month1Section";
-import Month2Section from "@/components/sections/Month2Section";
-import IncludedSection from "@/components/sections/IncludedSection";
-import NotIncludedSection from "@/components/sections/NotIncludedSection";
+import ThreeMonthSection from "@/components/sections/ThreeMonthSection";
+import ScopeBoundariesSection from "@/components/sections/ScopeBoundariesSection";
+import EngagementFlowSection from "@/components/sections/EngagementFlowSection";
 import PricingSection from "@/components/sections/PricingSection";
 import FooterSection from "@/components/sections/FooterSection";
 
@@ -14,9 +14,9 @@ const Index = () => (
     <EngagementOverviewSection />
     <AlignmentSprintSection />
     <Month1Section />
-    <Month2Section />
-    <IncludedSection />
-    <NotIncludedSection />
+    <ThreeMonthSection />
+    <ScopeBoundariesSection />
+    <EngagementFlowSection />
     <PricingSection />
     <FooterSection />
   </div>
