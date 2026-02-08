@@ -6,12 +6,12 @@ const included = [
   "Advisory guidance across defined phases",
   "CRM and infrastructure decisions",
   "Defined outbound support",
-  "Weekly reporting and dashboards",
-  "Market intelligence and system recommendations",
+  "Weekly reporting & dashboards",
+  "Market intelligence & system recommendations",
 ];
 
 const notIncluded = [
-  "Fundraising ownership or investor relations",
+  "Fundraising ownership",
   "Investor deck creation",
   "Product roadmap ownership",
   "SDR / BDR management",
@@ -22,41 +22,43 @@ const notIncluded = [
 
 const ScopeBoundariesSection = () => (
   <AnimatedSection id="scope" alt>
-    <div className="w-full max-w-[620px] mx-auto px-4 sm:px-5">
-      <motion.p variants={labelSlide} className="section-label mb-3 sm:mb-4">SCOPE</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-6 sm:mb-8 text-text-primary">
+    <div className="content-container">
+      <motion.p variants={labelSlide} className="section-label mb-3">SCOPE</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-6 text-text-primary">
         Scope Boundaries
       </motion.h2>
 
-      {/* Included */}
-      <motion.div variants={fadeUp} className="mb-5 sm:mb-6">
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-success mb-2.5 sm:mb-3">What's Included</p>
-        <div className="space-y-2">
-          {included.map((item) => (
-            <div key={item} className="tap-card flex items-start gap-3">
-              <div className="w-6 h-6 rounded-md bg-success-surface flex items-center justify-center shrink-0 mt-0.5">
-                <Check className="w-3.5 h-3.5 text-success" />
+      <div className="space-y-6 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-5">
+        {/* Included */}
+        <motion.div variants={fadeUp}>
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-success mb-3">What's Included</p>
+          <div className="space-y-2">
+            {included.map((item) => (
+              <div key={item} className="boundary-tile">
+                <div className="w-6 h-6 rounded-md bg-success-surface flex items-center justify-center shrink-0">
+                  <Check className="w-3.5 h-3.5 text-success" />
+                </div>
+                <span className="text-text-primary font-medium">{item}</span>
               </div>
-              <p className="text-[13px] sm:text-[14px] text-text-primary font-medium">{item}</p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-      {/* Not Included */}
-      <motion.div variants={fadeUp}>
-        <p className="text-[12px] font-semibold uppercase tracking-wider text-text-muted-custom mb-2.5 sm:mb-3">Not Included</p>
-        <div className="space-y-2">
-          {notIncluded.map((item) => (
-            <div key={item} className="tap-card flex items-start gap-3">
-              <div className="w-6 h-6 rounded-md bg-muted flex items-center justify-center shrink-0 mt-0.5">
-                <X className="w-3.5 h-3.5 text-text-muted-custom" />
+        {/* Not Included */}
+        <motion.div variants={fadeUp}>
+          <p className="text-[12px] font-semibold uppercase tracking-wider text-text-muted-custom mb-3">Not Included</p>
+          <div className="space-y-2">
+            {notIncluded.map((item) => (
+              <div key={item} className="boundary-tile">
+                <div className="w-6 h-6 rounded-md bg-muted flex items-center justify-center shrink-0">
+                  <X className="w-3.5 h-3.5 text-text-muted-custom" />
+                </div>
+                <span className="text-text-secondary">{item}</span>
               </div>
-              <p className="text-[13px] sm:text-[14px] text-text-secondary">{item}</p>
-            </div>
-          ))}
-        </div>
-      </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </div>
   </AnimatedSection>
 );

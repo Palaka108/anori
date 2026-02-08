@@ -105,7 +105,6 @@
     border-radius: 2px;
   }
 
-  /* Hide scrollbar for horizontal scroll areas */
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -116,7 +115,9 @@
 }
 
 @layer utilities {
-  /* Module Card — mobile-first */
+  /* ========== CORE CARD SYSTEM ========== */
+
+  /* Module Card — primary content card */
   .module-card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
@@ -125,13 +126,9 @@
     box-shadow: var(--shadow-sm);
     transition: all 220ms ease;
   }
-
   @media (min-width: 640px) {
-    .module-card {
-      padding: 24px 22px;
-    }
+    .module-card { padding: 24px 22px; }
   }
-
   @media (hover: hover) {
     .module-card:hover {
       border-color: hsl(var(--accent-border));
@@ -140,33 +137,22 @@
     }
   }
 
-  /* Tap Card — optimised for touch */
-  .tap-card {
-    background: hsl(var(--card));
+  /* Scope Box — small tile for individual scope items */
+  .scope-box {
+    background: hsl(var(--surface-subtle));
     border: 1px solid hsl(var(--border));
     border-radius: var(--radius);
-    padding: 16px 14px;
-    box-shadow: var(--shadow-sm);
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: hsl(var(--text-primary));
     transition: all 200ms ease;
     -webkit-tap-highlight-color: transparent;
   }
-
-  @media (min-width: 640px) {
-    .tap-card {
-      padding: 20px 18px;
-    }
-  }
-
-  .tap-card:active {
-    transform: scale(0.985);
-    border-color: hsl(var(--accent-border));
-  }
-
   @media (hover: hover) {
-    .tap-card:hover {
+    .scope-box:hover {
       border-color: hsl(var(--accent-border));
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-hover);
+      background: hsl(var(--accent-surface));
     }
   }
 
@@ -179,11 +165,8 @@
     padding: 16px 14px;
     box-shadow: var(--shadow-sm);
   }
-
   @media (min-width: 640px) {
-    .module-card-highlight {
-      padding: 22px 20px;
-    }
+    .module-card-highlight { padding: 22px 20px; }
   }
 
   /* Investment Card */
@@ -194,14 +177,104 @@
     padding: 20px 16px;
     box-shadow: var(--shadow-sm);
   }
-
   @media (min-width: 640px) {
-    .investment-card {
-      padding: 24px 20px;
+    .investment-card { padding: 24px 20px; }
+  }
+
+  /* Deliverable Tile */
+  .deliverable-tile {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--accent-border));
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .deliverable-tile p {
+    font-size: 13px;
+    font-weight: 600;
+    color: hsl(var(--text-primary));
+  }
+
+  /* Scope Boundary Tile — included/excluded items */
+  .boundary-tile {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 200ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (min-width: 640px) {
+    .boundary-tile { font-size: 14px; }
+  }
+
+  /* Step Card — engagement flow */
+  .step-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 16px 14px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 200ms ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (hover: hover) {
+    .step-card:hover {
+      border-color: hsl(var(--accent-border));
+      box-shadow: var(--shadow-hover);
     }
   }
 
-  /* Section Label */
+  /* ========== LAYOUT HELPERS ========== */
+
+  .content-container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  @media (min-width: 640px) {
+    .content-container { padding: 0 24px; }
+  }
+  @media (min-width: 1024px) {
+    .content-container { max-width: 960px; }
+  }
+
+  .card-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 640px) {
+    .card-grid-2 {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+  }
+
+  .card-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 640px) {
+    .card-grid-3 {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+    }
+  }
+
+  /* ========== TYPOGRAPHY & TAGS ========== */
+
   .section-label {
     @apply uppercase tracking-[0.12em] flex items-center gap-3;
     font-size: 11px;
@@ -209,7 +282,6 @@
     letter-spacing: 0.12em;
     color: hsl(var(--accent));
   }
-
   .section-label::before {
     content: '';
     display: block;
@@ -218,14 +290,10 @@
     background: hsl(var(--accent));
     border-radius: 1px;
   }
-
   @media (min-width: 640px) {
-    .section-label::before {
-      width: 24px;
-    }
+    .section-label::before { width: 24px; }
   }
 
-  /* Tags — 48px min height for touch */
   .tag {
     @apply uppercase tracking-[0.06em] px-3 py-1.5 rounded-full inline-block;
     font-size: 10px;
@@ -248,19 +316,10 @@
     border: 1px solid hsl(38 65% 48% / 0.18);
   }
 
-  .tag-pill {
-    @apply text-[13px] font-medium px-4 py-2.5 rounded-lg inline-flex items-center gap-2;
-    color: hsl(var(--text-secondary));
-    background: hsl(var(--surface-subtle));
-    border: 1px solid hsl(var(--border));
-    min-height: 44px;
-  }
-
   /* Section surfaces */
   .section-surface {
     background: hsl(var(--surface));
   }
-
   .section-surface-alt {
     background: hsl(var(--surface-elevated));
   }
@@ -283,32 +342,15 @@
     display: inline-flex;
     align-items: center;
   }
-
   .nav-pill:active {
     transform: scale(0.95);
     border-color: hsl(var(--accent));
     color: hsl(var(--accent));
   }
-
   @media (hover: hover) {
     .nav-pill:hover {
       border-color: hsl(var(--accent-border));
       color: hsl(var(--accent));
-    }
-  }
-
-  /* Scope pill — touch friendly */
-  .scope-pill {
-    @apply text-[13px] font-medium px-4 py-3 rounded-lg;
-    color: hsl(var(--text-primary));
-    background: hsl(var(--surface-subtle));
-    border: 1px solid hsl(var(--border));
-    min-height: 44px;
-  }
-
-  @media (min-width: 640px) {
-    .scope-pill {
-      @apply py-2.5;
     }
   }
 
@@ -317,12 +359,9 @@
     background: hsl(var(--accent-surface));
     border: 1px solid hsl(var(--accent-border));
     border-radius: var(--radius);
-    padding: 14px 14px;
+    padding: 14px;
   }
-
   @media (min-width: 640px) {
-    .time-box {
-      padding: 14px 16px;
-    }
+    .time-box { padding: 14px 16px; }
   }
 }

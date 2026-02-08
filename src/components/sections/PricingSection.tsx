@@ -24,13 +24,13 @@ const tiers = [
 
 const PricingSection = () => (
   <AnimatedSection id="pricing" alt>
-    <div className="w-full max-w-[620px] mx-auto px-4 sm:px-5">
-      <motion.p variants={labelSlide} className="section-label mb-3 sm:mb-4">INVESTMENT</motion.p>
-      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-6 sm:mb-8 text-text-primary">
+    <div className="content-container">
+      <motion.p variants={labelSlide} className="section-label mb-3">INVESTMENT</motion.p>
+      <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-6 text-text-primary">
         Pricing Summary
       </motion.h2>
 
-      <div className="space-y-3 sm:space-y-4">
+      <div className="space-y-3">
         {tiers.map((tier) => (
           <motion.div
             key={tier.label}
@@ -53,9 +53,11 @@ const PricingSection = () => (
         ))}
       </div>
 
-      <motion.p variants={fadeUp} className="text-[12px] text-text-muted-custom mt-5 sm:mt-6 leading-relaxed text-center">
-        All pricing represents initial estimates. Final scope and investment confirmed after the Initial Phase.
-      </motion.p>
+      <motion.div variants={fadeUp} className="module-card mt-5 text-center">
+        <p className="text-[12px] text-text-muted-custom leading-relaxed">
+          All pricing represents initial estimates. Final scope and investment confirmed after the Initial Phase.
+        </p>
+      </motion.div>
     </div>
   </AnimatedSection>
 );
