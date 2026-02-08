@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Search, MessageCircle, Users, BarChart, TrendingUp, CheckCircle, Database, Clock, FileText, ClipboardList, Map } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
+import ExpandableCard from "../ExpandableCard";
 
 const scopeItems = [
   { Icon: Search, text: "Product & roadmap alignment" },
@@ -34,17 +35,18 @@ const AlignmentSprintSection = () => (
         </p>
       </motion.div>
 
-      {/* Scope boxes */}
-      <motion.div variants={fadeUp} className="mb-5">
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-text-muted-custom mb-3">Scope</p>
-        <div className="card-grid-2">
-          {scopeItems.map((item) => (
-            <div key={item.text} className="scope-box">
-              <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
-              <span>{item.text}</span>
-            </div>
-          ))}
-        </div>
+      {/* Scope — expandable */}
+      <motion.div variants={fadeUp} className="mb-4">
+        <ExpandableCard title="Scope of Work" subtitle="6 advisory focus areas" defaultOpen>
+          <div className="card-grid-2">
+            {scopeItems.map((item) => (
+              <div key={item.text} className="scope-box">
+                <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </ExpandableCard>
       </motion.div>
 
       {/* CRM Setup */}
@@ -66,17 +68,18 @@ const AlignmentSprintSection = () => (
         </p>
       </motion.div>
 
-      {/* Deliverables */}
+      {/* Deliverables — expandable */}
       <motion.div variants={fadeUp} className="mb-5">
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-accent mb-3">Deliverables</p>
-        <div className="card-grid-3">
-          {deliverables.map((d) => (
-            <div key={d.text} className="deliverable-tile">
-              <d.Icon className="tile-icon w-5 h-5" strokeWidth={1.5} />
-              <p>{d.text}</p>
-            </div>
-          ))}
-        </div>
+        <ExpandableCard title="Deliverables" subtitle="3 outputs from this phase" defaultOpen>
+          <div className="card-grid-3">
+            {deliverables.map((d) => (
+              <div key={d.text} className="deliverable-tile">
+                <d.Icon className="tile-icon w-5 h-5" strokeWidth={1.5} />
+                <p>{d.text}</p>
+              </div>
+            ))}
+          </div>
+        </ExpandableCard>
       </motion.div>
 
       {/* Investment */}

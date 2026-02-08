@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Box, Download, GitBranch, Users, Calendar, Target, BookOpen, Compass, Settings, PieChart, Activity, Mail, Cpu, Clock, BarChart2 } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
+import ExpandableCard from "../ExpandableCard";
 
 const infrastructure = [
   { Icon: Box, text: "CRM platform finalization & full team setup" },
@@ -31,49 +32,52 @@ const Month1Section = () => (
       <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
         Full Foundation Build
       </motion.h2>
-      <motion.div variants={fadeUp} className="module-card mb-5">
+      <motion.div variants={fadeUp} className="module-card mb-6">
         <p className="text-[14px] text-text-secondary leading-relaxed">
           Establishing core infrastructure and surfacing initial market signals.
         </p>
       </motion.div>
 
-      {/* Infrastructure */}
+      {/* Infrastructure — expandable */}
       <motion.div variants={fadeUp} className="mb-4">
-        <span className="tag-accent mb-3">INFRASTRUCTURE</span>
-        <div className="space-y-2 mt-3">
-          {infrastructure.map((item) => (
-            <div key={item.text} className="scope-box">
-              <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
-              <span>{item.text}</span>
-            </div>
-          ))}
-        </div>
+        <ExpandableCard title="Infrastructure" subtitle="CRM setup, pipeline, and lead intake" defaultOpen>
+          <div className="space-y-2">
+            {infrastructure.map((item) => (
+              <div key={item.text} className="scope-box">
+                <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </ExpandableCard>
       </motion.div>
 
-      {/* Systems */}
+      {/* Systems — expandable */}
       <motion.div variants={fadeUp} className="mb-4">
-        <span className="tag-accent mb-3">SYSTEMS</span>
-        <div className="space-y-2 mt-3">
-          {systems.map((item) => (
-            <div key={item.text} className="scope-box">
-              <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
-              <span>{item.text}</span>
-            </div>
-          ))}
-        </div>
+        <ExpandableCard title="Systems" subtitle="Templates, ICP mapping, enablement">
+          <div className="space-y-2">
+            {systems.map((item) => (
+              <div key={item.text} className="scope-box">
+                <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </ExpandableCard>
       </motion.div>
 
-      {/* Advisory */}
-      <motion.div variants={fadeUp} className="mb-5">
-        <span className="tag-accent mb-3">ADVISORY WORK</span>
-        <div className="card-grid-2 mt-3">
-          {advisory.map((item) => (
-            <div key={item.text} className="scope-box">
-              <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
-              <span>{item.text}</span>
-            </div>
-          ))}
-        </div>
+      {/* Advisory — expandable */}
+      <motion.div variants={fadeUp} className="mb-6">
+        <ExpandableCard title="Advisory Work" subtitle="6 strategic focus areas">
+          <div className="card-grid-2">
+            {advisory.map((item) => (
+              <div key={item.text} className="scope-box">
+                <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </ExpandableCard>
       </motion.div>
 
       {/* Time Box */}
