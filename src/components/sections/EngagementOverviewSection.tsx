@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Layers, Database, CalendarPlus } from "lucide-react";
+import { Layers, Database, CalendarRange } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const cards = [
@@ -19,7 +19,7 @@ const cards = [
   },
   {
     label: "ON REQUEST",
-    Icon: CalendarPlus,
+    Icon: CalendarRange,
     title: "Future Months",
     subtitle: "Available on Request",
     desc: "Additional months follow the same structure. Inquire about bulk pricing for multi‑month engagements.",
