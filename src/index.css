@@ -164,6 +164,40 @@
     }
   }
 
+  /* Scope Box Static — no hover effects */
+  .scope-box-static {
+    background: hsl(var(--surface-subtle));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: 500;
+    color: hsl(var(--text-primary));
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .scope-box-static .scope-icon {
+    color: hsl(var(--accent));
+    flex-shrink: 0;
+  }
+
+  /* Boundary Tile Static — no hover effects */
+  .boundary-tile-static {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  @media (min-width: 640px) {
+    .boundary-tile-static { font-size: 14px; }
+  }
+
   /* Module Card — primary content card */
   .module-card {
     background: hsl(var(--card));

@@ -6,8 +6,8 @@ const fade = {
 };
 
 const FooterSection = () => {
-  const scrollToDesign = () => {
-    document.getElementById("design-phase")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  const scrollToOverview = () => {
+    document.getElementById("overview")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
@@ -22,8 +22,8 @@ const FooterSection = () => {
         <motion.div variants={fade} className="section-divider max-w-[80px] mx-auto mb-6" />
 
         <motion.div variants={fade} className="mb-6">
-          <button onClick={scrollToDesign} className="btn-primary">
-            Proceed with Design Phase
+          <button onClick={scrollToOverview} className="btn-primary">
+            View Engagement Structure
           </button>
         </motion.div>
 

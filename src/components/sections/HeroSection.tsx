@@ -10,9 +10,7 @@ const navItems = [
   { label: "Overview", anchor: "overview" },
   { label: "Design Phase", anchor: "design-phase" },
   { label: "Month 1", anchor: "month-1" },
-  { label: "Future Months", anchor: "future-months" },
   { label: "Scope", anchor: "scope" },
-  { label: "Flow", anchor: "flow" },
 ];
 
 const HeroSection = () => {
@@ -72,17 +70,14 @@ const HeroSection = () => {
           </span>
         </motion.div>
 
-        {/* CTAs */}
-        <motion.div variants={fade} className="flex flex-col gap-3 sm:flex-row sm:gap-3 justify-center mb-10 px-2 sm:px-0">
+        {/* Single CTA */}
+        <motion.div variants={fade} className="flex justify-center mb-10 px-2 sm:px-0">
           <button onClick={() => handleNavClick("overview")} className="btn-primary">
             View Engagement Structure
           </button>
-          <button onClick={() => handleNavClick("design-phase")} className="btn-secondary">
-            Proceed with Design Phase
-          </button>
         </motion.div>
 
-        {/* Nav pills */}
+        {/* Nav pills — 4 items */}
         <motion.div
           variants={fade}
           className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide sm:flex-wrap sm:justify-center sm:overflow-visible sm:mx-0 sm:px-0"

@@ -12,7 +12,7 @@ const cards = [
   {
     label: "MONTH 1",
     Icon: Database,
-    title: "Full Foundation Build",
+    title: "Per-Month Engagement (Estimate)",
     desc: "Expand CRM to full team, build systems, and surface early market signals.",
   },
 ];
@@ -38,7 +38,7 @@ const EngagementOverviewSection = () => (
 
       <motion.div variants={fadeUp} className="module-card mt-4 text-center">
         <p className="text-[12px] text-text-muted-custom leading-relaxed">
-          Future months (Month 2, Month 3) available upon request. Inquire about bulk pricing for multi-month engagements.
+          Future months available upon request. Inquire about bulk pricing for multi-month engagements.
         </p>
       </motion.div>
     </div>

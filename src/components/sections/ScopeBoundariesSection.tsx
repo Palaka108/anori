@@ -11,19 +11,15 @@ const included = [
 ];
 
 const notIncluded = [
-  "Fundraising ownership",
-  "Investor deck creation",
-  "Product roadmap ownership",
-  "SDR / BDR management",
   "Heavy automation or custom engineering",
   "Ongoing CRM data entry",
-  "Ongoing campaign management beyond defined sequences",
 ];
 
 const optionalUpgrades = [
-  { text: "Expanded outbound campaign management", note: "Beyond initial 1–2 sequences" },
-  { text: "Additional CRM automation buildout", note: "Custom workflows & integrations" },
-  { text: "Extended team onboarding sessions", note: "Beyond primary enablement guide" },
+  { text: "SDR / BDR management", note: "Available as separate scope" },
+  { text: "Additional automations", note: "Beyond initial recommendations" },
+  { text: "Text-to-CRM / Voice-to-CRM", note: "Advanced capture features" },
+  { text: "Ongoing campaign management", note: "Beyond defined sequences — inquire about packages" },
 ];
 
 const ScopeBoundariesSection = () => (
@@ -48,7 +44,7 @@ const ScopeBoundariesSection = () => (
           </div>
           <div className="space-y-2">
             {included.map((item) => (
-              <div key={item} className="boundary-tile">
+              <div key={item} className="boundary-tile-static">
                 <div className="w-6 h-6 rounded-md bg-success-surface flex items-center justify-center shrink-0">
                   <Check className="w-3.5 h-3.5 text-success" strokeWidth={2} />
                 </div>
@@ -66,7 +62,7 @@ const ScopeBoundariesSection = () => (
           </div>
           <div className="space-y-2">
             {notIncluded.map((item) => (
-              <div key={item} className="boundary-tile opacity-60">
+              <div key={item} className="boundary-tile-static opacity-60">
                 <div className="w-6 h-6 rounded-md bg-muted flex items-center justify-center shrink-0">
                   <X className="w-3.5 h-3.5 text-text-muted-custom" strokeWidth={2} />
                 </div>
@@ -80,11 +76,11 @@ const ScopeBoundariesSection = () => (
         <motion.div variants={fadeUp}>
           <div className="flex items-center gap-2 mb-3">
             <div className="w-2 h-2 rounded-full bg-violet shrink-0" />
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-violet">Optional Upgrade</p>
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-violet">Optional Upgrades</p>
           </div>
           <div className="space-y-2">
             {optionalUpgrades.map((item) => (
-              <div key={item.text} className="boundary-tile border-violet-surface">
+              <div key={item.text} className="boundary-tile-static border-violet-surface">
                 <div className="w-6 h-6 rounded-md bg-violet-surface flex items-center justify-center shrink-0">
                   <ArrowUpRight className="w-3.5 h-3.5 text-violet" strokeWidth={2} />
                 </div>
@@ -95,6 +91,9 @@ const ScopeBoundariesSection = () => (
               </div>
             ))}
           </div>
+          <p className="text-[11px] text-text-muted-custom mt-3 leading-relaxed">
+            Inquire about packages for optional upgrades.
+          </p>
         </motion.div>
       </div>
     </div>
