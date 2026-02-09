@@ -4,34 +4,35 @@ import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 import ExpandableCard from "../ExpandableCard";
 
 const scopeItems = [
-  { Icon: Search, text: "Product & roadmap alignment" },
-  { Icon: MessageCircle, text: "POC and feedback synthesis" },
-  { Icon: Users, text: "Partner / customer conversation (if available)" },
-  { Icon: BarChart, text: "Lead & CRM reality assessment" },
-  { Icon: TrendingUp, text: "GTM signal validation" },
-  { Icon: CheckCircle, text: "Execution priority definition" },
+  { Icon: Search, text: "Product and roadmap alignment" },
+  { Icon: MessageCircle, text: "Existing proof‑of‑concept and feedback review" },
+  { Icon: Users, text: "One partner or customer‑facing conversation (where available)" },
+  { Icon: BarChart, text: "Lead and CRM reality assessment" },
+  { Icon: TrendingUp, text: "Go‑to‑market signal check (early interest and channels)" },
+  { Icon: CheckCircle, text: "Initial execution priority definition" },
 ];
 
 const deliverables = [
   { Icon: FileText, text: "Current Stage Assessment" },
-  { Icon: ClipboardList, text: "Month 1 Execution Definition" },
-  { Icon: Map, text: "Preliminary 3-Month Trajectory" },
+  { Icon: ClipboardList, text: "Month 1 Commercial Plan" },
+  { Icon: Map, text: "Preliminary 3‑Month View" },
 ];
 
 const AlignmentSprintSection = () => (
-  <AnimatedSection id="design-phase" alt>
+  <AnimatedSection id="commercial-foundations" alt>
     <div className="content-container">
-      <motion.p variants={labelSlide} className="section-label mb-3">DESIGN PHASE</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-3">COMMERCIAL FOUNDATIONS</motion.p>
       <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
-        Alignment & Foundation Setup
+        Commercial Foundations Phase
       </motion.h2>
+      <motion.p variants={fadeUp} className="text-[13px] text-accent/70 mb-4">Baseline & CRM Foundations — Required Once</motion.p>
 
       <motion.div variants={fadeUp} className="module-card mb-4">
         <p className="text-[14px] text-text-secondary leading-relaxed mb-2">
-          Execution-focused advisory work to establish a defensible baseline and begin CRM implementation.
+          Execution‑focused advisory work to establish a defensible commercial baseline and begin CRM implementation.
         </p>
         <p className="text-[14px] text-text-secondary leading-relaxed">
-          Defines what should be executed now, what should wait, and what should not proceed.
+          Clarifies what should be executed now, what should wait, and what should not proceed.
         </p>
       </motion.div>
 
@@ -49,14 +50,14 @@ const AlignmentSprintSection = () => (
         </ExpandableCard>
       </motion.div>
 
-      {/* CRM Setup — same card style as other blocks */}
+      {/* CRM Setup */}
       <motion.div variants={fadeUp} className="module-card mb-4">
         <div className="flex items-center gap-2 mb-2">
           <Database className="w-[18px] h-[18px] text-accent" strokeWidth={1.5} />
           <p className="text-[12px] font-semibold uppercase tracking-wider text-accent">CRM Setup Included</p>
         </div>
         <p className="text-[13px] text-text-secondary leading-relaxed">
-          HubSpot configuration for 1 primary user (Adrian). Additional team members will be added during Month 1.
+          HubSpot configuration for one primary user (Adrian). Additional team members (up to four) are added during the first Monthly Advisory Engagement.
         </p>
       </motion.div>
 
@@ -72,7 +73,7 @@ const AlignmentSprintSection = () => (
 
       {/* Deliverables — expandable */}
       <motion.div variants={fadeUp} className="mb-4">
-        <ExpandableCard title="Deliverables" subtitle="3 outputs from this phase" defaultOpen>
+        <ExpandableCard title="Deliverables" subtitle="Outputs from this phase" defaultOpen>
           <div className="card-grid-3">
             {deliverables.map((d) => (
               <div key={d.text} className="deliverable-tile">
@@ -88,8 +89,8 @@ const AlignmentSprintSection = () => (
       <motion.div variants={fadeUp} className="investment-card">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Design Phase</p>
-            <p className="text-[11px] text-text-muted-custom">Credited toward Month 1 if engagement proceeds</p>
+            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Commercial Foundations Phase</p>
+            <p className="text-[11px] text-text-muted-custom">Credited toward the first Monthly Advisory Engagement if we proceed</p>
           </div>
           <div className="text-right shrink-0">
             <span className="text-[22px] sm:text-[28px] font-bold text-text-primary">$1,800</span>

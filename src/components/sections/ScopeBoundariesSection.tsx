@@ -3,23 +3,23 @@ import { Check, X, ArrowUpRight } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const included = [
-  "Advisory guidance across defined phases",
-  "CRM and infrastructure decisions",
-  "Defined outbound support",
-  "Weekly reporting & dashboards",
-  "Market intelligence & system recommendations",
+  "Advisory guidance across the Commercial Foundations Phase and Monthly Advisory Engagement",
+  "CRM and infrastructure decisions and configuration appropriate to stage",
+  "Defined outbound support at limited, test‑scale volume",
+  "Weekly reporting snapshots and simple dashboards",
+  "Commercial and system recommendations grounded in actual conversations and pipeline data",
 ];
 
 const notIncluded = [
-  "Heavy automation or custom engineering",
+  "Heavy automation or custom engineering work",
   "Ongoing CRM data entry",
 ];
 
 const optionalUpgrades = [
-  { text: "SDR / BDR management", note: "Available as separate scope" },
-  { text: "Additional automations", note: "Beyond initial recommendations" },
-  { text: "Text-to-CRM / Voice-to-CRM", note: "Advanced capture features" },
-  { text: "Ongoing campaign management", note: "Beyond defined sequences — inquire about packages" },
+  { text: "SDR / BDR management and oversight", note: "Available as separate scope" },
+  { text: "Additional automations beyond initial recommendations", note: "Scoped separately" },
+  { text: "Text‑to‑CRM / Voice‑to‑CRM capture features", note: "Advanced capture tools" },
+  { text: "Ongoing campaign management beyond defined test sequences", note: "Inquire about packages" },
 ];
 
 const ScopeBoundariesSection = () => (
@@ -58,7 +58,7 @@ const ScopeBoundariesSection = () => (
         <motion.div variants={fadeUp}>
           <div className="flex items-center gap-2 mb-3">
             <div className="w-2 h-2 rounded-full bg-text-muted-custom shrink-0" />
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-text-muted-custom">Not Included</p>
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-text-muted-custom">Not Included in Base Engagement</p>
           </div>
           <div className="space-y-2">
             {notIncluded.map((item) => (
@@ -76,7 +76,7 @@ const ScopeBoundariesSection = () => (
         <motion.div variants={fadeUp}>
           <div className="flex items-center gap-2 mb-3">
             <div className="w-2 h-2 rounded-full bg-violet shrink-0" />
-            <p className="text-[11px] font-semibold uppercase tracking-wider text-violet">Optional Upgrades</p>
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-violet">Optional Upgrades (Separate Scope)</p>
           </div>
           <div className="space-y-2">
             {optionalUpgrades.map((item) => (

@@ -1,19 +1,28 @@
 import { motion } from "framer-motion";
-import { Layers, Database } from "lucide-react";
+import { Layers, Database, CalendarPlus } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const cards = [
   {
-    label: "DESIGN PHASE",
+    label: "REQUIRED ONCE",
     Icon: Layers,
-    title: "Alignment & Foundation Setup",
-    desc: "Establish a factual baseline, set up CRM for primary user, and define execution-ready priorities.",
+    title: "Commercial Foundations Phase",
+    subtitle: "Baseline & CRM Foundations",
+    desc: "A one‑time working phase to establish a factual commercial baseline, configure CRM for the founder, and define a focused first‑month plan.",
   },
   {
-    label: "MONTH 1",
+    label: "ONGOING",
     Icon: Database,
-    title: "Per-Month Engagement (Estimate)",
-    desc: "Expand CRM to full team, build systems, and surface early market signals.",
+    title: "Monthly Advisory Engagement",
+    subtitle: "Per‑Month Estimate",
+    desc: "Ongoing advisory support to expand CRM to the full team, operate the system, and learn from early customer and channel patterns.",
+  },
+  {
+    label: "ON REQUEST",
+    Icon: CalendarPlus,
+    title: "Future Months",
+    subtitle: "Available on Request",
+    desc: "Additional months follow the same structure. Inquire about bulk pricing for multi‑month engagements.",
   },
 ];
 
@@ -25,12 +34,15 @@ const EngagementOverviewSection = () => (
         Engagement Overview
       </motion.h2>
 
-      <div className="space-y-3 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4">
+      <div className="space-y-3">
         {cards.map((card) => (
           <motion.div key={card.title} variants={fadeUp} className="glow-card">
-            <card.Icon className="w-5 h-5 text-accent mb-3" strokeWidth={1.5} />
-            <span className="tag-accent mb-3">{card.label}</span>
-            <h3 className="text-[15px] font-semibold text-text-primary mb-1 mt-2">{card.title}</h3>
+            <div className="flex items-center gap-3 mb-3">
+              <card.Icon className="w-5 h-5 text-accent shrink-0" strokeWidth={1.5} />
+              <span className="tag-accent">{card.label}</span>
+            </div>
+            <h3 className="text-[15px] font-semibold text-text-primary mb-0.5">{card.title}</h3>
+            <p className="text-[13px] text-accent/70 mb-2">{card.subtitle}</p>
             <p className="text-[13px] text-text-secondary leading-relaxed">{card.desc}</p>
           </motion.div>
         ))}
@@ -38,7 +50,7 @@ const EngagementOverviewSection = () => (
 
       <motion.div variants={fadeUp} className="module-card mt-4 text-center">
         <p className="text-[12px] text-text-muted-custom leading-relaxed">
-          Future months available upon request. Inquire about bulk pricing for multi-month engagements.
+          The Commercial Foundations Phase is required once before any ongoing monthly engagement. It is included in the first month and not repeated thereafter.
         </p>
       </motion.div>
     </div>

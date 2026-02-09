@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 
 const steps = [
-  { num: "1", title: "Design Phase", sub: "Alignment & CRM Setup" },
-  { num: "2", title: "Scope Confirmation", sub: "" },
-  { num: "3", title: "Month 1", sub: "Full Foundation Build" },
-  { num: "4", title: "Optional", sub: "Multi-Month Continuation" },
+  { num: "1", title: "Commercial Foundations Phase", sub: "Baseline & CRM Foundations" },
+  { num: "2", title: "Scope Confirmation", sub: "Monthly scope and fee agreed" },
+  { num: "3", title: "Monthly Advisory Engagement", sub: "First month of ongoing work" },
+  { num: "4", title: "Optional Extension", sub: "Additional months or upgrade modules as needed" },
 ];
 
 const EngagementFlowSection = () => (

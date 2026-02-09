@@ -31,7 +31,7 @@ const FooterSection = () => {
           Confidential · February 2026
         </motion.p>
         <motion.p variants={fade} className="text-[11px] sm:text-[12px] text-text-muted-custom">
-          Anori / Gosai
+          Anori × Gosai
         </motion.p>
       </div>
     </motion.footer>
