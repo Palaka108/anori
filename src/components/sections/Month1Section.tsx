@@ -30,7 +30,7 @@ const Month1Section = () => (
     <div className="content-container">
       <motion.p variants={labelSlide} className="section-label mb-3">MONTH 1</motion.p>
       <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
-        Full Foundation Build
+        Month 1 — Engagement
       </motion.h2>
       <motion.div variants={fadeUp} className="module-card mb-6">
         <p className="text-[14px] text-text-secondary leading-relaxed">
@@ -43,7 +43,7 @@ const Month1Section = () => (
         <ExpandableCard title="Infrastructure" subtitle="CRM setup, pipeline, and lead intake" defaultOpen>
           <div className="space-y-2">
             {infrastructure.map((item) => (
-              <div key={item.text} className="scope-box">
+              <div key={item.text} className="scope-box-static">
                 <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
                 <span>{item.text}</span>
               </div>
@@ -57,7 +57,7 @@ const Month1Section = () => (
         <ExpandableCard title="Systems" subtitle="Templates, ICP mapping, enablement">
           <div className="space-y-2">
             {systems.map((item) => (
-              <div key={item.text} className="scope-box">
+              <div key={item.text} className="scope-box-static">
                 <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
                 <span>{item.text}</span>
               </div>
@@ -71,7 +71,7 @@ const Month1Section = () => (
         <ExpandableCard title="Advisory Work" subtitle="6 strategic focus areas">
           <div className="card-grid-2">
             {advisory.map((item) => (
-              <div key={item.text} className="scope-box">
+              <div key={item.text} className="scope-box-static">
                 <item.Icon className="scope-icon w-[18px] h-[18px]" strokeWidth={1.5} />
                 <span>{item.text}</span>
               </div>
@@ -81,15 +81,17 @@ const Month1Section = () => (
       </motion.div>
 
       {/* Time Box */}
-      <motion.div variants={fadeUp} className="time-box mb-5">
-        <Clock className="time-icon w-[18px] h-[18px]" strokeWidth={1.5} />
-        <p className="text-[13px] text-text-primary leading-relaxed">
-          Up to <span className="font-semibold">8 hours</span> of customer-, partner-, and Anori-facing meetings.
-        </p>
+      <motion.div variants={fadeUp} className="module-card mb-5">
+        <div className="flex items-center gap-2">
+          <Clock className="w-[18px] h-[18px] text-accent shrink-0" strokeWidth={1.5} />
+          <p className="text-[13px] text-text-primary leading-relaxed">
+            Up to <span className="font-semibold">8 hours</span> of customer-, partner-, and Anori-facing meetings.
+          </p>
+        </div>
       </motion.div>
 
       {/* Deliverable */}
-      <motion.div variants={fadeUp} className="module-card-highlight mb-5">
+      <motion.div variants={fadeUp} className="module-card mb-5">
         <div className="flex items-center gap-2 mb-2">
           <BarChart2 className="w-[18px] h-[18px] text-accent" strokeWidth={1.5} />
           <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">Month 1 Deliverable</p>
@@ -104,8 +106,8 @@ const Month1Section = () => (
       <motion.div variants={fadeUp} className="investment-card">
         <div className="flex items-center justify-between gap-3 mb-3">
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Month 1 Advisory</p>
-            <p className="text-[11px] text-text-muted-custom">Initial Estimate</p>
+            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Per-Month Estimate</p>
+            <p className="text-[11px] text-text-muted-custom">Final scope confirmed after Design Phase</p>
           </div>
           <div className="text-right shrink-0">
             <span className="text-[22px] sm:text-[28px] font-bold text-text-primary">$6,000</span>
@@ -113,7 +115,7 @@ const Month1Section = () => (
           </div>
         </div>
         <p className="text-[12px] text-text-muted-custom leading-relaxed">
-          Final scope and fee confirmed after Design Phase.
+          Future months follow the same pattern. Inquire about bulk pricing for extended engagements.
         </p>
       </motion.div>
     </div>
