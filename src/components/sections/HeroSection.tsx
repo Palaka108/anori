@@ -8,8 +8,8 @@ const fade = {
 
 const navItems = [
   { label: "Overview", anchor: "overview" },
-  { label: "Design Phase", anchor: "design-phase" },
-  { label: "Month 1", anchor: "month-1" },
+  { label: "Commercial Foundations", anchor: "commercial-foundations" },
+  { label: "Monthly Advisory", anchor: "monthly-advisory" },
   { label: "Scope", anchor: "scope" },
 ];
 
@@ -61,7 +61,7 @@ const HeroSection = () => {
           variants={fade}
           className="text-[13px] sm:text-[14px] text-text-muted-custom max-w-sm mx-auto mb-6 leading-relaxed px-2"
         >
-          Structured advisory support for early-stage building-tech initiatives — designed to earn clarity before scale.
+          Structured advisory support for early‑stage building‑tech initiatives — designed to earn clarity before committing to scale.
         </motion.p>
 
         <motion.div variants={fade} className="inline-block mb-8">

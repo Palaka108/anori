@@ -4,37 +4,39 @@ import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 import ExpandableCard from "../ExpandableCard";
 
 const infrastructure = [
-  { Icon: Box, text: "CRM platform finalization & full team setup" },
-  { Icon: Download, text: "Intake of initial lead set (volume/sources defined in Design Phase)" },
-  { Icon: GitBranch, text: "Stage-appropriate pipeline structure" },
-  { Icon: Users, text: "CRM access for all 5 team members" },
+  { Icon: Box, text: "CRM platform finalized for the team" },
+  { Icon: Download, text: "Intake of initial lead set (volume and sources defined during Foundations Phase)" },
+  { Icon: GitBranch, text: "Stage‑appropriate pipeline structure" },
+  { Icon: Users, text: "CRM access for all five team members" },
 ];
 
 const systems = [
-  { Icon: Calendar, text: "Follow-up architecture (calendar + templates)" },
-  { Icon: Target, text: "ICP & persona mapping across target verticals" },
-  { Icon: BookOpen, text: "CRM enablement guide (up to three revisions)" },
+  { Icon: Calendar, text: "Follow‑up structure (calendar, queues, templates)" },
+  { Icon: Target, text: "Ideal customer and persona mapping across target verticals" },
+  { Icon: BookOpen, text: "Short CRM enablement guide (up to three revisions)" },
 ];
 
 const advisory = [
-  { Icon: Compass, text: "Strategic planning & prioritization" },
-  { Icon: Settings, text: "CRM and pipeline operations" },
-  { Icon: PieChart, text: "Lead & market analysis" },
-  { Icon: Activity, text: "Weekly dashboards & reporting" },
-  { Icon: Mail, text: "Outreach preparation" },
-  { Icon: Cpu, text: "Automation scoping (recommendations only)" },
+  { Icon: Compass, text: "Commercial planning and prioritization" },
+  { Icon: Settings, text: "CRM and pipeline operations guidance" },
+  { Icon: PieChart, text: "Lead and simple market pattern analysis" },
+  { Icon: Activity, text: "Weekly pipeline and activity snapshots" },
+  { Icon: Mail, text: "Outreach preparation (email and call templates)" },
+  { Icon: Cpu, text: "Automation recommendations (advice only, no heavy builds)" },
 ];
 
 const Month1Section = () => (
-  <AnimatedSection id="month-1">
+  <AnimatedSection id="monthly-advisory">
     <div className="content-container">
-      <motion.p variants={labelSlide} className="section-label mb-3">MONTH 1</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-3">MONTHLY ADVISORY</motion.p>
       <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
-        Month 1 — Engagement
+        Monthly Advisory Engagement
       </motion.h2>
+      <motion.p variants={fadeUp} className="text-[13px] text-accent/70 mb-4">Per‑Month Estimate (After Foundations Phase)</motion.p>
+
       <motion.div variants={fadeUp} className="module-card mb-6">
         <p className="text-[14px] text-text-secondary leading-relaxed">
-          Establishing core infrastructure and surfacing initial market signals.
+          Establish and operate the core commercial infrastructure, expand CRM to the full team, and learn from early customer and channel patterns.
         </p>
       </motion.div>
 
@@ -68,7 +70,7 @@ const Month1Section = () => (
 
       {/* Advisory — expandable */}
       <motion.div variants={fadeUp} className="mb-6">
-        <ExpandableCard title="Advisory Work" subtitle="6 strategic focus areas">
+        <ExpandableCard title="Advisory Work" subtitle="6 commercial focus areas">
           <div className="card-grid-2">
             {advisory.map((item) => (
               <div key={item.text} className="scope-box-static">
@@ -85,7 +87,7 @@ const Month1Section = () => (
         <div className="flex items-center gap-2">
           <Clock className="w-[18px] h-[18px] text-accent shrink-0" strokeWidth={1.5} />
           <p className="text-[13px] text-text-primary leading-relaxed">
-            Up to <span className="font-semibold">8 hours</span> of customer-, partner-, and Anori-facing meetings.
+            Up to <span className="font-semibold">8 hours</span> of founder, customer, and partner‑facing meetings per month.
           </p>
         </div>
       </motion.div>
@@ -94,11 +96,11 @@ const Month1Section = () => (
       <motion.div variants={fadeUp} className="module-card mb-5">
         <div className="flex items-center gap-2 mb-2">
           <BarChart2 className="w-[18px] h-[18px] text-accent" strokeWidth={1.5} />
-          <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">Month 1 Deliverable</p>
+          <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">Monthly Deliverable</p>
         </div>
-        <p className="text-[14px] font-semibold text-text-primary mb-2">Market Intelligence Report</p>
+        <p className="text-[14px] font-semibold text-text-primary mb-2">Commercial & Market Summary</p>
         <p className="text-[13px] text-text-secondary leading-relaxed">
-          Market signals · Channel insights · System recommendations · Cost estimates
+          Early customer and channel patterns · pipeline insights · system recommendations · approximate cost ranges for proposed improvements.
         </p>
       </motion.div>
 
@@ -106,8 +108,8 @@ const Month1Section = () => (
       <motion.div variants={fadeUp} className="investment-card">
         <div className="flex items-center justify-between gap-3 mb-3">
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Per-Month Estimate</p>
-            <p className="text-[11px] text-text-muted-custom">Final scope confirmed after Design Phase</p>
+            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Monthly Advisory Engagement</p>
+            <p className="text-[11px] text-text-muted-custom">Final scope and fee confirmed after Commercial Foundations Phase</p>
           </div>
           <div className="text-right shrink-0">
             <span className="text-[22px] sm:text-[28px] font-bold text-text-primary">$6,000</span>
@@ -115,7 +117,7 @@ const Month1Section = () => (
           </div>
         </div>
         <p className="text-[12px] text-text-muted-custom leading-relaxed">
-          Future months follow the same pattern. Inquire about bulk pricing for extended engagements.
+          Future months follow this pattern. Inquire about bulk pricing for extended engagements.
         </p>
       </motion.div>
     </div>
