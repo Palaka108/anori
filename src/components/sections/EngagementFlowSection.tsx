@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
+import BackToTop from "../BackToTop";
 
 const steps = [
   { num: "1", title: "Commercial Foundations Phase", sub: "Baseline & CRM Foundations" },
@@ -32,6 +33,7 @@ const EngagementFlowSection = () => (
           </div>
         ))}
       </motion.div>
+      <BackToTop />
     </div>
   </AnimatedSection>
 );

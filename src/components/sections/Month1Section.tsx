@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Box, Download, GitBranch, Users, Calendar, Target, BookOpen, Compass, Settings, PieChart, Activity, Mail, Cpu, Clock, BarChart2 } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
+import BackToTop from "../BackToTop";
 import ExpandableCard from "../ExpandableCard";
 
 const infrastructure = [
@@ -120,6 +121,7 @@ const Month1Section = () => (
           Future months follow this pattern. Inquire about bulk pricing for extended engagements.
         </p>
       </motion.div>
+      <BackToTop />
     </div>
   </AnimatedSection>
 );

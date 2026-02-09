@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Search, MessageCircle, Users, BarChart, TrendingUp, CheckCircle, Database, Clock, FileText, ClipboardList, Map } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
+import BackToTop from "../BackToTop";
 import ExpandableCard from "../ExpandableCard";
 
 const scopeItems = [
@@ -98,6 +99,7 @@ const AlignmentSprintSection = () => (
           </div>
         </div>
       </motion.div>
+      <BackToTop />
     </div>
   </AnimatedSection>
 );
