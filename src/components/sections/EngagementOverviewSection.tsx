@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Layers, Database, CalendarRange } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
+import BackToTop from "../BackToTop";
 
 const cards = [
   {
@@ -53,6 +54,7 @@ const EngagementOverviewSection = () => (
           The Commercial Foundations Phase is required once before any ongoing monthly engagement. It is included in the first month and not repeated thereafter.
         </p>
       </motion.div>
+      <BackToTop />
     </div>
   </AnimatedSection>
 );

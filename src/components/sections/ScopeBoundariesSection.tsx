@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Check, X, ArrowUpRight } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
+import BackToTop from "../BackToTop";
 
 const included = [
   "Advisory guidance across the Commercial Foundations Phase and Monthly Advisory Engagement",
@@ -96,6 +97,7 @@ const ScopeBoundariesSection = () => (
           </p>
         </motion.div>
       </div>
+      <BackToTop />
     </div>
   </AnimatedSection>
 );
