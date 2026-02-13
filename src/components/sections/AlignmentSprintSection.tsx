@@ -14,7 +14,7 @@ const scopeItems = [
 const deliverables = [
   { Icon: FileText, text: "Current Stage Assessment" },
   { Icon: ClipboardList, text: "Month 1 Commercial Plan" },
-  { Icon: Map, text: "Preliminary 3‑Month View" },
+  { Icon: Map, text: "Migrate Existing Leads into CRM Database" },
 ];
 
 const AlignmentSprintSection = () => (
