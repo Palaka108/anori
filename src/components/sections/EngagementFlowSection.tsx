@@ -3,7 +3,7 @@ import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 import BackToTop from "../BackToTop";
 
 const steps = [
-  { num: "1", title: "Commercial Foundations Phase", sub: "Baseline & CRM Foundations" },
+  { num: "1", title: "Joint Development Blueprint", sub: "Phase 1 — Required Once" },
   { num: "2", title: "Scope Confirmation", sub: "Monthly scope and fee agreed" },
   { num: "3", title: "Monthly Advisory Engagement", sub: "First month of ongoing work" },
   { num: "4", title: "Optional Extension", sub: "Additional months or upgrade modules as needed" },

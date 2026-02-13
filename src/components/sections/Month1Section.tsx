@@ -21,7 +21,7 @@ const advisory = [
   { Icon: Compass, text: "Commercial planning and prioritization" },
   { Icon: Settings, text: "CRM and pipeline operations guidance" },
   { Icon: PieChart, text: "Lead and simple market pattern analysis" },
-  { Icon: Activity, text: "Weekly pipeline and activity snapshots" },
+  { Icon: Activity, text: "Weekly reports — pipeline and activity snapshots" },
   { Icon: Mail, text: "Outreach preparation (email and call templates)" },
   { Icon: Cpu, text: "Automation recommendations (advice only, no heavy builds)" },
 ];
@@ -110,11 +110,11 @@ const Month1Section = () => (
         <div className="flex items-center justify-between gap-3 mb-3">
           <div>
             <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Monthly Advisory Engagement</p>
-            <p className="text-[11px] text-text-muted-custom">Final scope and fee confirmed after Commercial Foundations Phase</p>
+            <p className="text-[11px] text-text-muted-custom">Estimate — final scope and fee solidified during Phase 1</p>
           </div>
           <div className="text-right shrink-0">
             <span className="text-[22px] sm:text-[28px] font-bold text-text-primary">$6,000</span>
-            <span className="text-[11px] sm:text-[12px] text-text-muted-custom ml-1">/ month</span>
+            <span className="text-[11px] sm:text-[12px] text-text-muted-custom ml-1">/ month est.</span>
           </div>
         </div>
         <p className="text-[12px] text-text-muted-custom leading-relaxed">

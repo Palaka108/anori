@@ -6,10 +6,6 @@ const fade = {
 };
 
 const FooterSection = () => {
-  const scrollToOverview = () => {
-    document.getElementById("overview")?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <motion.footer
       initial="hidden"
@@ -21,14 +17,8 @@ const FooterSection = () => {
       <div className="content-container text-center">
         <motion.div variants={fade} className="section-divider max-w-[80px] mx-auto mb-6" />
 
-        <motion.div variants={fade} className="mb-6">
-          <button onClick={scrollToOverview} className="btn-primary">
-            View Engagement Structure
-          </button>
-        </motion.div>
-
         <motion.p variants={fade} className="text-[11px] sm:text-[12px] text-text-muted-custom mb-1 tracking-wide">
-          Confidential · February 2026
+          February 2026
         </motion.p>
         <motion.p variants={fade} className="text-[11px] sm:text-[12px] text-text-muted-custom">
           Anori × Gosai

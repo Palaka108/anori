@@ -1,16 +1,14 @@
 import { motion } from "framer-motion";
-import { Search, MessageCircle, Users, BarChart, TrendingUp, CheckCircle, Database, Clock, FileText, ClipboardList, Map } from "lucide-react";
+import { Search, MessageCircle, Users, Database, Clock, FileText, ClipboardList, Map, Building } from "lucide-react";
 import AnimatedSection, { fadeUp, labelSlide } from "../AnimatedSection";
 import BackToTop from "../BackToTop";
 import ExpandableCard from "../ExpandableCard";
 
 const scopeItems = [
-  { Icon: Search, text: "Product and roadmap alignment" },
-  { Icon: MessageCircle, text: "Existing proof‑of‑concept and feedback review" },
-  { Icon: Users, text: "One partner or customer‑facing conversation (where available)" },
-  { Icon: BarChart, text: "Lead and CRM reality assessment" },
-  { Icon: TrendingUp, text: "Go‑to‑market signal check (early interest and channels)" },
-  { Icon: CheckCircle, text: "Initial execution priority definition" },
+  { Icon: Search, text: "Technical Deep Dive and Potential Product Placement (2 hours min)" },
+  { Icon: MessageCircle, text: "Existing Partner Conversation" },
+  { Icon: Building, text: "Gosai to deliver Real Estate Developer Meeting" },
+  { Icon: Database, text: "Initial CRM setup for 1 user (and establish phases per current stage)" },
 ];
 
 const deliverables = [
@@ -22,11 +20,11 @@ const deliverables = [
 const AlignmentSprintSection = () => (
   <AnimatedSection id="commercial-foundations" alt>
     <div className="content-container">
-      <motion.p variants={labelSlide} className="section-label mb-3">COMMERCIAL FOUNDATIONS</motion.p>
+      <motion.p variants={labelSlide} className="section-label mb-3">PHASE 1</motion.p>
       <motion.h2 variants={fadeUp} className="text-[22px] sm:text-[28px] md:text-[32px] font-bold mb-3 text-text-primary">
-        Commercial Foundations Phase
+        Joint Development Blueprint
       </motion.h2>
-      <motion.p variants={fadeUp} className="text-[13px] text-accent/70 mb-4">Baseline & CRM Foundations — Required Once</motion.p>
+      <motion.p variants={fadeUp} className="text-[13px] text-accent/70 mb-4">Required Once</motion.p>
 
       <motion.div variants={fadeUp} className="module-card mb-4">
         <p className="text-[14px] text-text-secondary leading-relaxed mb-2">
@@ -39,7 +37,7 @@ const AlignmentSprintSection = () => (
 
       {/* Scope — expandable */}
       <motion.div variants={fadeUp} className="mb-4">
-        <ExpandableCard title="Scope of Work" subtitle="6 advisory focus areas" defaultOpen>
+        <ExpandableCard title="Scope of Work" subtitle="4 advisory focus areas" defaultOpen>
           <div className="card-grid-2">
             {scopeItems.map((item) => (
               <div key={item.text} className="scope-box-static">
@@ -49,17 +47,6 @@ const AlignmentSprintSection = () => (
             ))}
           </div>
         </ExpandableCard>
-      </motion.div>
-
-      {/* CRM Setup */}
-      <motion.div variants={fadeUp} className="module-card mb-4">
-        <div className="flex items-center gap-2 mb-2">
-          <Database className="w-[18px] h-[18px] text-accent" strokeWidth={1.5} />
-          <p className="text-[12px] font-semibold uppercase tracking-wider text-accent">CRM Setup Included</p>
-        </div>
-        <p className="text-[13px] text-text-secondary leading-relaxed">
-          HubSpot configuration for one primary user (Adrian). Additional team members (up to four) are added during the first Monthly Advisory Engagement.
-        </p>
       </motion.div>
 
       {/* Time Box */}
@@ -90,7 +77,7 @@ const AlignmentSprintSection = () => (
       <motion.div variants={fadeUp} className="investment-card">
         <div className="flex items-center justify-between gap-3">
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Commercial Foundations Phase</p>
+            <p className="text-[12px] font-semibold uppercase tracking-wider text-accent mb-0.5">Joint Development Blueprint</p>
             <p className="text-[11px] text-text-muted-custom">Credited toward the first Monthly Advisory Engagement if we proceed</p>
           </div>
           <div className="text-right shrink-0">

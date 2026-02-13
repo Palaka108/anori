@@ -32,7 +32,7 @@ const ScopeBoundariesSection = () => (
       </motion.h2>
       <motion.div variants={fadeUp} className="module-card mb-6">
         <p className="text-[13px] sm:text-[14px] text-text-secondary leading-relaxed">
-          Clear scope definition protects both parties. Items below are categorized as base engagement, explicit exclusions, or available upgrades.
+          Items below are categorized as base engagement, explicit exclusions, or available upgrades.
         </p>
       </motion.div>
 

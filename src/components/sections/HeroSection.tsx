@@ -8,7 +8,7 @@ const fade = {
 
 const navItems = [
   { label: "Overview", anchor: "overview" },
-  { label: "Commercial Foundations", anchor: "commercial-foundations" },
+  { label: "Phase 1", anchor: "commercial-foundations" },
   { label: "Monthly Advisory", anchor: "monthly-advisory" },
   { label: "Scope", anchor: "scope" },
 ];
@@ -64,17 +64,10 @@ const HeroSection = () => {
           Structured advisory support for early‑stage building‑tech initiatives — designed to turn product potential into a clear revenue system.
         </motion.p>
 
-        <motion.div variants={fade} className="inline-block mb-8">
+        <motion.div variants={fade} className="inline-block mb-10">
           <span className="text-[10px] sm:text-[11px] text-accent tracking-widest uppercase px-4 py-1.5 rounded-full border border-accent/20 bg-accent/5">
-            February 2026 · Confidential
+            February 2026
           </span>
-        </motion.div>
-
-        {/* Single CTA */}
-        <motion.div variants={fade} className="flex justify-center mb-10 px-2 sm:px-0">
-          <button onClick={() => handleNavClick("overview")} className="btn-primary">
-            View Engagement Structure
-          </button>
         </motion.div>
 
         {/* Nav pills — 4 items */}

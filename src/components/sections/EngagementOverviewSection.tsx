@@ -5,10 +5,10 @@ import BackToTop from "../BackToTop";
 
 const cards = [
   {
-    label: "REQUIRED ONCE",
+    label: "PHASE 1",
     Icon: Layers,
-    title: "Commercial Foundations Phase",
-    subtitle: "Baseline & CRM Foundations",
+    title: "Joint Development Blueprint",
+    subtitle: "Required Once",
     desc: "A one‑time working phase to establish a factual commercial baseline, configure CRM for the founder, and define a focused first‑month plan.",
   },
   {
@@ -51,7 +51,7 @@ const EngagementOverviewSection = () => (
 
       <motion.div variants={fadeUp} className="module-card mt-4 text-center">
         <p className="text-[12px] text-text-muted-custom leading-relaxed">
-          The Commercial Foundations Phase is required once before any ongoing monthly engagement. It is included in the first month and not repeated thereafter.
+          The Joint Development Blueprint is required once before any ongoing monthly engagement. It is included in the first month and not repeated thereafter.
         </p>
       </motion.div>
       <BackToTop />
