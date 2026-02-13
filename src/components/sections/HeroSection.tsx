@@ -70,14 +70,13 @@ const HeroSection = () => {
           </span>
         </motion.div>
 
-        {/* Nav pills — 4 items */}
+        {/* Nav pills — 2x2 grid on mobile, single row on sm+ */}
         <motion.div
           variants={fade}
-          className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide sm:flex-wrap sm:justify-center sm:overflow-visible sm:mx-0 sm:px-0"
-          style={{ WebkitOverflowScrolling: "touch" }}
+          className="grid grid-cols-2 gap-2 w-full max-w-[320px] mx-auto sm:flex sm:flex-wrap sm:justify-center sm:max-w-none"
         >
           {navItems.map((item) => (
-            <button key={item.anchor} onClick={() => handleNavClick(item.anchor)} className="nav-pill shrink-0">
+            <button key={item.anchor} onClick={() => handleNavClick(item.anchor)} className="nav-pill sm:shrink-0">
               {item.label}
             </button>
           ))}

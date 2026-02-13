@@ -405,7 +405,7 @@
 
   /* Nav pill */
   .nav-pill {
-    @apply text-[13px] font-medium px-4 py-2.5 rounded-full whitespace-nowrap;
+    @apply text-[12px] sm:text-[13px] font-medium px-3 sm:px-4 py-2.5 rounded-full whitespace-normal sm:whitespace-nowrap text-center;
     color: hsl(var(--text-secondary));
     background: hsl(var(--surface-subtle));
     border: 1px solid hsl(var(--border));
@@ -414,6 +414,7 @@
     min-height: 44px;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
   }
   .nav-pill:active {
     transform: scale(0.95);
