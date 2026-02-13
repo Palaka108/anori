@@ -61,7 +61,7 @@ const HeroSection = () => {
           variants={fade}
           className="text-[13px] sm:text-[14px] text-text-muted-custom max-w-sm mx-auto mb-6 leading-relaxed px-2"
         >
-          Structured advisory support for early‑stage building‑tech initiatives — designed to earn clarity before committing to scale.
+          Structured advisory support for early‑stage building‑tech initiatives — designed to turn product potential into a clear revenue system.
         </motion.p>
 
         <motion.div variants={fade} className="inline-block mb-8">
